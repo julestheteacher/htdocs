@@ -8,7 +8,3 @@
       <li><a href="../../test/quiz.php"><i class="fas fa-cogs"></i>Test Yourself </a></li>
     </ul>
 
-    <!--/index goes to root, no Revision_site
-    index goes to http://localhost/Revision_site/security/8-1/php_includes/index.php
-    /Revision_site/index.php goes to http://localhost/Revision_site/index.php
-      -->
