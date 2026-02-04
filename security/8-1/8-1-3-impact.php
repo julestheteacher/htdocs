@@ -9,8 +9,8 @@ include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Software Development/Digital Support Services Pearson</title>
-  <link rel="stylesheet" href="How much global_includes/styles.css">
-  <script src="global_includes/script.js"></script>
+<link rel="stylesheet" href="../../global_includes/styles.css">
+<script src="php_includes/css-script.js"></script>
 </head>
 <body>
 <div class="container">

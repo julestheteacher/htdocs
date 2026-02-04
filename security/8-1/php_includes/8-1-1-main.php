@@ -2,53 +2,54 @@
 
 <h1>8.1.1 Confidential Information Held by Organisations</h1>
 
-   <section>
-    <h2>Explanation of Confidential Information</h2>
-      <p>Click each category below to expand and view details:</p>
-    <div class="accordion"></div>
+<section>
+<main class="wrap">
+    <h1>8.1.1 Confidential Information Held by Organisations</h1>
+    <p class="note">Click each category to expand and view the types of confidential information commonly held by organisations.</p>
+
+    <div class="accordion" id="confidential-811">
+
       <!-- Human Resources -->
       <div class="accordion-item">
-        <button class="accordion-header">
-          Human Resources
-        </button>
-        <div class="accordion-content" type="button">
+        <button class="accordion-header" type="button">Human Resources</button>
+        <div class="accordion-content">
           <ul>
-            <li> <i class="strong">Salaries:</i> Disclosure can cause internal disputes and external exploitation.</li>
-            <li> <i class="strong">Benefits:</i> Sensitive perks may be targeted for fraud.</li>
-            <li> <i class="strong">Staff personal details:</i> Identity theft and phishing risks.</li>
+            <li><strong>Salaries and benefits</strong> — pay scales, bonuses, and compensation packages.</li>
+            <li><strong>Staff personal details</strong> — home address, date of birth, contact details, emergency contacts, right‑to‑work documents.</li>
           </ul>
         </div>
       </div>
 
       <!-- Commercially Sensitive Information -->
       <div class="accordion-item">
-        <button class="accordion-header">
-        Commercially Sensitive Information
-        </button>
+        <button class="accordion-header" type="button">Commercially Sensitive Information</button>
         <div class="accordion-content">
           <ul>
-            <li> <i class="strong">Client details:</i> Exposure damages trust and can lead to legal issues.</li>
-            <li> <i class="strong">Stakeholder details:</i> Exploited for fraud or insider trading.</li>
-            <li> <i class="strong">Intellectual property:</i> Loss harms competitiveness.</li>
-            <li> <i class="strong">Sales numbers:</i> Competitors may use leaked figures.</li>
-            <li> <i class="strong">Contracts:</i> Unauthorised access can lead to manipulation.</li>
+            <li><strong>Client details</strong> — names, contact information, contract terms, support history.</li>
+            <li><strong>Stakeholder details</strong> — partners, suppliers, investors, and relevant correspondence.</li>
+            <li><strong>Intellectual property</strong> — designs, source code, trade secrets, research data.</li>
+            <li><strong>Sales numbers</strong> — forecasts, pipelines, pricing strategies, performance reports.</li>
+            <li><strong>Contracts</strong> — NDAs, SLAs, supplier and customer agreements, amendments.</li>
           </ul>
         </div>
       </div>
 
       <!-- Access Information -->
       <div class="accordion-item">
-        <button class="accordion-header">
-          Access Information
-        </button>
+        <button class="accordion-header" type="button">Access Information</button>
         <div class="accordion-content">
           <ul>
-            <li> <i class="strong">Usernames and passwords:</i> Basic credentials are prime targets.</li>
-            <li> <i class="strong">MFA details:</i> If compromised, MFA loses its security advantage.</li>
-            <li> <i class="strong">PIN and access codes:</i> Used for banking or secure systems.</li>
-            <li> <i class="strong">Biometric data:</i> Cannot be changed like passwords, making breaches permanent.</li>
+            <li><strong>Usernames</strong> and <strong>passwords</strong> for systems and services.</li>
+            <li><strong>Multi‑factor authentication (MFA) details</strong> — backup codes, token seeds, authenticator bindings.</li>
+            <li><strong>Personal Identification Number (PIN)</strong> and <strong>access codes</strong> for devices, doors, or vaults.</li>
+            <li><strong>Passphrases</strong> — longer shared secrets protecting sensitive assets.</li>
+            <li><strong>Biometric data</strong> — fingerprints, facial templates, voiceprints, iris patterns.</li>
           </ul>
         </div>
       </div>
+
     </div>
-</div>
+
+    <p class="note"><em>Reminder:</em> These categories require appropriate classification, access control, retention, and secure disposal according to your organisation’s policies and applicable regulations.</p>
+</main>
+</section>

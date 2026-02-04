@@ -1,3 +1,5 @@
+<script src="css-script.js"></script>
+
 <h1>8.1.3 Impact of Security Risks</h1>
 <section>
   <h2>Potential Impact of Failing to Maintain Privacy and Confidentiality</h2>
@@ -9,7 +11,7 @@
     <button class="accordion-header">
       Potential Impact of Failing to Maintain Privacy and Confidentiality
     </button>
-    <div class="accordion-content">
+    <div class="accordion-content" type="button">
       <ul>
         <li><i class="strong">Non-compliance with regulations:</i> Can result in <em>loss of licence to practice</em>.</li>
         <li><i class="strong">Loss of trust:</i> Clients and stakeholders may no longer rely on the organisation.</li>
