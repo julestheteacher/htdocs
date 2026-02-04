@@ -1,10 +1,8 @@
 <script src="css-script.js"></script>
-
 <h1>8.1.1 Confidential Information Held by Organisations</h1>
-
 <section>
 <main class="wrap">
-    <h1>8.1.1 Confidential Information Held by Organisations</h1>
+    
     <p class="note">Click each category to expand and view the types of confidential information commonly held by organisations.</p>
 
     <div class="accordion" id="confidential-811">

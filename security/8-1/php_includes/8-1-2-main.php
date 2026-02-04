@@ -1,8 +1,8 @@
 <script src="css-script.js"></script>
-
+<h1>8.1.2 Understand why information must be kept confidential</h1>
 <section>
   <main class="wrap">
-    <h1>8.1.2 Understand why information must be kept confidential</h1>
+    
     <p class="note">Click each category to expand and see the reasoning.</p>
 
     <div class="accordion" id="confidential-812">
