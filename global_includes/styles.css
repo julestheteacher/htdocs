@@ -235,59 +235,11 @@ section h2 {
 }
 
 /* Accordion */
-.accordion {
-  margin-top: 20px;
-}
-
-.accordion-item {
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.accordion-header {
-  width: 100%;
-  background: #007BFF;
-  color: #fff;
-  text-align: left;
-  padding: 15px;
-}
-
-/* existing styles… */
-
-.accordion {
-  margin-top: 20px;
-}
-
-.accordion-item {
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.accordion-header {
-  width: 100%;
-  background: #007BFF;
-  color: #fff;
-  text-align: left;
-  padding: 15px;
-  cursor: pointer;           /* add: make it clickable */
-}
-
-/* NEW: panel body */
-.accordion-content {
-  display: none;             /* start closed */
-  padding: 15px;
-  background: #fff;
-  color: #333;
-}
-
-/* NEW: when accordion-item is open, show its content */
-.accordion-item.open .accordion-content {
-  display: block;
-}
+.accordion{margin-top:20px}
+.accordion-item{margin-bottom:10px;border:1px solid #ddd;border-radius:6px;overflow:hidden}
+.accordion-header{width:100%;background:#007BFF;color:#fff;text-align:left;padding:15px;cursor:pointer}
+.accordion-content{display:none;padding:15px;background:#fff;color:#333}
+.accordion-item.open .accordion-content{display:block}
 
     
     select, input[type="number"] { padding: 10px; border-radius: 8px; border: 1px solid #ccc; min-width: 220px; }

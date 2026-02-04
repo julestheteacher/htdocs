@@ -1,4 +1,6 @@
-    <h1>8.1.1 Confidential Information Held by Organisations</h1>
+<script src="css-script.js"></script>
+
+<h1>8.1.1 Confidential Information Held by Organisations</h1>
 
    <section>
     <h2>Explanation of Confidential Information</h2>
@@ -9,7 +11,7 @@
         <button class="accordion-header">
           Human Resources
         </button>
-        <div class="accordion-content">
+        <div class="accordion-content" type="button">
           <ul>
             <li> <i class="strong">Salaries:</i> Disclosure can cause internal disputes and external exploitation.</li>
             <li> <i class="strong">Benefits:</i> Sensitive perks may be targeted for fraud.</li>
