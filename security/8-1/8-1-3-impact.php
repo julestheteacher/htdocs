@@ -1,7 +1,8 @@
 ﻿<?php
-include '../../index_includes/is_auth.php';
-include '../../index_includes/check.php';
+include($_SERVER['DOCUMENT_ROOT'].'/index_includes/is_auth.php');
+include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,17 +1,18 @@
 ﻿<?php
-include '../../index_includes/is_auth.php';
-include '../../index_includes/check.php';
+include($_SERVER['DOCUMENT_ROOT'].'/index_includes/is_auth.php');
+include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Software Development/Digital Support Services Pearson</title>
-<!--<?php include '/Revision_site/global_includes/global_include.php'; ?> -->
+<!--<?php include '/global_includes/global_include.php'; ?> -->
 
 <link rel="stylesheet" href="/Revision_site/global_includes/styles.css">
-<script src="/Revision_site/global_includes/script.js"></script>
+<script src="/global_includes/script.js"></script>
 </head>
 <body>
 <div class="container">
