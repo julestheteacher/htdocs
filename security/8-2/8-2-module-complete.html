@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Vulnerabilities</title>
+<link rel="stylesheet" href="../styles.css">
+<script src="script.js"></script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<script>
+window.onload = displayFinalResult;
+function displayFinalResult() {
+  const score = localStorage.getItem('finalScore');
+  const percentage = localStorage.getItem('finalPercentage');
+  const resultElement = document.getElementById('final-result');
+  const certElement = document.getElementById('certificate');
+  const certScore = document.getElementById('cert-score');
+
+  if (score && percentage) {
+    resultElement.textContent = `Your final score is ${score} (${percentage}%).`;
+    if (percentage >= 50) {
+      certElement.style.display = 'block';
+      certScore.textContent = `${score} (${percentage}%)`;
+    }
+  } else {
+    resultElement.textContent = 'No quiz data found. Please complete the quiz first.';
+  }
+}
+</script>
+
+</head>
+<body>
+
+    
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <H1><a href="../index.html">Home</a></H1>
+    <h1><a href="security-index.html">Security Home</a></h1>
+    <h2>8-2 Security Threats</h2>
+    <ul>
+      <li><a href="8-2-technical.html">8.2.1 Technical Threats</a></li>
+      <li><a href="8-2-techvul.html"> 8.2.2 Technical Vulnerabilities</a></li>
+      <li><a href="8-2-human.html"> 8.2.3 Human Threats</a></li>
+      <li><a href="8-2-physical.html"> 8.2.4 Physical Threats</a></li>
+      <li><a href="8-2-impact.html"> 8.2.5 Impact</a></li>
+      <li><a href="8-2-quiz.html">8.2 Quiz</a></li>
+      
+    </ul>
+  </aside>
+
+  <main class="content">
+  <h1>ðŸŽ‰ Module Complete</h1>
+<section class="score-section">
+  <h2>Your Performance</h2>
+  <div id="score-box" class="score-box">
+    <p id="final-result" class="score-text"></p>
+  </div>
+  <div id="certificate" class="certificate">
+    <h2>ðŸ† Certificate of Completion</h2>
+    <p>Congratulations! You have successfully completed the Cybersecurity Module.</p>
+    <p>Your Score: <span id="cert-score"></span></p>
+    <button onclick="downloadCertificate()">Download Certificate</button>
+  </div>
+</section>
+
+</main>
+  
+</div>
+</body>
+</html>
+
+
+

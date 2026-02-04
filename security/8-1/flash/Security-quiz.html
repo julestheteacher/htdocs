@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Quiz</title>
+<link rel="stylesheet" href="../styles.css">
+<script src="script.js"></script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">    
+
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <H1><a href="../index.html">Home</a></H1>
+    <h1><a href="security-index.html">Security Home</a></h1>
+   <h2>Security Quiz</h2>
+    <ul>
+      <li><a href="8-1-index.html"><i class="fas fa-cogs"></i>8.1 Security Risks</a></li>
+      <li><a href="8-2-index.html"><i class="fas fa-cogs"></i>8.2 Types of threats and vulnerabilities</a></li>
+      <li><a href="8-3-index.html"><i class="fas fa-cogs"></i>8.3 Threat Mitigation</a></li>
+      <li><a href="Security-quiz.html"><i class="fas fa-cogs"></i>Overall Security Quiz</a></li>
+    </ul>
+  </aside>
+  <!-- Main Content -->
+  <main class="content">
+    <h1><i class="fas fa-question-circle"></i> Comprehensive Knowledge Quiz</h1>
+    <p>Answer all 20 questions to test your understanding of cybersecurity vulnerabilities:</p>
+
+    <form id="final-quiz">
+      <!-- Questions -->
+      <ol>
+        <li>
+          Which of these is a technical vulnerability?<br>
+          <label><input type="radio" name="q1" value="A"> Phishing</label>
+          <label><input type="radio" name="q1" value="B"> Unpatched software</label>
+          <label><input type="radio" name="q1" value="C"> Fire</label>
+        </li>
+        <li>
+          Which of these is a human threat?<br>
+          <label><input type="radio" name="q2" value="A"> Social engineering</label>
+          <label><input type="radio" name="q2" value="B"> Flood</label>
+          <label><input type="radio" name="q2" value="C"> Weak encryption</label>
+        </li>
+        <li>
+          Which of these is a physical vulnerability?<br>
+          <label><input type="radio" name="q3" value="A"> Fire</label>
+          <label><input type="radio" name="q3" value="B"> Malware</label>
+          <label><input type="radio" name="q3" value="C"> Phishing</label>
+        </li>
+        <li>
+          What does MFA stand for?<br>
+          <label><input type="radio" name="q4" value="A"> Multi-Factor Authentication</label>
+          <label><input type="radio" name="q4" value="B"> Multiple File Access</label>
+          <label><input type="radio" name="q4" value="C"> Multi-Function Application</label>
+        </li>
+        <li>
+          Which is an example of commercially sensitive information?<br>
+          <label><input type="radio" name="q5" value="A"> Client details</label>
+          <label><input type="radio" name="q5" value="B"> Firewall settings</label>
+          <label><input type="radio" name="q5" value="C"> Antivirus logs</label>
+        </li>
+        <li>
+          Which of these is NOT a technical vulnerability?<br>
+          <label><input type="radio" name="q6" value="A"> Weak encryption</label>
+          <label><input type="radio" name="q6" value="B"> Insider threat</label>
+          <label><input type="radio" name="q6" value="C"> Unpatched software</label>
+        </li>
+        <li>
+          Which human threat involves tricking people into revealing confidential information?<br>
+          <label><input type="radio" name="q7" value="A"> Social engineering</label>
+          <label><input type="radio" name="q7" value="B"> Malware infection</label>
+          <label><input type="radio" name="q7" value="C"> Fire hazard</label>
+        </li>
+        <li>
+          Which of these is a mitigation for physical vulnerabilities?<br>
+          <label><input type="radio" name="q8" value="A"> Installing CCTV</label>
+          <label><input type="radio" name="q8" value="B"> Using strong passwords</label>
+          <label><input type="radio" name="q8" value="C"> Encrypting data</label>
+        </li>
+        <li>
+          Which of these is considered biometric data?<br>
+          <label><input type="radio" name="q9" value="A"> Fingerprint</label>
+          <label><input type="radio" name="q9" value="B"> Password</label>
+          <label><input type="radio" name="q9" value="C"> PIN</label>
+        </li>
+        <li>
+          Which of these is a common technical vulnerability?<br>
+          <label><input type="radio" name="q10" value="A"> Zero-day exploit</label>
+          <label><input type="radio" name="q10" value="B"> Social engineering</label>
+          <label><input type="radio" name="q10" value="C"> Fire</label>
+        </li>
+        <!-- Add 10 more questions similarly -->
+      </ol>
+
+      <button type="button" onclick="gradeLongQuiz()">Submit Quiz</button>
+      
+    </form>
+
+
+  </main>
+</div>
+</body>
+</html>
+
+
+

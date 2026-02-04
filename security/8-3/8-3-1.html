@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact of Threats and Vulnerabilities</title>
+<link rel="stylesheet" href="../styles.css">
+<script src="script.js"></script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <H1><a href="../index.html">Home</a></H1>
+    <h1><a href="security-index.html">Security Home</a></h1>
+  <h2>8.3 Threat Mitigation</h2>
+    <ul>
+      <li><a href="8-3-1.html"><i class="fas fa-cogs"></i> 8.3.1 Common Threat Mitigation</a></li>
+      <li><a href="8-3-2.html"><i class="fas fa-cogs"></i> 8.3.2 Process and Procedures</a></li>
+       <li><a href="8-3-quiz.html"><i class="fas fa-cogs"></i> 8.3 Quiz</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1><i class="fas fa-shield-alt"></i> Threat Mitigation Strategies</h1>
+    <p>Click each category below to explore mitigation techniques:</p>
+
+    <div class="accordion">
+      <!-- Security Settings -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-cogs"></i> Security Settings</button>
+        <div class="accordion-content">
+          <ul>
+            <li><i class="fas fa-desktop"></i> <i class="strong">Hardware:</i> Configure BIOS/UEFI settings, disable unused ports, enable secure boot.</li>
+            <li><i class="fas fa-code"></i> <i class="strong">Software:</i> Apply least privilege principles, configure firewalls, enforce secure defaults.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Anti-Malware Software -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-virus-slash"></i> Anti-Malware Software</button>
+        <div class="accordion-content">
+          <ul>
+            <li><i class="fas fa-shield-virus"></i> <i class="strong">Function:</i> Detect and remove malicious software.</li>
+            <li><i class="fas fa-broom"></i> <i class="strong">Actions:</i> Real-time scanning, quarantine infected files, automatic updates.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Intrusion Detection -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-eye"></i> Intrusion Detection</button>
+        <div class="accordion-content">
+          <p>Monitors network and system activities for malicious actions or policy violations.</p>
+        </div>
+      </div>
+
+      <!-- Encryption -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-lock"></i> Encryption</button>
+        <div class="accordion-content">
+          <ul>
+            <li><i class="fas fa-hashtag"></i> <i class="strong">Hashing:</i> One-way encryption for data integrity.</li>
+            <li><i class="fas fa-exchange-alt"></i> <i class="strong">Symmetric:</i> Same key for encryption and decryption.</li>
+            <li><i class="fas fa-key"></i> <i class="strong">Asymmetric:</i> Public and private key pair for secure communication.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- User Access Policies -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-user-shield"></i> User Access Policies</button>
+        <div class="accordion-content">
+          <p>Define roles, permissions, and authentication requirements to prevent unauthorized access.</p>
+        </div>
+      </div>
+
+      <!-- Staff Vetting -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-id-card"></i> Staff Vetting</button>
+        <div class="accordion-content">
+          <p>Background checks and verification before granting access to sensitive systems.</p>
+        </div>
+      </div>
+
+      <!-- Staff Training -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-chalkboard-teacher"></i> Staff Training</button>
+        <div class="accordion-content">
+          <p>Regular cybersecurity awareness programs to reduce human error and social engineering risks.</p>
+        </div>
+      </div>
+
+      <!-- Software-Based Access Control -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-laptop-code"></i> Software-Based Access Control</button>
+        <div class="accordion-content">
+          <p>Implement ACLs (Access Control Lists) and RBAC (Role-Based Access Control) in applications.</p>
+        </div>
+      </div>
+
+      <!-- Device Hardening -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-tools"></i> Device Hardening</button>
+        <div class="accordion-content">
+          <p>Disable unnecessary services, apply patches, and enforce strong configurations.</p>
+        </div>
+      </div>
+
+      <!-- Backups -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-database"></i> Backups</button>
+        <div class="accordion-content">
+          <ul>
+            <li><i class="fas fa-copy"></i> <i class="strong">Types:</i> Full, incremental, differential backups.</li>
+            <li><i class="fas fa-lock"></i> <i class="strong">Safe Storage:</i> Encrypt backups and store off-site or in secure cloud environments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Software Updates -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-sync-alt"></i> Software Updates</button>
+        <div class="accordion-content">
+          <p>Regular patching to fix vulnerabilities and improve security.</p>
+        </div>
+      </div>
+
+      <!-- Firmware/Driver Updates -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-microchip"></i> Firmware/Driver Updates</button>
+        <div class="accordion-content">
+          <p>Keep device firmware and drivers updated to prevent exploitation of hardware-level vulnerabilities.</p>
+        </div>
+      </div>
+
+      <!-- Air Gaps -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-network-wired"></i> Air Gaps</button>
+        <div class="accordion-content">
+          <p>Physically isolate critical systems from external networks to prevent remote attacks.</p>
+        </div>
+      </div>
+
+      <!-- Certification of APIs -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-plug"></i> Certification of APIs</button>
+        <div class="accordion-content">
+          <p>Ensure APIs are secure and verified to prevent unauthorized data exchange.</p>
+        </div>
+      </div>
+
+      <!-- VPNs -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-lock"></i> VPNs (Virtual Private Networks)</button>
+        <div class="accordion-content">
+          <p>Encrypt network traffic to protect data in transit and prevent interception.</p>
+        </div>
+      </div>
+
+      <!-- Multi-Factor Authentication -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-shield-alt"></i> Multi-Factor Authentication</button>
+        <div class="accordion-content">
+          <p>Add extra layers of security beyond passwords, such as OTPs or biometrics.</p>
+        </div>
+      </div>
+
+      <!-- Password Managers -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-key"></i> Password Managers</button>
+        <div class="accordion-content">
+          <p>Securely store and generate strong passwords to reduce credential reuse risks.</p>
+        </div>
+      </div>
+
+      <!-- Port Scanning -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-search"></i> Port Scanning</button>
+        <div class="accordion-content">
+          <p>Identify open ports and close unnecessary ones to reduce attack surface.</p>
+        </div>
+      </div>
+
+      <!-- Penetration Testing -->
+      <div class="accordion-item">
+        <button class="accordion-header"><i class="fas fa-user-secret"></i> Penetration Testing</button>
+        <div class="accordion-content">
+          <ul>
+            <li><i class="fas fa-user-check"></i> <i class="strong">Ethical Hacking:</i> Authorized testing to find vulnerabilities before attackers do.</li>
+            <li><i class="fas fa-user-times"></i> <i class="strong">Unethical Hacking:</i> Malicious exploitation of vulnerabilities for illegal purposes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
+

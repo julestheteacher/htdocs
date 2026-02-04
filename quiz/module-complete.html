@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Module Complete</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root{ --ok:#15803d; --bad:#b91c1c; --muted:#6b7280; --brand:#e14586; --chip:#f3f4f6; }
+  body{font-family:system-ui,Arial,sans-serif;margin:2rem;background:#fafafa;}
+  .card{max-width:860px;margin:0 auto;padding:1.5rem 1.75rem;border:1px solid #eee;border-radius:14px;background:#fff;}
+  h1{margin:0 0 .5rem;}
+  .lead{font-size:1.1rem;margin-bottom:.25rem}
+  .muted{color:var(--muted)}
+  .stat{display:inline-block;padding:.2rem .55rem;border-radius:999px;background:var(--chip);margin-right:.5rem}
+  .pass{color:var(--ok);font-weight:700}
+  .fail{color:var(--bad);font-weight:700}
+  .actions{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;text-decoration:none;color:#fff;background:var(--brand)}
+  .btn.secondary{background:#6b7280}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Test Complete</h1>
+    <p id="headline" class="lead">Loading your results…</p>
+
+    <p class="muted">
+      <span id="score" class="stat"></span>
+      <span id="percent" class="stat"></span>
+      <span id="section" class="stat"></span>
+      <span id="threshold" class="stat"></span>
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="review.html">Review answers</a>
+      <a class="btn secondary" href="quiz.html">Take another quiz</a>
+    </div>
+  </div>
+
+<script>
+const PASS_THRESHOLD = 70; // static
+
+(function(){
+  const read = k => localStorage.getItem(k);
+  const n = (v,d=0)=>{ const x=Number(v); return Number.isFinite(x)?x:d; };
+
+  const score = n(read('finalScore'),0);
+  const total = n(read('finalTotal'),0);
+  const pctStored = n(read('finalPercentage'), NaN);
+  const pct = Number.isFinite(pctStored) ? pctStored : (total?(score/total*100):0);
+  const sec = read('finalSection') || '';
+
+  const pass = (pct >= PASS_THRESHOLD);
+
+  document.getElementById('headline').innerHTML = pass
+    ? '🎉 <span class="pass">You passed</span> this quiz.'
+    : '❗ <span class="fail">You did not meet the pass mark</span>.';
+
+  document.getElementById('score').textContent     = `Score: ${score}/${total}`;
+  document.getElementById('percent').textContent   = `Percentage: ${pct.toFixed(2)}%`;
+  document.getElementById('section').textContent   = sec ? `Section: ${sec}` : 'Section: (not specified)';
+  document.getElementById('threshold').textContent = `Pass mark: ${PASS_THRESHOLD}%`;
+})();
+</script>
+</body>
+</html>

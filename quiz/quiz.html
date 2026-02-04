@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Interactive Quiz (Client‑side)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root{
+    --ok:#15803d; --bad:#b91c1c; --muted:#6b7280; --brand:#e14586; --chip:#f3f4f6;
+  }
+  body{font-family:system-ui,Arial,sans-serif;margin:2rem;background:#fafafa;}
+  .card{max-width:980px;margin:0 auto;padding:1.5rem 1.75rem;border:1px solid #eee;border-radius:14px;background:#fff;}
+  h1{margin:0 0 .5rem;}
+  .row{display:flex;gap:1rem;flex-wrap:wrap;align-items:end}
+  label{display:block;font-weight:700;margin:.25rem 0}
+  select,input[type="number"]{padding:.4rem .5rem;border-radius:8px;border:1px solid #ddd;min-width:220px}
+  .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;text-decoration:none;color:#fff;background:var(--brand);border:none;cursor:pointer}
+  .btn.secondary{background:#6b7280}
+  .stat{display:inline-block;padding:.2rem .55rem;border-radius:999px;background:var(--chip);margin-right:.5rem}
+  hr{margin:1.25rem 0}
+  .question{padding:.9rem 1rem;border:1px solid #eee;border-radius:10px;background:#fff;margin:.6rem 0}
+  .question h3{margin:0 0 .6rem;font-size:1rem}
+  .option{margin:.25rem 0}
+  .hidden{display:none}
+  .hint{color:var(--muted);margin-top:.25rem}
+  .error{color:#b91c1c;font-weight:700}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Interactive Quiz (Client‑side)</h1>
+    <p id="csvStatus" class="hint">Loading <code>questions.csv</code>…</p>
+
+    <div class="row">
+      <div>
+        <label for="sectionSel">Section</label>
+        <select id="sectionSel" disabled>
+          <option value="" selected disabled>Select a section…</option>
+          <option value="__RAND_SECTION__">Random section…</option>
+          <option value="__RAND_QUESTIONS__">Random questions…</option>
+        </select>
+      </div>
+      <div>
+        <label for="countInp">Number of questions</label>
+        <input id="countInp" type="number" min="1" value="5" disabled />
+        <div id="availableInfo" class="hint">Waiting for CSV to load…</div>
+      </div>
+      <div>
+        <button id="buildBtn" class="btn" disabled>Load Quiz</button>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Rendered quiz -->
+    <div id="quizWrap" class="hidden">
+      <h2 id="quizTitle">Quiz</h2>
+      <p>Answer all questions then submit.</p>
+      <div id="questionsHost"></div>
+      <div class="row" style="margin-top:1rem">
+        <button id="submitBtn" class="btn">Submit Quiz</button>
+        <button id="resetBtn" class="btn secondary">Start Over</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ========= CONFIG ========= */
+const PASS_THRESHOLD = 70; // percent — keep static across pages
+const CSV_PATH = 'questions.csv'; // auto-load from same folder
+
+/* ========= Utilities ========= */
+const byId = (id)=>document.getElementById(id);
+
+function parseCSV(text){
+  // Robust CSV (quotes, commas, CRLF) — returns [rows[]], rows = array of fields
+  const rows=[]; let row=[], field="", inQuotes=false;
+  for(let i=0;i<text.length;i++){
+    const ch=text[i], next=text[i+1];
+    if(ch === '"' && inQuotes && next === '"'){ field+='"'; i++; continue; }
+    if(ch === '"'){ inQuotes=!inQuotes; continue; }
+    if(ch === ',' && !inQuotes){ row.push(field); field=""; continue; }
+    if((ch === '\n' || ch === '\r') && !inQuotes){
+      if(ch === '\r' && next === '\n') i++;
+      row.push(field); field="";
+      if(row.some(c => (c||"").trim() !== "")) rows.push(row);
+      row=[]; continue;
+    }
+    field += ch;
+  }
+  if(field.length>0 || row.length>0){ row.push(field); if(row.some(c=>(c||"").trim()!=="")) rows.push(row); }
+  return rows;
+}
+
+function buildIndex(header){
+  const idx={}; header.forEach((h,i)=>idx[(h||"").trim()] = i);
+  const required=['Section','QuestionText','OptionA','OptionB','OptionC','CorrectOption'];
+  for(const r of required){ if(idx[r]===undefined) throw new Error(`CSV missing required column: ${r}`); }
+  return idx;
+}
+
+function toQObjects(parsed){
+  const header = parsed[0]; const idx = buildIndex(header);
+  return parsed.slice(1)
+    .filter(r => r && r.length>0 && (r[idx.Section]||"").trim()!=="" && (r[idx.QuestionText]||"").trim()!=="")
+    .map((r)=>({
+      section:(r[idx.Section]||"").trim(),
+      text:(r[idx.QuestionText]||"").trim(),
+      a:(r[idx.OptionA]||"").trim(),
+      b:(r[idx.OptionB]||"").trim(),
+      c:(r[idx.OptionC]||"").trim(),
+      d: idx.OptionD!==undefined ? (r[idx.OptionD]||"").trim() : "",
+      correct:(r[idx.CorrectOption]||"").trim().toLowerCase()
+    }));
+}
+
+function groupBySection(questions){
+  const map = new Map();
+  for(const q of questions){ if(!map.has(q.section)) map.set(q.section, []); map.get(q.section).push(q); }
+  return map;
+}
+
+function sample(array, n){
+  const a=[...array]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a.slice(0, n);
+}
+
+function escapeHtml(s){ return (s||'').replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
+function renderOption(i, key, text){
+  return `
+    <div class="option">
+      <label><input type="radio" name="q${i}" value="${key}"> ${escapeHtml(text||'')}</label>
+    </div>`;
+}
+
+/* ========= State ========= */
+let ALL_QUESTIONS = [];      // full dataset
+let SECTIONS_MAP = new Map();// section -> questions[]
+let CURRENT_SECTION = "";    // label shown on results
+
+/* ========= DOM ========= */
+const csvStatus = byId('csvStatus');
+const sectionSel= byId('sectionSel');
+const countInp  = byId('countInp');
+const available = byId('availableInfo');
+const buildBtn  = byId('buildBtn');
+const quizWrap  = byId('quizWrap');
+const quizTitle = byId('quizTitle');
+const questionsHost = byId('questionsHost');
+const submitBtn = byId('submitBtn');
+const resetBtn  = byId('resetBtn');
+
+/* ========= Auto-load CSV on page load ========= */
+document.addEventListener('DOMContentLoaded', async ()=>{
+  try{
+    const resp = await fetch(CSV_PATH, { cache: 'no-store' });
+    if(!resp.ok) throw new Error(`Failed to fetch ${CSV_PATH}: ${resp.status} ${resp.statusText}`);
+    const text = await resp.text();
+    const parsed = parseCSV(text);
+    if(!parsed || parsed.length<2) throw new Error('CSV has no data rows.');
+    ALL_QUESTIONS = toQObjects(parsed);
+    if(ALL_QUESTIONS.length === 0) throw new Error('No valid questions found in CSV.');
+
+    // Build sections
+    SECTIONS_MAP = groupBySection(ALL_QUESTIONS);
+
+    // Populate section select (keep the two special options first)
+    sectionSel.innerHTML = `
+      <option value="" selected disabled>Select a section…</option>
+      <option value="__RAND_SECTION__">Random section…</option>
+      <option value="__RAND_QUESTIONS__">Random questions…</option>
+    `;
+    [...SECTIONS_MAP.keys()].sort().forEach(sec=>{
+      const opt = document.createElement('option');
+      opt.value = sec; opt.textContent = sec;
+      sectionSel.appendChild(opt);
+    });
+
+    // Enable controls
+    sectionSel.disabled = false; countInp.disabled = false; buildBtn.disabled = false;
+    csvStatus.textContent = `Loaded ${ALL_QUESTIONS.length} questions across ${SECTIONS_MAP.size} section(s) from “${CSV_PATH}”.`;
+    available.textContent = 'Pick a section to see availability.';
+  }catch(err){
+    console.error(err);
+    csvStatus.innerHTML = `<span class="error">Could not auto‑load <code>${CSV_PATH}</code>.<br>
+      Tip: open this folder with a simple local server (e.g. VS Code “Live Server” or <code>python -m http.server</code>), then reload.</span>`;
+    // Keep controls disabled because we have no data
+  }
+});
+
+/* ========= Section availability hint ========= */
+sectionSel.addEventListener('change', ()=>{
+  const v = sectionSel.value;
+  if(v === '__RAND_QUESTIONS__'){
+    const total = ALL_QUESTIONS.length || 0;
+    available.textContent = `Total questions available: ${total}.`;
+    countInp.max = String(total);
+  } else if(v === '__RAND_SECTION__'){
+    available.textContent = `A random section will be chosen automatically.`;
+  } else if(v){
+    const n = (SECTIONS_MAP.get(v)||[]).length;
+    available.textContent = `Questions in section "${v}": ${n}.`;
+    countInp.max = String(n);
+  } else {
+    available.textContent = 'Pick a section to see availability.';
+  }
+});
+
+/* ========= Build quiz ========= */
+buildBtn.addEventListener('click', ()=>{
+  if(ALL_QUESTIONS.length === 0){ alert('questions.csv is not loaded.'); return; }
+  const wanted = Math.max(1, Number(countInp.value||1));
+  const mode = sectionSel.value;
+
+  let chosenSection = "";
+  let list = [];
+
+  if(mode === '__RAND_QUESTIONS__'){
+    list = sample(ALL_QUESTIONS, Math.min(wanted, ALL_QUESTIONS.length));
+    chosenSection = 'Randomly Generated';
+  } else if(mode === '__RAND_SECTION__'){
+    const secs = [...SECTIONS_MAP.keys()];
+    chosenSection = secs[Math.floor(Math.random()*secs.length)];
+    const pool = SECTIONS_MAP.get(chosenSection) || [];
+    list = sample(pool, Math.min(wanted, pool.length));
+  } else {
+    chosenSection = mode;
+    const pool = SECTIONS_MAP.get(mode) || [];
+    list = sample(pool, Math.min(wanted, pool.length));
+  }
+
+  if(list.length === 0){ alert('No questions available for that choice.'); return; }
+
+  // render
+  CURRENT_SECTION = chosenSection || '';
+  quizTitle.textContent = (chosenSection && chosenSection!=='Randomly Generated')
+    ? `Section ${chosenSection} — Quiz`
+    : `${chosenSection || 'Quiz'}`;
+
+  questionsHost.innerHTML = '';
+  list.forEach((q, i)=>{
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.dataset.correct = q.correct; // a/b/c/d
+    div.innerHTML = `
+      <h3>${i+1}. ${escapeHtml(q.text)}</h3>
+      ${renderOption(i,'a',q.a)}
+      ${renderOption(i,'b',q.b)}
+      ${renderOption(i,'c',q.c)}
+      ${q.d ? renderOption(i,'d',q.d) : ''}
+    `;
+    questionsHost.appendChild(div);
+  });
+
+  quizWrap.classList.remove('hidden');
+  window.scrollTo({top: quizWrap.offsetTop-20, behavior: 'smooth'});
+});
+
+/* ========= Grade & redirect ========= */
+byId('submitBtn').addEventListener('click', ()=>{
+  const qNodes = Array.from(document.querySelectorAll('.question'));
+  if(qNodes.length===0){ alert('No questions to grade.'); return; }
+
+  let score=0; const total=qNodes.length; const review=[];
+  qNodes.forEach((qNode, i)=>{
+    const correct = (qNode.dataset.correct||'').trim().toLowerCase();
+    const qTextRaw = qNode.querySelector('h3')?.textContent || '';
+    const question = qTextRaw.replace(/^\s*\d+\.\s*/, '').trim();
+
+    const inputs = Array.from(qNode.querySelectorAll('label > input'));
+    const options = inputs.map(inp=>({ key:(inp.value||'').trim().toLowerCase(), text:(inp.parentElement?.textContent||'').trim() }));
+    const chosenEl = document.querySelector(`input[name="q${i}"]:checked`);
+    const chosen = (chosenEl?.value||'').trim().toLowerCase();
+
+    const chosenText  = options.find(o=>o.key===chosen)?.text ?? null;
+    const correctText = options.find(o=>o.key===correct)?.text ?? null;
+
+    const isCorrect = chosen!=='' && chosen===correct;
+    if(isCorrect) score++;
+
+    review.push({ index:i+1, question, chosen:chosen||null, chosenText, correct, correctText, isCorrect });
+  });
+
+  const pct = total ? (score/total*100) : 0;
+  const pass = (pct >= PASS_THRESHOLD);
+
+  // Persist for results & review pages
+  localStorage.setItem('finalScore', String(score));
+  localStorage.setItem('finalTotal', String(total));
+  localStorage.setItem('finalPercentage', pct.toFixed(2));
+  localStorage.setItem('finalSection', CURRENT_SECTION || '');
+  localStorage.setItem('finalPass', pass ? '1':'0');
+  localStorage.setItem('finalReview', JSON.stringify(review));
+
+  // Go to results
+  window.location.href = 'module-complete.html';
+});
+
+byId('resetBtn').addEventListener('click', ()=>{
+  quizWrap.classList.add('hidden');
+  questionsHost.innerHTML = '';
+  CURRENT_SECTION = '';
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+</script>
+</body>
+</html>

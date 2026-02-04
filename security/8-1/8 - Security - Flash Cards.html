@@ -1,0 +1,418 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Software Development/Digital Support Services Pearson</title>
+<link rel="stylesheet" href="../styles.css">
+<script src="script.js"></script>
+
+<style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 2rem; }
+    .controls { margin-bottom: 1rem; display: flex; gap: 1rem; align-items: center; }
+    .card { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; max-width: 600px; }
+    .front { font-weight: 600; }
+    .back { margin-top: 0.75rem; color: #333; display: none; }
+    .actions { margin-top: 1rem; display: flex; gap: 0.5rem; }
+    .actions button { padding: 0.5rem 0.75rem; cursor: pointer; }
+    .score { margin-top: 1rem; font-weight: 600; }
+    .nav { margin-top: 1rem; display: flex; gap: 0.5rem; }
+    .hidden { display: none; }
+  </style>
+
+</head>
+<body>
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <H1><a href="../index.html">Home</a></H1>
+    <h1><a href="security-index.html">Security Home</a></h1>
+    <h2>Security - 8.1 Security Risks</h2>
+    <ul>
+      <li><a href="security-index.html">Security Home</a></li>
+      <li><a href="8-1-1-confidential.html">8.1.1 Confidential Info</a></li>
+      <li><a href="8-1-2-whyimportant.html">8.1.2 Why Important</a></li>
+      <li><a href="8-1-3-impact.html">8.1.3 Impact</a></li>
+      <li><a href="8-1-quiz.html">Quiz</a></li>
+
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h2>Digital Software Development</h2>
+    <h2>Digital Support Services</h2>
+    <h2>Security</h2>
+    <p>8-1 Security Risks</p>
+    <p>Welcome to the "Security Risks" section of the Digital Support Services course. Here, you'll explore various cybersecurity risks, including technical, human, and physical vulnerabilities. Each topic includes detailed explanations, real-world examples, and knowledge checks to reinforce your understanding.</p>
+    <p>Use the sidebar to navigate through each topic, complete knowledge checks, and submit reflections. When ready, try the <i class="strong">Interactive Quiz</i> to test your knowledge!</p>
+  </main>
+</div>
+
+
+<body>
+  <h1>Flashcards from CSV</h1>
+
+  <div class="controls">
+    <label>
+      Load CSV:
+      <input type="file" id="csvInput" accept=".csv" />
+    </label>
+    <button id="resetBtn" disabled>Reset Progress</button>
+    <!-- NEW: Export & save controls -->
+    <button id="exportBtn" disabled>Download Results CSV</button>
+    <button id="forceSaveBtn" disabled>Save Progress Now</button>
+  </div>
+
+  <div id="status">No CSV loaded.</div>
+
+  <div id="cardArea" class="card hidden">
+    <div class="front" id="question"></div>
+    <div class="back" id="answer"></div>
+    <div class="actions">
+      <button id="revealBtn">Reveal Answer</button>
+      <button id="correctBtn" disabled>✔ Correct</button>
+      <button id="incorrectBtn" disabled>✘ Incorrect</button>
+    </div>
+    <div class="nav">
+      <button id="prevBtn" disabled>⟵ Previous</button>
+      <button id="nextBtn" disabled>Next ⟶</button>
+    </div>
+    <div class="score" id="score">Score: 0 correct out of 0</div>
+    <div class="meta" id="meta"></div> 
+    
+  </div>
+
+  <script>
+    // --- Simple CSV parser (no external libraries) ---
+    function parseCSV(text) {
+      const rows = [];
+      let i = 0, field = '', row = [], inQuotes = false;
+
+      while (i < text.length) {
+        const char = text[i];
+        if (inQuotes) {
+          if (char === '"') {
+            if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+            else { inQuotes = false; i++; continue; }
+          } else { field += char; i++; continue; }
+        } else {
+          if (char === '"') { inQuotes = true; i++; continue; }
+          if (char === ',') { row.push(field); field = ''; i++; continue; }
+          if (char === '\n') { row.push(field); field = ''; rows.push(row); row = []; i++; continue; }
+          if (char === '\r') { i++; continue; }
+          field += char; i++;
+        }
+      }
+      if (field.length > 0 || row.length > 0) { row.push(field); rows.push(row); }
+      return rows;
+    }
+
+    // --- Quick hash for CSV content to identify a dataset (NEW) ---
+    function simpleHash(str) {
+      // DJB2-like hash
+      let h = 5381;
+      for (let i = 0; i < str.length; i++) {
+        h = ((h << 5) + h) + str.charCodeAt(i); // h * 33 + c
+        h = h & 0xffffffff; // clamp to 32-bit
+      }
+      return (h >>> 0).toString(16);
+    }
+
+    // --- State ---
+    let cards = [];         // [{ id, question, answer }]
+    let current = 0;        // index of current card
+    let correctCount = 0;   // tally of correct selections
+    let answered = [];      // per-card: true/false/null
+    let datasetKey = null;  // NEW: identifies this CSV dataset (hash)
+    let fileNameKey = null; // NEW: optional for display (file.name if available)
+
+    // --- DOM elements ---
+    const csvInput = document.getElementById('csvInput');
+    const status = document.getElementById('status');
+    const cardArea = document.getElementById('cardArea');
+    const questionEl = document.getElementById('question');
+    const answerEl = document.getElementById('answer');
+    const revealBtn = document.getElementById('revealBtn');
+    const correctBtn = document.getElementById('correctBtn');
+    const incorrectBtn = document.getElementById('incorrectBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const scoreEl = document.getElementById('score');
+    const resetBtn = document.getElementById('resetBtn');
+    const exportBtn = document.getElementById('exportBtn');    // NEW
+    const forceSaveBtn = document.getElementById('forceSaveBtn'); // NEW
+    const metaEl = document.getElementById('meta');            // NEW
+
+    // --- Helpers ---
+    function updateScore() {
+      const totalAnswered = answered.filter(x => x !== null).length;
+      scoreEl.textContent = `Score: ${correctCount} correct out of ${totalAnswered} (total cards: ${cards.length})`;
+    }
+
+    function showCard(index) {
+      if (!cards.length) return;
+      const card = cards[index];
+      questionEl.textContent = card.question;
+      answerEl.textContent = card.answer;
+      answerEl.style.display = 'none';
+
+      // Buttons
+      revealBtn.disabled = false;
+      correctBtn.disabled = true;
+      incorrectBtn.disabled = true;
+
+      // Navigation buttons
+      prevBtn.disabled = index <= 0;
+      nextBtn.disabled = index >= cards.length - 1;
+
+      // Status
+      status.textContent = `Card ${index + 1} of ${cards.length}`;
+      cardArea.classList.remove('hidden');
+
+      // Show progress info (NEW)
+      const fname = fileNameKey ? `File: ${fileNameKey}` : '';
+      metaEl.textContent = `Dataset key: ${datasetKey}${fname ? ` • ${fname}` : ''}`;
+    }
+
+    function resetProgress() {
+      correctCount = 0;
+      answered = Array(cards.length).fill(null);
+      updateScore();
+      showCard(0);
+      current = 0;
+      // Also clear stored progress for this dataset (NEW)
+      if (datasetKey) {
+        localStorage.removeItem(storageKey(datasetKey));
+        metaEl.textContent = `Progress reset • Dataset key: ${datasetKey}`;
+      }
+    }
+
+    // --- Storage helpers (NEW) ---
+    function storageKey(datasetKey) {
+      return `flashcards_progress_${datasetKey}`;
+    }
+
+    function saveProgress() {
+      if (!datasetKey || !cards.length) return;
+      const payload = {
+        datasetKey,
+        fileNameKey,
+        timestamp: new Date().toISOString(),
+        cards: cards.map((c, idx) => ({
+          id: c.id,
+          question: c.question,
+          answer: c.answer,
+          result: answered[idx], // true/false/null
+        })),
+        current,
+        correctCount
+      };
+      localStorage.setItem(storageKey(datasetKey), JSON.stringify(payload));
+      metaEl.textContent = `Progress saved at ${new Date().toLocaleString()}`;
+    }
+
+    function loadProgressIfAvailable() {
+      if (!datasetKey) return false;
+      const raw = localStorage.getItem(storageKey(datasetKey));
+      if (!raw) return false;
+
+      try {
+        const payload = JSON.parse(raw);
+        if (!payload || !payload.cards || !Array.isArray(payload.cards)) return false;
+
+        // Map saved results back to current cards—match by id or by question+answer
+        let restored = 0;
+        answered = Array(cards.length).fill(null);
+        correctCount = 0;
+
+        for (let i = 0; i < cards.length; i++) {
+          const c = cards[i];
+          const match = payload.cards.find(pc =>
+            (pc.id && c.id && pc.id === c.id) ||
+            (pc.question === c.question && pc.answer === c.answer)
+          );
+          if (match) {
+            answered[i] = match.result;
+            if (match.result === true) correctCount += 1;
+            restored += 1;
+          }
+        }
+
+        // Restore last position if valid
+        if (typeof payload.current === 'number' && payload.current >= 0 && payload.current < cards.length) {
+          current = payload.current;
+        } else {
+          current = 0;
+        }
+
+        updateScore();
+        showCard(current);
+        metaEl.textContent = `Progress loaded • Restored ${restored}/${cards.length} cards • Saved: ${new Date(payload.timestamp).toLocaleString()}`;
+        return true;
+      } catch (e) {
+        console.error('Failed to parse saved progress:', e);
+        return false;
+      }
+    }
+
+    // --- Export results to CSV (NEW) ---
+    function exportResultsCSV() {
+      if (!cards.length) return;
+
+      const headers = ['id', 'question', 'answer', 'result', 'timestamp'];
+      const nowISO = new Date().toISOString();
+
+      const rows = cards.map((c, idx) => {
+        const res = answered[idx];
+        const resultStr = res === true ? 'correct' : (res === false ? 'incorrect' : 'unanswered');
+
+        // Escape CSV field
+        const esc = v => {
+          const s = String(v ?? '');
+          return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+        };
+
+        return [
+          esc(c.id ?? ''),
+          esc(c.question),
+          esc(c.answer),
+          esc(resultStr),
+          esc(nowISO)
+        ].join(',');
+      });
+
+      const csvText = headers.join(',') + '\n' + rows.join('\n');
+
+      const blob = new Blob([csvText], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const name = fileNameKey ? fileNameKey.replace(/\.csv$/i, '') : `flashcards`;
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${name}_results_${datasetKey}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // --- Events ---
+    csvInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const text = await file.text();
+      const rows = parseCSV(text);
+
+      if (rows.length < 2) {
+        status.textContent = 'CSV seems empty or lacks data rows.';
+        cardArea.classList.add('hidden');
+        return;
+      }
+
+      // Expect header: id,question,answer (case-insensitive)
+      const header = rows[0].map(h => h.trim().toLowerCase());
+      const idxId = header.indexOf('id');
+      const idxQ = header.indexOf('question');
+      const idxA = header.indexOf('answer');
+
+      if (idxQ === -1 || idxA === -1) {
+        status.textContent = 'CSV must contain at least "question" and "answer" headers.';
+        cardArea.classList.add('hidden');
+        return;
+      }
+
+      cards = rows.slice(1)
+        .filter(r => r.length >= Math.max(idxQ, idxA) + 1)
+        .map(r => ({
+          id: idxId !== -1 ? r[idxId] : '',
+          question: r[idxQ],
+          answer: r[idxA]
+        }));
+
+      if (!cards.length) {
+        status.textContent = 'No valid flashcard rows found.';
+        cardArea.classList.add('hidden');
+        return;
+      }
+
+      // NEW: set dataset keys for saving/loading
+      datasetKey = simpleHash(rows.map(r => r.join(',')).join('\n')); // based on content
+      fileNameKey = file.name || null;
+
+      answered = Array(cards.length).fill(null);
+      correctCount = 0;
+      current = 0;
+
+      status.textContent = `Loaded ${cards.length} flashcards.`;
+      resetBtn.disabled = false;
+      exportBtn.disabled = false;     // NEW
+      forceSaveBtn.disabled = false;  // NEW
+      updateScore();
+
+      // Try to load saved progress for this dataset (NEW)
+      const loaded = loadProgressIfAvailable();
+      if (!loaded) {
+        showCard(current);
+        metaEl.textContent = `No saved progress found for this dataset.`;
+      }
+    });
+
+    revealBtn.addEventListener('click', () => {
+      answerEl.style.display = 'block';
+      correctBtn.disabled = false;
+      incorrectBtn.disabled = false;
+      revealBtn.disabled = true;
+    });
+
+    correctBtn.addEventListener('click', () => {
+      if (answered[current] === null) {
+        answered[current] = true;
+        correctCount += 1;
+        updateScore();
+        saveProgress(); // NEW: auto-save on change
+      }
+      correctBtn.disabled = true;
+      incorrectBtn.disabled = true;
+      revealBtn.disabled = false;
+    });
+
+    incorrectBtn.addEventListener('click', () => {
+      if (answered[current] === null) {
+        answered[current] = false;
+        updateScore();
+        saveProgress(); // NEW: auto-save on change
+      }
+      correctBtn.disabled = true;
+      incorrectBtn.disabled = true;
+      revealBtn.disabled = false;
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) {
+        current -= 1;
+        showCard(current);
+        saveProgress(); // NEW: save position
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (current < cards.length - 1) {
+        current += 1;
+        showCard(current);
+        saveProgress(); // NEW: save position
+      }
+    });
+
+    resetBtn.addEventListener('click', resetProgress);
+
+    exportBtn.addEventListener('click', exportResultsCSV); // NEW
+    forceSaveBtn.addEventListener('click', saveProgress);  // NEW
+
+    // Optional: save on page unload (NEW)
+    window.addEventListener('beforeunload', () => {
+      saveProgress();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flashcards — Load Progress CSV + Save As</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --border:#d0d7de;
+      --btn-bg:#f7f7f7;
+      --btn-bg-hover:#efefef;
+      --ok:#059669;        /* green */
+      --no:#dc2626;        /* red */
+      --na:#6b7280;        /* gray */
+      --muted:#555;
+    }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:1.5rem}
+    h1{margin:0 0 1rem 0;font-size:1.3rem}
+    .controls{margin-bottom:1rem;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+    .controls button{
+      padding:.55rem .9rem;border:1px solid var(--border);background:var(--btn-bg);
+      border-radius:8px;cursor:pointer;transition:.15s background-color,.15s border-color;
+    }
+    .controls button:hover{background:var(--btn-bg-hover)}
+    .controls button:disabled{opacity:.6;cursor:not-allowed}
+    #status{margin:.5rem 0 1rem 0;color:var(--muted)}
+    .card{border:1px solid var(--border);border-radius:12px;padding:1rem;max-width:980px;}
+    .front{font-weight:700;font-size:1.05rem}
+    .back{margin-top:.75rem;color:#222;display:none;white-space:pre-wrap}
+    .actions{margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+    .score{margin-top:1rem;font-weight:600}
+    .nav{margin-top:.75rem;display:flex;gap:.5rem;flex-wrap:wrap}
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important; height: 1px !important;
+      padding: 0 !important; margin: -1px !important;
+      overflow: hidden !important; clip: rect(0 0 0 0) !important;
+      white-space: nowrap !important; border: 0 !important;
+    }
+    .hidden{display:none}
+
+    /* Summary panel */
+    .summary-header{
+      display:flex;justify-content:space-between;align-items:center;gap:.75rem;margin-bottom:.5rem
+    }
+    .summary-title{font-weight:700}
+    .summary-controls{display:flex;gap:.4rem;flex-wrap:wrap}
+    .summary-controls button{padding:.45rem .75rem}
+    .summary-counts{color:var(--muted);font-size:.95rem;margin:.5rem 0}
+    .result-item{
+      border-top:1px dashed #e5e7eb;padding:.6rem 0;
+      display:grid;grid-template-columns: 1fr auto;gap:.5rem;align-items:start;
+    }
+    .result-q{font-weight:600}
+    .result-a{color:#222;margin-top:.2rem}
+    .result-status{
+      align-self:center; padding:.25rem .5rem; border-radius:999px;
+      font-size:.85rem; border:1px solid var(--border);
+    }
+    .result-status.ok{color:var(--ok); border-color:#b7ead5}
+    .result-status.no{color:var(--no); border-color:#f7c6c6}
+    .result-status.na{color:var(--na); border-color:#ddd}
+  </style>
+</head>
+<body>
+  <h1>Flashcards — Load Progress CSV</h1>
+
+  <div class="controls">
+    <!-- PROGRESS ONLY -->
+    <button id="loadProgressBtn">Load Progress CSV</button>
+    <input type="file" id="progressInput" accept=".csv" class="visually-hidden" />
+
+    <!-- Save As (choose location & filename) -->
+    <button id="saveAsBtn" disabled>Save As…</button>
+
+    <button id="resetBtn" disabled>Reset Progress</button>
+  </div>
+
+  <div id="status">Load a previously saved Progress CSV.</div>
+
+  <!-- Single-card study view -->
+  <div id="cardArea" class="card hidden">
+    <div class="front" id="question"></div>
+    <div class="back" id="answer"></div>
+
+    <div class="actions">
+      <button id="revealBtn">Reveal Answer</button>
+      <button id="correctBtn" disabled>✔ Correct</button>
+      <button id="incorrectBtn" disabled>✘ Incorrect</button>
+    </div>
+
+    <div class="nav">
+      <button id="prevBtn" disabled>⟵ Previous</button>
+      <button id="nextBtn" disabled>Next ⟶</button>
+    </div>
+
+    <div class="score" id="score">Score: 0 correct out of 0</div>
+  </div>
+
+  <!-- Summary panel -->
+  <div id="resultsPanel" class="card hidden" aria-live="polite">
+    <div class="summary-header">
+      <div class="summary-title">Progress Summary</div>
+      <div class="summary-controls">
+        <button id="filterAll">All</button>
+        <button id="filterCorrect">Correct</button>
+        <button id="filterIncorrect">Incorrect</button>
+        <button id="filterUnanswered">Unanswered</button>
+        <button id="hideResults">Hide Summary</button>
+      </div>
+    </div>
+    <div class="summary-counts" id="summaryCounts"></div>
+    <div id="resultsList" aria-label="List of flashcards with result"></div>
+  </div>
+
+  <script>
+    // ---------- Wire buttons ----------
+    const loadProgressBtn= document.getElementById('loadProgressBtn');
+    const progressInput  = document.getElementById('progressInput');
+    const saveAsBtn      = document.getElementById('saveAsBtn');
+    const resetBtn       = document.getElementById('resetBtn');
+
+    loadProgressBtn.addEventListener('click', () => progressInput.click());
+
+    // ---------- Parser ----------
+    function parseCSV(text) {
+      const rows = [];
+      let i = 0, field = '', row = [], inQuotes = false;
+      while (i < text.length) {
+        const char = text[i];
+        if (inQuotes) {
+          if (char === '"') {
+            if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+            inQuotes = false; i++; continue;
+          } else { field += char; i++; continue; }
+        } else {
+          if (char === '"') { inQuotes = true; i++; continue; }
+          if (char === ',') { row.push(field); field=''; i++; continue; }
+          if (char === '\n') { row.push(field); field=''; rows.push(row); row=[]; i++; continue; }
+          if (char === '\r') { i++; continue; }
+          field += char; i++;
+        }
+      }
+      if (field.length > 0 || row.length > 0) { row.push(field); rows.push(row); }
+      return rows;
+    }
+
+    // ---------- Hash (used when re-saving) ----------
+    function simpleHash(str) {
+      let h = 5381;
+      for (let i = 0; i < str.length; i++) {
+        h = ((h << 5) + h) + str.charCodeAt(i);
+        h &= 0xffffffff;
+      }
+      return (h >>> 0).toString(16);
+    }
+
+    // ---------- State ----------
+    let cards = [];        // [{id,question,answer}]
+    let answered = [];     // true/false/null
+    let current = 0;
+    let correctCount = 0;
+
+    // From progress file:
+    let datasetKey = null;
+    let fileNameKey = null;
+
+    // ---------- DOM ----------
+    const status     = document.getElementById('status');
+    const cardArea   = document.getElementById('cardArea');
+    const questionEl = document.getElementById('question');
+    const answerEl   = document.getElementById('answer');
+    const revealBtn  = document.getElementById('revealBtn');
+    const correctBtn = document.getElementById('correctBtn');
+    const incorrectBtn = document.getElementById('incorrectBtn');
+    const prevBtn    = document.getElementById('prevBtn');
+    const nextBtn    = document.getElementById('nextBtn');
+    const scoreEl    = document.getElementById('score');
+
+    const resultsPanel = document.getElementById('resultsPanel');
+    const resultsList  = document.getElementById('resultsList');
+    const summaryCounts= document.getElementById('summaryCounts');
+    const filterAllBtn = document.getElementById('filterAll');
+    const filterCorrectBtn = document.getElementById('filterCorrect');
+    const filterIncorrectBtn = document.getElementById('filterIncorrect');
+    const filterUnansweredBtn = document.getElementById('filterUnanswered');
+    const hideResultsBtn = document.getElementById('hideResults');
+
+    // ---------- UI helpers ----------
+    function updateScore() {
+      const totalAnswered = answered.filter(x => x !== null).length;
+      correctCount = answered.filter(v => v === true).length;
+      scoreEl.textContent = `Score: ${correctCount} correct out of ${totalAnswered} (total cards: ${cards.length})`;
+    }
+
+    function showCard(index) {
+      if (!cards.length) return;
+      const c = cards[index];
+      questionEl.textContent = c.question;
+      answerEl.textContent = c.answer;
+      answerEl.style.display = 'none';
+
+      revealBtn.disabled = false;
+      correctBtn.disabled = true;
+      incorrectBtn.disabled = true;
+
+      prevBtn.disabled = index <= 0;
+      nextBtn.disabled = index >= cards.length - 1;
+
+      status.textContent = `Card ${index + 1} of ${cards.length}` + (fileNameKey ? ` • ${fileNameKey}` : '');
+      cardArea.classList.remove('hidden');
+    }
+
+    function resetProgress() {
+      answered = Array(cards.length).fill(null);
+      current = 0;
+      updateScore();
+      showCard(0);
+      status.textContent = 'Progress reset to unanswered.';
+      renderSummary('all');
+    }
+
+    // ---------- Load Progress CSV ONLY ----------
+    progressInput.addEventListener('change', async (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) { status.textContent = 'No progress file selected.'; return; }
+
+      try {
+        const text = await file.text();
+        const rows = parseCSV(text);
+        if (rows.length < 2) {
+          status.textContent = 'Progress CSV seems empty.';
+          return;
+        }
+
+        // Required headers for a previously saved CSV:
+        const header = rows[0].map(h => h.trim().toLowerCase());
+        const idxDataset = header.indexOf('datasetkey');
+        const idxFileName= header.indexOf('filename');
+        const idxId      = header.indexOf('id');
+        const idxQ       = header.indexOf('question');
+        const idxA       = header.indexOf('answer');
+        const idxResult  = header.indexOf('result');
+        const idxCurrent = header.indexOf('currentindex');
+
+        if ([idxDataset, idxFileName, idxQ, idxA, idxResult].some(i => i === -1)) {
+          status.textContent = 'Invalid file: please load a Progress CSV saved from this app.';
+          cardArea.classList.add('hidden');
+          resultsPanel.classList.add('hidden');
+          return;
+        }
+
+        // Build cards + answered from progress rows
+        const dataRows = rows.slice(1).filter(r => r.length >= Math.max(idxQ, idxA, idxResult) + 1);
+
+        cards = dataRows.map(r => ({
+          id: idxId !== -1 ? (r[idxId] ?? '') : '',
+          question: r[idxQ],
+          answer: r[idxA]
+        }));
+
+        answered = dataRows.map(r => {
+          const val = (r[idxResult] ?? '').trim().toLowerCase();
+          if (val === 'correct') return true;
+          if (val === 'incorrect') return false;
+          return null;
+        });
+
+        datasetKey  = (idxDataset !== -1 ? (dataRows[0]?.[idxDataset] ?? null) : null);
+        fileNameKey = (idxFileName !== -1 ? (dataRows[0]?.[idxFileName] ?? null) : null);
+
+        // Set current to the last valid currentIndex found
+        current = 0;
+        if (idxCurrent !== -1) {
+          for (let i = 1; i < rows.length; i++) {
+            const v = rows[i][idxCurrent];
+            if (v !== undefined && v !== null && v !== '') {
+              const n = Number(v);
+              if (!Number.isNaN(n) && n >= 0 && n < cards.length) current = n;
+            }
+          }
+        }
+
+        status.textContent = `Loaded ${cards.length} cards from Progress CSV "${file.name}".`;
+        saveAsBtn.disabled = !('showSaveFilePicker' in window); // enable only if supported
+        resetBtn.disabled = false;
+
+        updateScore();
+        showCard(current);
+
+        // Auto-open summary filtered to "Correct"
+        renderSummary('correct');
+        resultsPanel.classList.remove('hidden');
+
+      } catch (err) {
+        console.error(err);
+        status.textContent = 'Failed to read the progress file.';
+      } finally {
+        e.target.value = '';
+      }
+    });
+
+    // ---------- Study actions (you can adjust answers and Save As) ----------
+    revealBtn.addEventListener('click', () => {
+      answerEl.style.display = 'block';
+      correctBtn.disabled = false;
+      incorrectBtn.disabled = false;
+      revealBtn.disabled = true;
+    });
+
+    correctBtn.addEventListener('click', () => {
+      answered[current] = true;
+      updateScore();
+      correctBtn.disabled = true;
+      incorrectBtn.disabled = true;
+      revealBtn.disabled = false;
+      renderSummary('correct'); // keep summary in sync
+    });
+
+    incorrectBtn.addEventListener('click', () => {
+      answered[current] = false;
+      updateScore();
+      correctBtn.disabled = true;
+      incorrectBtn.disabled = true;
+      revealBtn.disabled = false;
+      renderSummary('incorrect'); // keep summary in sync
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) { current -= 1; showCard(current); }
+    });
+    nextBtn.addEventListener('click', () => {
+      if (current < cards.length - 1) { current += 1; showCard(current); }
+    });
+
+    resetBtn.addEventListener('click', resetProgress);
+
+    // ---------- Build CSV text from current state ----------
+    function buildProgressCSVText() {
+      const headers = ['datasetKey','fileName','id','question','answer','result','currentIndex','timestamp'];
+      const nowISO = new Date().toISOString();
+
+      const esc = v => {
+        const s = String(v ?? '');
+        return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+      };
+
+      const rows = cards.map((c, idx) => {
+        const res = answered[idx];
+        const resultStr = res === true ? 'correct' : (res === false ? 'incorrect' : 'unanswered');
+        return [
+          esc(datasetKey ?? simpleHash(c.question + '|' + c.answer)), // fallback hash per item
+          esc(fileNameKey || ''),
+          esc(c.id || ''),
+          esc(c.question),
+          esc(c.answer),
+          esc(resultStr),
+          esc(current),
+          esc(nowISO)
+        ].join(',');
+      });
+
+      return headers.join(',') + '\n' + rows.join('\n');
+    }
+
+    // ---------- Save As… (choose folder & filename via File System Access API) ----------
+    async function saveProgressAs() {
+      if (!cards.length) { status.textContent = 'Load a Progress CSV first.'; return; }
+
+      if (!('showSaveFilePicker' in window)) {
+        // Fallback: if API not available, offer a regular download via a temporary link
+        const csvText = buildProgressCSVText();
+        const blob = new Blob([csvText], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const base = (fileNameKey ? fileNameKey.replace(/\.csv$/i, '') : 'flashcards');
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${base || 'progress'}_progress_${datasetKey || 'auto'}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        status.textContent = 'Progress CSV downloaded (browser fallback).';
+        return;
+      }
+
+      try {
+        const baseName = (fileNameKey ? fileNameKey.replace(/\.csv$/i, '') : 'flashcards');
+        const suggestedName = `${baseName || 'progress'}_progress_${datasetKey || 'auto'}.csv`;
+
+        const handle = await window.showSaveFilePicker({
+          suggestedName,
+          types: [{
+            description: 'CSV files',
+            accept: { 'text/csv': ['.csv'] }
+          }]
+        });
+
+        const writable = await handle.createWritable();
+        await writable.write(buildProgressCSVText());
+        await writable.close();
+
+        status.textContent = `Progress CSV saved to chosen location: ${suggestedName}`;
+      } catch (err) {
+        if (err && err.name === 'AbortError') {
+          status.textContent = 'Save As cancelled.';
+        } else {
+          console.error(err);
+          status.textContent = 'Failed to Save As. Try again or use the browser fallback.';
+        }
+      }
+    }
+    saveAsBtn.addEventListener('click', () => saveProgressAs());
+
+    // ---------- Summary rendering ----------
+    function renderSummary(filter = 'all') {
+      if (!cards.length) { resultsList.innerHTML = ''; summaryCounts.textContent=''; return; }
+
+      const total = cards.length;
+      const numCorrect = answered.filter(v => v === true).length;
+      const numIncorrect = answered.filter(v => v === false).length;
+      const numUnanswered = answered.filter(v => v === null).length;
+
+      summaryCounts.textContent =
+        `Total: ${total} • Correct: ${numCorrect} • Incorrect: ${numIncorrect} • Unanswered: ${numUnanswered}`;
+
+      const frag = document.createDocumentFragment();
+
+      for (let i = 0; i < cards.length; i++) {
+        const c = cards[i];
+        const v = answered[i];
+
+        // Filter
+        if (filter === 'correct' && v !== true) continue;
+        if (filter === 'incorrect' && v !== false) continue;
+        if (filter === 'unanswered' && v !== null) continue;
+
+        const item = document.createElement('div');
+        item.className = 'result-item';
+
+        const left = document.createElement('div');
+        const q = document.createElement('div');
+        q.className = 'result-q';
+        q.textContent = `${i+1}. ${c.question}`;
+
+        const a = document.createElement('div');
+        a.className = 'result-a';
+        a.textContent = c.answer;
+
+        left.appendChild(q);
+        left.appendChild(a);
+
+        const statusBadge = document.createElement('div');
+        statusBadge.className = 'result-status ' + (v === true ? 'ok' : v === false ? 'no' : 'na');
+        statusBadge.textContent = v === true ? 'Correct' : v === false ? 'Incorrect' : 'Unanswered';
+
+        item.appendChild(left);
+        item.appendChild(statusBadge);
+        frag.appendChild(item);
+      }
+
+      resultsList.innerHTML = '';
+      resultsList.appendChild(frag);
+    }
+
+    // Summary controls
+    filterAllBtn.addEventListener('click', () => renderSummary('all'));
+    filterCorrectBtn.addEventListener('click', () => renderSummary('correct'));
+    filterIncorrectBtn.addEventListener('click', () => renderSummary('incorrect'));
+    filterUnansweredBtn.addEventListener('click', () => renderSummary('unanswered'));
+    hideResultsBtn.addEventListener('click', () => {
+      resultsPanel.classList.add('hidden');
+      resultsList.innerHTML = '';
+      summaryCounts.textContent = '';
+    });
+  </script>
+
+  <!-- Expected Progress CSV schema (the file this app saves/loads):
+  datasetKey,fileName,id,question,answer,result,currentIndex,timestamp
+  9f23ab12,flashcards.csv,1,What is the capital of France?,Paris,correct,0,2025-12-05T15:05:00.000Z
+  9f23ab12,flashcards.csv,2,2 + 2 = ?,4,incorrect,1,2025-12-05T15:05:00.000Z
+  9f23ab12,flashcards.csv,3,HTML stands for?,  9f23ab12,flashcards.csv,3,HTML stands for?,HyperText Markup Language,unanswered,2,2025-12-05T15:05:00.000Z
+  -->
+</body>
+</html>

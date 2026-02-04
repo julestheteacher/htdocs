@@ -1,0 +1,100 @@
+﻿Section,Topic1,QuestionText,OptionA,OptionB,OptionC,OptionD,CorrectOption,Description
+8.1.1,,Which of these is an example of Human Resources confidential information?,Salaries and benefits,Intellectual property,Client details,,a,
+8.1.1,,Which of these is considered commercially sensitive information?,Client details,Staff personal details,Usernames and passwords,,a,
+8.1.1,,Which of these is considered access information?,Usernames and passwords,Sales numbers,Contracts,,a,
+8.1.2,,Why must salary information be kept confidential?,To prevent competitors from offering higher wages,To allow employees to compare salaries,To share benefits publicly,,a,
+8.1.2,,Why must staff details be kept confidential?,To protect privacy and prevent competitors from contacting them,To allow public networking,To share achievements publicly,,a,
+8.1.2,,Why must intellectual property be kept confidential?,To prevent competitors from copying designs,To allow free sharing of ideas,To improve collaboration with competitors,,a,
+8.1.3,,What is a potential impact of failing to maintain confidentiality?,Increased trust,Financial loss and legal action,Improved security,,b,
+8.1.3,,Which of these is a financial consequence of failing to maintain confidentiality?,Fines and refunds,Increased earnings,Free advertising,,a,
+8.1.3,,Which of these is a legal consequence of failing to maintain confidentiality?,Legal action and lawsuits,Improved compliance,Increased security,,a,
+8.2.1,,Name something,This,That,other,,c,
+8.2.5,,What is a common business impact of leaking sensitive data?,Improved brand reputation,Regulatory fines and lawsuits,Lower security costs,,b,
+8.2.5,,Loss of sensitive data often leads to:,Customer churn and loss of trust,Higher NPS immediately,Automatic new sales,,a,
+8.2.5,,Unauthorised access to digital systems can allow attackers to:,Improve firewall rules,Exfiltrate data or alter configurations,Reduce detection,,b,
+8.2.5,,A likely result of unauthorised access is:,Better audit trails,Privilege escalation and lateral movement,Lower risk,,b,
+8.2.5,,Data corruption primarily impacts:,Data integrity and decision?making,Office layout,Screen brightness,,a,
+8.2.5,,Corrupted records in a finance system can cause:,Accurate reporting,Incorrect financial statements,Lower fraud risk,,b,
+8.2.5,,"Service disruption (e.g., DDoS) most directly causes:",Higher conversions,Reduced availability and lost revenue,Faster analytics,,b,
+8.2.5,,Extended downtime may lead to:,Improved SLAs,SLA breaches and compensation payments,Lower support tickets,,b,
+8.2.5,,Unauthorised access to restricted physical areas can result in:,Better safety,"Theft, tampering, or sabotage",Lower insurance cost,,b,
+8.2.5,,Physical breaches of server rooms can cause:,Faster backups,Direct hardware theft or data destruction,Cheaper power,,b,
+8.2.5,,A reputational impact of a breach is typically:,Increased public trust,Negative media coverage and brand damage,Guaranteed growth,,b,
+8.2.5,,Regulatory non?compliance after a data leak may trigger:,Awards,Investigations and administrative penalties,Tax refunds,,b,
+8.2.5,,Operational impact of ransomware includes:,Continuous operations,System lockout and operational standstill,Free upgrades,,b,
+8.2.5,,A data integrity incident typically requires:,No follow?up,Root?cause analysis and data restoration,Marketing only,,b,
+8.2.5,,Credential compromise often results in:,Reduced auditability,Unauthorised transactions or data access,No financial risk,,b,
+8.2.5,,Supply?chain disruption due to a provider outage can:,Improve SLA attainment,Cascade into your own service disruption,Have no effect,,b,
+7.3,Types of networks,Which network type typically covers the smallest geographical area?,LAN,PAN,WAN,MAN,b,PAN covers the smallest area (personal/near?body range).
+7.3,Types of networks,A LAN usually covers which type of area?,A single person�s workspace,A city,A building or campus,Multiple countries,c,A LAN typically spans a building or campus.
+7.3,Types of networks,Which network type spans across countries or continents?,PAN,MAN,WAN,LAN,c,"WAN interconnects over large, cross?country distances."
+7.3,Types of networks,Bluetooth is most commonly used in which type of network?,MAN,WAN,PAN,LAN,c,Bluetooth is a short?range PAN technology.
+7.3,Types of networks,Fibre optic cable is an example of which type of connection media?,Wireless,Copper-based,Guided/wired,Virtual,c,Fibre is a guided/wired medium using light in optical fibre.
+7.3,Types of networks,Wi?Fi is an example of what type of network media?,Wired,Wireless,Fibre,Satellite,b,Wi?Fi is a wireless radio medium.
+7.3,Types of networks,A MAN typically connects multiple:,Devices on a desk,Buildings in a single city,Countries,Rooms in a home,b,MAN links multiple buildings across a city.
+7.3,Connection Media,Which connection media is most susceptible to electromagnetic interference?,Fibre optic,Satellite,"Copper (e.g., UTP)",Wi?Fi,c,Copper cabling is most affected by EMI compared to fibre.
+7.3,Network Models,Which model uses a central server to manage resources?,Client-server,Peer-to-peer,Mesh,Thin client,a,Client?server centralises resource control on a server.
+7.3,Network Models,Which model is easiest and cheapest to set up for a small number of users?,Client-server,Thin client,Peer-to-peer,WAN,c,Peer?to?peer is simplest and cheapest for small groups.
+7.3,Network Models,A thin client mainly relies on:,Local processing power,Cloud services,A powerful central server,Peer devices,c,Thin clients depend on a central server for processing.
+7.3,Network Models,Which is a drawback of a peer?to?peer network?,No central point of failure,Harder to manage and secure,Requires a server,Requires high bandwidth,b,P2P is harder to manage and secure without central control.
+7.3,Network Models,Which model provides the strongest centralised security?,LAN,Thin client,Peer?to?peer,Client?server,d,Client?server enables strong centralised policies and auth.
+7.3,Network Devices,Which device forwards data packets between different networks?,Switch,Router,Hub,Repeater,b,Routers forward packets between different IP networks.
+7.3,Network Devices,A switch operates mainly at which OSI layer?,Layer 2,Layer 3,Layer 7,Layer 1,a,Switches operate at OSI Layer 2 (Data Link).
+7.3,Network Devices,"Which device typically stores user accounts, files, and authentication services?",Router,Server,Firewall,Client,b,"Servers host user accounts, files, and authentication."
+7.3,Network Devices,The Internet backbone is best described as:,Home broadband networks,The central high?speed infrastructure of the internet,Cellular towers,LAN switches,b,It�s the high?speed core infrastructure of the internet.
+7.3,OSI,Which OSI layer is responsible for physically transmitting bits across media?,Data Link,Physical,Network,Transport,b,The Physical layer transmits raw bits over the medium.
+7.3,OSI,Which OSI layer assigns IP addresses and handles routing?,Session,Data Link,Network,Application,c,The Network layer handles IP addressing and routing.
+7.3,OSI,Encryption and decryption occur at which layer?,Application,Presentation,Session,Transport,b,Presentation layer handles data representation and encryption.
+7.3,OSI,TCP and UDP operate at which OSI layer?,Transport,Network,Session,Data Link,a,TCP and UDP are Transport?layer protocols.
+7.3,OSI,The session layer is responsible for:,Routing,Establishing and managing connections,Physical transmission,Compression,b,The Session layer establishes and manages sessions.
+7.3,OSI,HTTP and FTP work at which OSI layer?,Presentation,Network,Application,Transport,c,HTTP and FTP are Application?layer protocols.
+7.3,TCP/IP,"In the TCP/IP model, IP operates at which layer?",Transport,Application,Internet,Network Interface,c,IP resides in the Internet layer of TCP/IP.
+7.3,TCP/IP,Which layer of the TCP/IP model handles end?to?end communication?,Internet,Transport,Application,Network Access,b,The Transport layer provides end?to?end delivery.
+7.3,TCP/IP,The TCP/IP Application layer corresponds to which three OSI layers?,"1, 2, 3","4, 5, 6","5, 6, 7","3, 4, 5",c,TCP/IP Application maps to OSI layers 5�7.
+7.3,TCP/IP,Which protocol belongs to the TCP/IP Transport layer?,TCP,ARP,DHCP,DNS,a,TCP is a Transport?layer protocol.
+7.3,Data Transmission,Which part of a data packet contains the data being transmitted?,Header,Payload,Trailer,Checksum,b,The payload is the actual user data in the packet.
+7.3,Data Transmission,CRC is used for:,Addressing,Error detection,Routing,Encryption,b,CRC provides error detection by checking frame integrity.
+7.3,Data Transmission,Packet switching can cause packet loss due to:,Server upgrades,Congestion,Low CPU usage,High memory availability,b,Congestion leads to queue drops and packet loss.
+7.3,Data Transmission,The trailer of a packet typically contains:,Source address,Destination address,Error?checking information,Routing instructions,c,"Frame trailers carry error?checking information (e.g., FCS)."
+7.3,Protocols,Which protocol transfers web pages over the internet?,FTP,SMTP,HTTP,POP,c,HTTP is the protocol for transferring web pages.
+7.3,Protocols,HTTPS is more secure than HTTP because it uses:,UDP,Encryption,DNS,DHCP,b,HTTPS adds TLS encryption over HTTP.
+7.3,Protocols,Which protocol is used to send email from a client to a mail server?,SMTP,POP,IMAP,FTP,a,SMTP is used to send mail from clients to servers.
+7.3,Protocols,Which protocol downloads email from a mail server and removes it?,IMAP,SMTP,POP,FTP,c,POP retrieves and typically deletes email from the server.
+7.3,Protocols,Which routing protocol is a distance?vector protocol?,OSPF,RIP,DHCP,DNS,b,RIP is a distance?vector routing protocol.
+7.3,Protocols,Which routing protocol uses link?state routing?,RIP,OSPF,POP,HTTPS,b,OSPF is a link?state routing protocol.
+7.3,Protocols,Which protocol is used to assign IP addresses automatically?,DNS,DHCP,FTP,IMAP,b,DHCP dynamically assigns IP addresses to hosts.
+7.3,Protocols,Which protocol resolves domain names to IP addresses?,DNS,DHCP,FTP,SMTP,a,DNS resolves domain names to IP addresses.
+7.3,Protocols,SFTP is more secure than FTP because it:,Uses UDP,Encrypts data,Is faster,Uses DNS,b,Encrypts data
+7.3,OSI,Which OSI layer is responsible for end-user network services such as email and web browsing?,Application,Presentation,Session,Transport,a,Application
+7.3,OSI,"Which OSI layer handles data encryption, compression, and translation?",Transport,Presentation,Network,Data Link,b,Presentation
+7.3,OSI,"Which OSI layer establishes, manages, and terminates communication sessions?",Session,Network,Application,Physical,a,Session
+7.3,TCP/IP,TCP and UDP operate at which OSI layer?,Transport,Network,Data Link,Presentation,a,Transport
+7.3,OSI,Which OSI layer handles logical addressing and routing?,Network,Data Link,Transport,Session,a,Network
+7.3,OSI,MAC addressing operates at which OSI layer?,Data Link,Network,Physical,Transport,a,Data Link
+7.3,OSI,Which OSI layer transmits raw bits over physical media?,Physical,Network,Application,Presentation,a,Physical
+7.3,OSI,At which OSI layer do switches primarily operate?,Data Link,Transport,Network,Session,a,Data Link
+7.3,OSI,At which OSI layer do routers operate?,Network,Data Link,Transport,Physical,a,Network
+7.3,OSI,Which OSI layer is responsible for reliable or unreliable delivery of data segments?,Transport,Network,Session,Data Link,a,Transport
+7.3,TCP/IP,"Which TCP/IP layer combines OSI layers 5, 6, and 7?",Application,Transport,Internet,Network Access,a,Application
+7.3,TCP/IP,The TCP/IP Internet layer corresponds to which OSI layer?,Network,Data Link,Transport,Application,a,Network
+7.3,TCP/IP,Which TCP/IP layer is responsible for end-to-end communication and flow control?,Transport,Internet,Application,Network Access,a,Transport
+7.3,TCP/IP,The Network Access layer of TCP/IP corresponds to which OSI layers?,Data Link + Physical,Network + Data Link,Transport + Session,Presentation + Application,a,Data Link + Physical
+7.3,TCP/IP,Which protocol operates at the TCP/IP Internet layer?,IP,TCP,FTP,SMTP,a,IP
+7.3,TCP/IP,Which protocol operates at the TCP/IP Transport layer?,TCP,DNS,DHCP,ARP,a,TCP
+7.3,TCP/IP,"HTTP, FTP, and DNS operate at which TCP/IP layer?",Application,Transport,Internet,Network Access,a,Application
+7.3,OSI,Which OSI layer packages data into frames?,Data Link,Transport,Network,Presentation,a,Data Link
+7.3,OSI,Which OSI layer converts frames into bits for transmission?,Physical,Transport,Network,Session,a,Physical
+7.3,TCP/IP,Which TCP/IP layer handles physical addressing and defining how data is transmitted over media?,Network Access,Internet,Transport,Application,a,Network Access
+7.3,Data Transmission,What is the primary purpose of a data packet?,To transmit data across a network,To store backup files,To identify hardware components,To encrypt Wi-Fi signals,a,To transmit data across a network
+7.3,Data Transmission,Which part of a data packet contains the actual data being carried?,Header,Payload,Trailer,Checksum,b,Payload
+7.3,Data Transmission,What does the header of a data packet usually contain?,Error-checking data,Source and destination addresses,Application data,Encryption keys,b,Source and destination addresses
+7.3,Data Transmission,What is the function of the trailer in a data packet?,Routing,Error detection,Addressing,Transporting data,b,Error detection
+7.3,Data Transmission,Which component is used in packets to detect errors?,IP address,MAC address,CRC,Router,c,CRC
+7.3,Data Transmission,CRC stands for:,Cyclic Redundancy Check,Central Routing Code,Circular Resource Control,Client Relay Connection,a,Cyclic Redundancy Check
+7.3,Data Transmission,Packet switching breaks data into:,Blocks,Packets,Frames,Signals,b,Packets
+7.3,Data Transmission,Which process allows packets to take different paths across a network?,Circuit switching,Packet switching,Signal modulation,Frequency hopping,b,Packet switching
+7.3,Data Transmission,A common cause of packet loss is:,High CPU speed,Network congestion,Low RAM usage,Strong Wi-Fi signal,b,Network congestion
+7.3,Data Transmission,Which of the following is NOT a cause of packet loss?,Hardware failure,Network congestion,Routing errors,Correct packet sequencing,d,Correct packet sequencing
+7.3,Data Transmission,Packet switching is mainly used in:,Postal systems,Circuit-based telephones,Modern digital networks,Water supply systems,c,Modern digital networks
+7.3,Data Transmission,Which term describes when packets arrive out of order?,Packet loss,Packet delay,Packet reordering,Packet duplication,c,Packet reordering
+7.3,Data Transmission,Which part of a packet ensures data has not been corrupted?,Header,Payload,CRC value,Router,c,CRC value
