@@ -1,78 +1,84 @@
 <script src="css-script.js"></script>
-<h1>8.1.2 Understand why information must be kept confidential</h1>
-<section>
-  <main class="wrap">
-    
-    <p class="note">Click each category to expand and see the reasoning.</p>
+<main class="content">
+    <h1><i class="fas fa-building"></i> 8.2.2 Technical Vulnerabilities</h1>
 
-    <div class="accordion" id="confidential-812">
+    <section>
+  <h2>Explanation of Technical Vulnerabilities</h2>
+  <p>Click each category below to expand and view details:</p>
 
-      <!-- Salaries and benefits -->
-      <div class="accordion-item">
-        <button class="accordion-header" type="button">Salaries and benefits</button>
-        <div class="accordion-content">
-          <ul>
-            <li><strong>Prevent targeted poaching by competitors</strong> — if rivals know exact pay/benefits, they can outbid to attract staff.</li>
-            <li><strong>Reduce internal friction</strong> — wide visibility can trigger disputes and equal‑pay demands outside policy review cycles.</li>
-          </ul>
-        </div>
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">Botnets</button>
+      <div class="accordion-content" hidden>
+        <p>Networks of compromised devices controlled by attackers to distribute tasks or launch attacks.</p>
       </div>
-
-      <!-- Staff details -->
-      <div class="accordion-item">
-        <button class="accordion-header" type="button">Staff details</button>
-        <div class="accordion-content">
-          <ul>
-            <li><strong>Protect privacy</strong> — personal data (addresses, contact info, IDs) must be guarded to prevent misuse.</li>
-            <li><strong>Limit direct competitor contact</strong> — prevents head‑hunting or social‑engineering attempts using staff records.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Intellectual property -->
-      <div class="accordion-item">
-        <button class="accordion-header" type="button">Intellectual property</button>
-        <div class="accordion-content">
-          <ul>
-            <li><strong>Preserve competitive advantage</strong> — confidentiality prevents copying designs, code, research and trade secrets.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Client details -->
-      <div class="accordion-item">
-        <button class="accordion-header" type="button">Client details</button>
-        <div class="accordion-content">
-          <ul>
-            <li><strong>Prevent competitor targeting</strong> — reduces risk of rivals approaching clients with undercut offers.</li>
-            <li><strong>Protect client privacy</strong> — builds trust and supports legal/contractual obligations.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Sales numbers -->
-      <div class="accordion-item">
-        <button class="accordion-header" type="button">Sales numbers</button>
-        <div class="accordion-content">
-          <ul>
-            <li><strong>Avoid strategic exposure</strong> — publicising pipelines, conversions, or margins enables competitors to counter your strategy.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Access information -->
-      <div class="accordion-item">
-        <button class="accordion-header" type="button">Access information</button>
-        <div class="accordion-content">
-          <ul>
-            <li><strong>Prevent unauthorised access</strong> — safeguarding usernames, passwords, MFA/back‑up codes, PINs, passphrases, and biometric templates
-                reduces account takeovers and system breaches.</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
 
-    <p class="note"><em>Good practice:</em> classify data, apply least‑privilege access, log access attempts, and review confidentiality controls regularly.</p>
-  </main>
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">Denial of Service (DoS) / Distributed Denial of Service (DDoS)</button>
+      <div class="accordion-content" hidden>
+        <p>Overwhelming a service or network with traffic to make it unavailable to legitimate users.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">Malicious hacking</button>
+      <div class="accordion-content" hidden>
+        <ul>
+          <li><i class="Strong">Hacktivists</i> â€” Actors motivated by ideology; may deface or disrupt services to make a statement.</li>
+          <li><i class="Strong">Nation states</i> â€” State-sponsored groups conducting espionage, sabotage or intelligence gathering.</li>
+          <li><i class="Strong">Organised crime</i> â€” Professional cybercriminals focused on financial gain and large-scale fraud.</li>
+          <li><i class="Strong">Individuals</i> â€” Lone actors exploring, vandalising, or exploiting systems for various motives.</li>
+          <li><i class="Strong">Password cracking</i> â€” Automated brute-force or dictionary attacks to recover or guess user passwords.</li>
+          <li><i class="Strong">Cross-site scripting (XSS)</i> â€” Injected scripts run in victims' browsers to steal data or hijack sessions.</li>
+          <li><i class="Strong">SQL injection</i> â€” Malicious SQL input used to read, modify or delete data from a backend database.</li>
+          <li><i class="Strong">Buffer overflow</i> â€” Exploiting memory bugs to overwrite memory and execute arbitrary code.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">Malware</button>
+      <div class="accordion-content" hidden>
+        <ul>
+          <li><i class="Strong">Viruses</i> â€” Malicious code that attaches to files and spreads when the host file is executed.</li>
+          <li><i class="Strong">Worms</i> â€” Self-replicating malware that spreads across networks without user interaction.</li>
+          <li><i class="Strong">Key loggers</i> â€” Software that records keystrokes to capture passwords and sensitive input.</li>
+          <li><i class="Strong">Ransomware</i> â€” Encrypts files or systems and demands payment in exchange for a decryption key.</li>
+          <li><i class="Strong">Spyware</i> â€” Covertly collects data about a userâ€™s activities and transmits it to attackers.</li>
+          <li><i class="Strong">Remote access trojans (RATs)</i> â€” Provide attackers with persistent remote control over infected machines.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">Social engineering</button>
+      <div class="accordion-content" hidden>
+        <ul>
+          <li><i class="Strong">Phishing</i> â€” Mass fraudulent emails or websites that trick users into revealing credentials or clicking malicious links.</li>
+          <li><i class="Strong">Spear phishing</i> â€” Targeted phishing aimed at a specific person or organisation using personalised information to increase success.</li>
+          <li><i class="Strong">Smishing</i> â€” Phishing via SMS/text messages that direct victims to malicious links or request sensitive information.</li>
+          <li><i class="Strong">Vishing</i> â€” Voice phishing over phone calls where attackers impersonate trusted parties to extract information.</li>
+          <li><i class="Strong">Pharming</i> â€” Redirecting users from legitimate websites to malicious ones (DNS poisoning or hosts-file manipulation).</li>
+          <li><i class="Strong">Watering hole attacks</i> â€” Compromising websites frequented by a target group to infect visitors with malware.</li>
+          <li><i class="Strong">USB baiting</i> â€” Leaving infected USB drives in public places to entice users to plug them in and run malware.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">Domain name server attack / redirection of traffic</button>
+      <div class="accordion-content" hidden>
+        <p>Attacks that compromise DNS or redirect traffic to malicious destinations.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">Open / unsecured Wiâ€‘Fi networks</button>
+      <div class="accordion-content" hidden>
+        <p>Unencrypted networks that allow eavesdropping or man-in-the-middle attacks.</p>
+      </div>
+    </div>
+  </div>
 </section>
+  </main>
