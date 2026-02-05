@@ -19,7 +19,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
   </aside>
   <!-- Main Content -->
  <main class="content">
-  <?php include 'php_includes/8-2-1-main.php'; ?>
+  <?php include 'php_includes/8-2-3-main.php'; ?>
 </main>
 </body>
 </html>
