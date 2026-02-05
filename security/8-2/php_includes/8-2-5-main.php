@@ -1,10 +1,10 @@
 <script src="css-script.js"></script>
-    <h1>8.2.5 Impact</h1>
+    <h1>8.2.5 Impact of threats</h1>
 
     <section>
-        <main class="wrap">
-        <p class="note">Click each category to expand and view the types of confidential information commonly held by organisations.</p>
-        <h2>Understand the potential impact to an organisation of threats and vulnerabilities</h2>
+      <h2>Understand the potential impact to an organisation of threats and vulnerabilities</h2>
+      <p>Click each category to expand and view the types of confidential information commonly held by organisations.</p>
+        
      
 
       <div class="accordion">

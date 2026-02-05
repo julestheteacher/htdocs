@@ -1,11 +1,11 @@
 <script src="css-script.js"></script>
 <h1>8.2.4 Physical Vulnerabilities</h1>
 <section>
-
+  <h2>Understand potential physical vulnerabilities</h2>
   <p>Click each category below to expand and view details:</p>
 
   <div class="accordion">
-    <!-- Lack of Access Control -->
+
     <div class="accordion-item">
       <button class="accordion-header">
         <i class="strong"></i> Lack of Access Control

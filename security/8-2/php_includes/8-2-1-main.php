@@ -1,5 +1,5 @@
 <script src="css-script.js"></script>
-    <h1><i class="fas fa-building"></i> 8.2.2 Technical Vulnerabilities</h1>
+    <h1><i class="fas fa-building"></i> 8.2.1 Technical Threats</h1>
 
     <section>
   <h2>Explanation of Technical Vulnerabilities</h2>
