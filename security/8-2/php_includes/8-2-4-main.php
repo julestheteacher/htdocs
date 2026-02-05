@@ -1,7 +1,7 @@
 <script src="css-script.js"></script>
-
+<h1>8.2.4 Physical Vulnerabilities</h1>
 <section>
-  <h2>Explanation of Physical Vulnerabilities</h2>
+
   <p>Click each category below to expand and view details:</p>
 
   <div class="accordion">

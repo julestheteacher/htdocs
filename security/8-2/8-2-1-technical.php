@@ -21,8 +21,8 @@ include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 
   <!-- Main Content -->
     <main class="content">
-      <?php include 'php_includes/8-2-2-main.php'; ?>
+      <?php include 'php_includes/8-2-1-main.php'; ?>
     </main>
 </body>
 </html>
- 
+
