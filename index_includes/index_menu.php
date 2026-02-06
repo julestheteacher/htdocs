@@ -37,7 +37,7 @@
           const a = document.createElement("a");
           a.textContent = topic.name;
           a.href = topic.href;
-          a.target = "_blank";
+          a.target = "_self"; /**changed to self */
           li.appendChild(a);
 
           const status = document.createElement("span");
