@@ -22,7 +22,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 
   <!-- Main Content -->
   <main class="content">
-    <?php include 'php_includes/8-4-main.php'; ?>
+    <?php include 'php_includes/8-4-2-main.php'; ?>
   </main>
 </div>
 </body>

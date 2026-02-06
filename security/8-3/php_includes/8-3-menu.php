@@ -1,4 +1,4 @@
-        <H1><a href="index.php">Home</a></H1>
+        <H1><a href="../../index.php">Home</a></H1>
         <h1><a href="../security-index.php">Security Home</a></h1>
     <h2>8.2 Security Risks</h2>
       <ul>
