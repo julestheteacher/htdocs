@@ -4,7 +4,7 @@
       <ul>
 
       <li><a href="8-4-1-cia.php"><i class="fas fa-cogs"></i>8.4.1 CIA Triad</a></li>
-      <li><a href="8-4-2-IAAA.php"><i class="fas fa-cogs"></i>8.4.2 IAAA</a></li>
+      <li><a href="8-4-2-iaaa.php"><i class="fas fa-cogs"></i>8.4.2 IAAA</a></li>
       <li><a href="/test/quiz.php"><i class="fas fa-cogs"></i>8.4.3 Quiz</a></li>
       </UL>
 

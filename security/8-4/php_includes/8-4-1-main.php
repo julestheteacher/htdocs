@@ -1,4 +1,5 @@
 <script src="css-script.js"></script>
+<section>
 <h1>8.4.1 How Confidentiality, Integrity, and Availability Interrelate</h1>
 <p class="note">Click each part of the CIA triad to learn how they connect and depend on each other.</p>
 
