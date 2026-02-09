@@ -26,7 +26,7 @@
 8.2.5,,Credential compromise often results in:,Reduced auditability,Unauthorised transactions or data access,No financial risk,,b,
 8.2.5,,Supply?chain disruption due to a provider outage can:,Improve SLA attainment,Cascade into your own service disruption,Have no effect,,b,
 7.3,Types of networks,Which network type typically covers the smallest geographical area?,LAN,PAN,WAN,MAN,b,PAN covers the smallest area (personal/near?body range).
-7.3,Types of networks,A LAN usually covers which type of area?,A single person�s workspace,A city,A building or campus,Multiple countries,c,A LAN typically spans a building or campus.
+7.3,Types of networks,A LAN usually covers which type of area?,A single person s workspace,A city,A building or campus,Multiple countries,c,A LAN typically spans a building or campus.
 7.3,Types of networks,Which network type spans across countries or continents?,PAN,MAN,WAN,LAN,c,"WAN interconnects over large, cross?country distances."
 7.3,Types of networks,Bluetooth is most commonly used in which type of network?,MAN,WAN,PAN,LAN,c,Bluetooth is a short?range PAN technology.
 7.3,Types of networks,Fibre optic cable is an example of which type of connection media?,Wireless,Copper-based,Guided/wired,Virtual,c,Fibre is a guided/wired medium using light in optical fibre.
@@ -41,7 +41,7 @@
 7.3,Network Devices,Which device forwards data packets between different networks?,Switch,Router,Hub,Repeater,b,Routers forward packets between different IP networks.
 7.3,Network Devices,A switch operates mainly at which OSI layer?,Layer 2,Layer 3,Layer 7,Layer 1,a,Switches operate at OSI Layer 2 (Data Link).
 7.3,Network Devices,"Which device typically stores user accounts, files, and authentication services?",Router,Server,Firewall,Client,b,"Servers host user accounts, files, and authentication."
-7.3,Network Devices,The Internet backbone is best described as:,Home broadband networks,The central high?speed infrastructure of the internet,Cellular towers,LAN switches,b,It�s the high?speed core infrastructure of the internet.
+7.3,Network Devices,The Internet backbone is best described as:,Home broadband networks,The central high?speed infrastructure of the internet,Cellular towers,LAN switches,b,It s the high?speed core infrastructure of the internet.
 7.3,OSI,Which OSI layer is responsible for physically transmitting bits across media?,Data Link,Physical,Network,Transport,b,The Physical layer transmits raw bits over the medium.
 7.3,OSI,Which OSI layer assigns IP addresses and handles routing?,Session,Data Link,Network,Application,c,The Network layer handles IP addressing and routing.
 7.3,OSI,Encryption and decryption occur at which layer?,Application,Presentation,Session,Transport,b,Presentation layer handles data representation and encryption.
@@ -50,7 +50,7 @@
 7.3,OSI,HTTP and FTP work at which OSI layer?,Presentation,Network,Application,Transport,c,HTTP and FTP are Application?layer protocols.
 7.3,TCP/IP,"In the TCP/IP model, IP operates at which layer?",Transport,Application,Internet,Network Interface,c,IP resides in the Internet layer of TCP/IP.
 7.3,TCP/IP,Which layer of the TCP/IP model handles end?to?end communication?,Internet,Transport,Application,Network Access,b,The Transport layer provides end?to?end delivery.
-7.3,TCP/IP,The TCP/IP Application layer corresponds to which three OSI layers?,"1, 2, 3","4, 5, 6","5, 6, 7","3, 4, 5",c,TCP/IP Application maps to OSI layers 5�7.
+7.3,TCP/IP,The TCP/IP Application layer corresponds to which three OSI layers?,"1, 2, 3","4, 5, 6","5, 6, 7","3, 4, 5",c,TCP/IP Application maps to OSI layers 5 7.
 7.3,TCP/IP,Which protocol belongs to the TCP/IP Transport layer?,TCP,ARP,DHCP,DNS,a,TCP is a Transport?layer protocol.
 7.3,Data Transmission,Which part of a data packet contains the data being transmitted?,Header,Payload,Trailer,Checksum,b,The payload is the actual user data in the packet.
 7.3,Data Transmission,CRC is used for:,Addressing,Error detection,Routing,Encryption,b,CRC provides error detection by checking frame integrity.

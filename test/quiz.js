@@ -1,4 +1,6 @@
 
+const resp = await fetch(window.quizConfig.csvFile, { cache: 'no-store' });
+
 function parseCSV(csvText) {
   const rows = [];
   let row = [];
@@ -37,7 +39,7 @@ function parseCSV(csvText) {
 }
 
 async function loadCSVRecords() {
-  const resp = await fetch('questions.csv', { cache: 'no-store' });
+  const resp = await fetch(window.quizConfig.csvFile);
   if (!resp.ok) throw new Error(`Failed to load CSV: ${resp.status} ${resp.statusText}`);
 
   const text = await resp.text();
