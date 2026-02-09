@@ -1,82 +1,92 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <title>Module Complete</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root{
-      --ok:#15803d;      /* green-700 */
-      --bad:#b91c1c;     /* red-700 */
-      --muted:#6b7280;   /* gray-500 */
-      --brand:#e14586;   /* theme pink */
-      --bg:#ffffff;
-      --chip:#f3f4f6;    /* gray-100 */
-    }
-    body { font-family: system-ui, Arial, sans-serif; background:#fafafa; margin:2rem; }
-    .card { max-width: 860px; margin: 0 auto; padding: 1.5rem 1.75rem; border: 1px solid #eee; border-radius: 14px; background: var(--bg); }
-    h1 { margin: 0 0 .5rem; }
-    .lead { font-size: 1.1rem; margin-bottom: .25rem; }
-    .muted { color: var(--muted); }
-    .stat { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:var(--chip); margin-right:.5rem; }
-    .pass { color: var(--ok); font-weight: 700; }
-    .fail { color: var(--bad); font-weight: 700; }
-    .actions { margin-top: 1rem; display: flex; gap: .75rem; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: .6rem 1rem; border-radius: 8px; text-decoration: none; color: #fff; background: var(--brand); }
-    .btn.secondary { background: #6b7280; }
-  </style>
+<meta charset="UTF-8">
+<title>Quiz Complete</title>
+
+<link rel="stylesheet" href="quiz-layout.css">
+
+<style>
+.result-shell {
+    max-width:600px;
+    margin:3rem auto;
+    text-align:center;
+}
+
+.result-card {
+    background:#f8dfea;
+    border-radius:16px;
+    padding:2rem;
+    border:2px solid #e4b9c9;
+    box-shadow:0 4px 16px rgba(0,0,0,0.1);
+}
+
+.result-card h1 {
+    margin-bottom:1rem;
+}
+
+.result-buttons a {
+    display:inline-block;
+    margin:0.6rem;
+    padding:0.75rem 1.4rem;
+    background:#e89cb5;
+    color:white;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:1.1rem;
+    transition:0.15s ease;
+}
+
+.result-buttons a:hover {
+    background:#d37997;
+}
+
+.result-buttons a:active {
+    transform:scale(0.95);
+    background:#b85d7e;
+}
+
+.score-output {
+    font-size:1.4rem;
+    margin:1rem 0;
+    font-weight:bold;
+}
+</style>
+
 </head>
 <body>
-  <div class="card">
-    <h1>Test Complete</h1>
-    <p id="headline" class="lead">Loading your results…</p>
 
-    <p class="muted">
-      <span id="score"     class="stat"></span>
-      <span id="percent"   class="stat"></span>
-      <span id="section"   class="stat"></span>
-      <span id="threshold" class="stat"></span>
-    </p>
+<div class="result-shell">
+<div class="result-card">
+<h1>You've completed the quiz!</h1>
 
-    <div class="actions">
-      <a class="btn" href="review.php">Review answers</a>
-      <a class="btn secondary" href="quiz.php">Change section / count</a>
-      <a class="btn secondary" href="quiz.php">Retry Quiz</a>
-    </div>
-  </div>
+<p id="scoreArea" class="score-output">Loading results…</p>
 
-  <script>
-    (function(){
-      // === Static pass mark ===
-      const PASS_THRESHOLD = 70; // percent
+<div class="result-buttons">
+<a href="review.php"> Review Answers</a>
+<a href="quiz.php">Change Section / Count</a>
 
-      const read = (k) => window.localStorage.getItem(k);
-      const toNum = (v, d=0) => {
-        const n = Number(v);
-        return Number.isFinite(n) ? n : d;
-      };
+</div>
+</div>
+</div>
 
-      // Read stored summary
-      const score = toNum(read('finalScore'), 0);
-      const total = toNum(read('finalTotal'), 0);
-      const storedPct = toNum(read('finalPercentage'), NaN);
-      const pct = Number.isFinite(storedPct) ? storedPct : (total ? (score/total*100) : 0);
-      const sec = read('finalSection') || '';
+<script>
+// display score
+document.getElementById("scoreArea").innerText =
+    `You scored ${localStorage.getItem("finalScore")} out of ${localStorage.getItem("finalTotal")} (${localStorage.getItem("finalPercentage")}%)`;
 
-      // Decide pass (recompute to avoid any mismatch)
-      const pass = (pct >= PASS_THRESHOLD);
+// retry
+document.getElementById("retryQuizBtn").addEventListener("click", e=>{
+    e.preventDefault();
 
-      // Headline + chips
-      const headline = document.getElementById('headline');
-      headline.innerHTML = pass
-        ? '🎉 <span class="pass">You passed</span> this quiz.'
-        : '❗ <span class="fail">You did not meet the pass mark</span>.';
+    const course  = localStorage.getItem("lastCourse");
+    const section = localStorage.getItem("lastSection");
+    const filter  = localStorage.getItem("lastFilter");
+    const value   = localStorage.getItem("lastValue");
+    const count   = localStorage.getItem("lastCount");
 
-      document.getElementById('score').textContent     = `Score: ${score}/${total}`;
-      document.getElementById('percent').textContent   = `Percentage: ${pct.toFixed(2)}%`;
-      document.getElementById('section').textContent   = sec ? `Section: ${sec}` : 'Section: (not specified)';
-      document.getElementById('threshold').textContent = `Pass mark: ${PASS_THRESHOLD}%`;
-    })();
-  </script>
+});
+</script>
+
 </body>
 </html>
