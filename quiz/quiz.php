@@ -1,231 +1,304 @@
 <?php
+declare(strict_types=1);
 
+/**
+ * FINAL – OPTION A FLOW
+ * Course → Section → Filter → Values → Count → Load Quiz
+ *
+ * CSV files (dss.csv, dsd.csv, mark.csv) live in SAME folder as quiz.php.
+ */
 
-$csvFile = __DIR__ . DIRECTORY_SEPARATOR . 'questions.csv';
+function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES); }
 
-function removeZeroWidthSpaces(string $text): string {
-    // Pattern matches all listed zero-width characters
-    $pattern = '/[\x{200B}\x{200C}\x{200D}\x{FEFF}]/u';
-    return preg_replace($pattern, '', $text);
-}
+$course  = $_GET["course"]  ?? "";
+$section = $_GET["section"] ?? "";
+$filter  = $_GET["filter"]  ?? ""; 
+$value   = $_GET["value"]   ?? "";
+$count   = isset($_GET["count"]) ? max(1, intval($_GET["count"])) : 0;
+$doQuiz  = isset($_GET["doQuiz"]);  // quiz loads only when clicking Load Quiz
 
-if (!file_exists($csvFile)) {
-    http_response_code(500);
-    echo "CSV file not found:questions.csv";
-    exit;
-}
+$courses = [
+    "dss"  => "dss.csv",
+    "dsd"  => "dsd.csv",
+    "mark" => "mark.csv"
+];
 
-// Read CSV using fgetcsv for correct handling of commas/quotes
-$handle = fopen($csvFile, 'r');
-$header = fgetcsv($handle);
-if ($header === false) {
-    http_response_code(500);
-    echo "CSV header missing.";
-    exit;
-}
-
-// Map columns by header names so QuestionNumber can be removed in future
-$headerMap = [];
-foreach ($header as $i => $name) {
-    $headerMap[removeZeroWidthSpaces(trim($name))] = removeZeroWidthSpaces($i);
-}
-
-$required = ['Section','QuestionText','OptionA','OptionB','OptionC','OptionD','CorrectOption','Description'];
-foreach ($required as $col) {
-    if (!array_key_exists($col, $headerMap)) {
-        http_response_code(500);
-        echo "CSV is missing required column: {$col}";
-        exit;
-    }
-}
-
+$csvLoaded = false;
 $rows = [];
 $sections = [];
-$rowId = 0; // data-row index after the header
-while (($data = fgetcsv($handle)) !== false) {
-    // Skip empty lines
-    if (count($data) < 2) continue;
+$criteriaBySection = [];
+$topicBySection = [];
 
-    $section = trim($data[$headerMap['Section']] ?? '');
-    $qtext   = trim($data[$headerMap['QuestionText']] ?? '');
+/* ----------------------------------
+   LOAD CSV if course selected
+----------------------------------- */
+if ($course !== "" && isset($courses[$course])) {
 
-    if ($section === '' || $qtext === '') {
-        $rowId++;
-        continue;
-    }
+    $file = __DIR__ . "/" . $courses[$course];
 
-    $rows[] = [
-        'rowId' => $rowId,
-        'Section' => $section,
-        'QuestionText' => $qtext,
-        'OptionA' => $data[$headerMap['OptionA']] ?? '',
-        'OptionB' => $data[$headerMap['OptionB']] ?? '',
-        'OptionC' => $data[$headerMap['OptionC']] ?? '',
-        'OptionD' => $data[$headerMap['OptionD']] ?? '',
-        // CorrectOption is intentionally not used here (handled in JS)
-    ];
+    if (file_exists($file)) {
 
-    $sections[$section] = true;
-    $rowId++;
-}
-fclose($handle);
+        $fh = fopen($file, "r");
+        $header = fgetcsv($fh);
 
-$sectionList = array_keys($sections);
-sort($sectionList);
+        if ($header !== false) {
 
-// Read user selection
-$selectedSection = isset($_GET['section']) ? trim($_GET['section']) : '';
-$requestedCount  = isset($_GET['count']) ? (int)$_GET['count'] : 0;
+            $map = [];
+            foreach ($header as $i => $name) {
+                $map[trim($name)] = $i;
+            }
 
-// Filter questions by section
-$filtered = [];
-if ($selectedSection !== '') {
-    foreach ($rows as $r) {
-        if ($r['Section'] === $selectedSection) $filtered[] = $r;
-    }
-}
+            $required = [
+                "Section","Criteria","Topic1",
+                "QuestionText","OptionA","OptionB",
+                "OptionC","CorrectOption"
+            ];
 
-$maxCount = count($filtered);
-if ($requestedCount < 1) $requestedCount = 0;
-if ($requestedCount > $maxCount) $requestedCount = $maxCount;
+            $ok = true;
+            foreach ($required as $r) {
+                if (!array_key_exists($r,$map)) $ok=false;
+            }
 
-// If valid selection, pick N random questions from the chosen section
-$quizQuestions = [];
-if ($selectedSection !== '' && $requestedCount > 0) {
-    // Shuffle the filtered list and take first N
-    shuffle($filtered);
-    $quizQuestions = array_slice($filtered, 0, $requestedCount);
-}
+            if ($ok) {
+                $csvLoaded = true;
+                $id = 0;
 
-$randomSection = null;
-$randomQuestions = [];
+                while(($data=fgetcsv($fh))!==false){
 
-if(isset($_GET['section'])){
-  if($_GET['section'] == "rand_s"){
-    $randomSection = $sectionList[random_int(0, sizeof($sectionList)-1)];
-    header('Location: quiz.php?section='.htmlspecialchars($randomSection).'&count='.htmlspecialchars($_GET['count']));
-  } elseif($_GET['section'] == "rand_q"){
-    $requestedCount = isset($_GET['count']) ? (int) $_GET['count'] : 10;
-    if ($requestedCount < 1) {
-        $requestedCount = 10; // fallback if user input is less than 1
-    }
+                    $sec = trim($data[$map["Section"]] ?? "");
+                    $cri = trim($data[$map["Criteria"]] ?? "");
+                    $top = trim($data[$map["Topic1"]] ?? "");
+                    $txt = trim($data[$map["QuestionText"]] ?? "");
 
-    $allQuestions = [];
-    foreach ($sectionList as $sec) {
-        foreach ($rows as $r) {
-            if ($r['Section'] === $sec) {
-                $allQuestions[] = $r;
+                    if ($sec==="" || $txt==="") { $id++; continue; }
+
+                    $row = [
+                        "id"=>$id,
+                        "Section"=>$sec,
+                        "Criteria"=>$cri,
+                        "Topic"=>$top,
+                        "QuestionText"=>$txt,
+                        "A"=>$data[$map["OptionA"]] ?? "",
+                        "B"=>$data[$map["OptionB"]] ?? "",
+                        "C"=>$data[$map["OptionC"]] ?? "",
+                        "D"=>isset($map["OptionD"]) ? ($data[$map["OptionD"]] ?? "") : ""
+                    ];
+                    $rows[]=$row;
+
+                    $sections[$sec]=true;
+                    if ($cri!=="") $criteriaBySection[$sec][$cri]=true;
+                    if ($top!=="") $topicBySection[$sec][$top]=true;
+
+                    $id++;
+                }
+
+                fclose($fh);
+
+                $sections = array_keys($sections);
+                sort($sections);
+
+                foreach ($criteriaBySection as $sec=>$vals) {
+                    $criteriaBySection[$sec] = array_keys($vals);
+                    sort($criteriaBySection[$sec]);
+                }
+                foreach ($topicBySection as $sec=>$vals) {
+                    $topicBySection[$sec] = array_keys($vals);
+                    sort($topicBySection[$sec]);
+                }
             }
         }
     }
+}
 
-    $maxCount = sizeof($allQuestions);
+/* ----------------------------------
+   BUILD QUIZ — ONLY AFTER Load Quiz
+----------------------------------- */
+$quiz = [];
+$maxCountHint = null;
 
-    shuffle($allQuestions);
-    $quizQuestions = array_slice($allQuestions, 0, $requestedCount);
-  }
+if (
+    $doQuiz &&
+    $csvLoaded &&
+    $section !== "" &&
+    $filter  !== "" &&
+    $count > 0
+) {
+
+    if ($filter==="random") {
+        $pool = $rows;
+        $maxCountHint = count($pool);
+
+    } elseif ($filter==="criteria" && $value!=="") {
+        $pool=[];
+        foreach($rows as $r){
+            if ($r["Section"]===$section && $r["Criteria"]===$value) $pool[]=$r;
+        }
+        $maxCountHint = count($pool);
+
+    } elseif ($filter==="topic" && $value!=="") {
+        $pool=[];
+        foreach($rows as $r){
+            if ($r["Section"]===$section && $r["Topic"]===$value) $pool[]=$r;
+        }
+        $maxCountHint = count($pool);
+
+    } else {
+        $pool=[];
+        foreach($rows as $r){
+            if ($r["Section"]===$section) $pool[]=$r;
+        }
+        $maxCountHint = count($pool);
+    }
+
+    shuffle($pool);
+    $quiz = array_slice($pool,0,$count);
 }
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Interactive Quiz</title>
-   <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Interactive Quiz</title>
+<link rel="stylesheet" href="../../global_includes/styles.css">
 </head>
+
 <body>
-  <div class="container">
+<div class="container">
+<h1>Interactive Quiz</h1>
 
-<main class="content">
-<div class="wrap">
-  <h1>Interactive Quiz</h1>
-  <p>Choose the section and the number of questions. </p>
+<form method="get" id="settings">
 
-  <form method="get" class="controls" aria-label="Quiz settings">
-    <div>
-      <label for="section">Section</label>
-      <select id="section" name="section" required>
-        <option value="" disabled 
-        <?php echo ($selectedSection === '' ? 'selected' : ''); ?>>Select a section…</option>
-        <option <?php echo ($selectedSection === 'rand_s' ? 'selected' : ''); ?> value="rand_s">Randomly pick a section…</option>
-        <option <?php echo ($selectedSection === 'rand_q' ? 'selected' : ''); ?> value="rand_q">Randomly pick questions…</option>
-        <?php foreach ($sectionList as $sec): ?>
-          <option value="<?php echo htmlspecialchars($sec); ?>" <?php echo ($sec === $selectedSection ? 'selected' : ''); ?>>
-            <?php echo htmlspecialchars($sec); ?><?=
-              (explode('.', $sec)[0] == "7" && explode('.', $sec)[1] == "3") ? " - Digital Environments - Networking" : " - Unknown"
-            ?>
-          </option>
+<!-- Step 1: Course -->
+<label>Course:</label>
+<select name="course" onchange="this.form.submit()">
+    <option value="">Select a course</option>
+    <?php foreach($courses as $key=>$f): ?>
+        <option value="<?=h($key)?>" <?=$course===$key?"selected":""?>><?=strtoupper(h($key))?></option>
+    <?php endforeach; ?>
+</select>
+
+<?php if($csvLoaded): ?>
+
+<!-- Step 2: Section -->
+<label>Section:</label>
+<select name="section" onchange="this.form.submit()">
+    <option value="">Select a section</option>
+    <?php foreach($sections as $s): ?>
+        <option value="<?=h($s)?>" <?=$section===$s?"selected":""?>><?=h($s)?></option>
+    <?php endforeach; ?>
+</select>
+
+<?php endif; ?>
+
+<?php if($csvLoaded && $section!==""): ?>
+
+<!-- Step 3: Filter type -->
+<label>Filter:</label>
+<select name="filter" onchange="this.form.submit()">
+    <option value="">Choose filter…</option>
+    <option value="random"   <?=$filter==="random"?"selected":""?>>Random (all)</option>
+    <option value="criteria" <?=$filter==="criteria"?"selected":""?>>Criteria</option>
+    <option value="topic"    <?=$filter==="topic"?"selected":""?>>Topic</option>
+</select>
+
+<!-- Step 3b: value selection -->
+<?php if ($filter==="criteria"): ?>
+    <label>Criteria:</label>
+    <select name="value" onchange="this.form.submit()">
+        <option value="">Pick criteria</option>
+        <?php foreach($criteriaBySection[$section] ?? [] as $c): ?>
+            <option value="<?=h($c)?>" <?=$value===$c?"selected":""?>><?=h($c)?></option>
         <?php endforeach; ?>
-      </select>
-    </div><br><br>
+    </select>
 
-    <div>
-      <label for="count">Number of questions</label>
-      <input id="count" name="count" type="number" min="1" value="<?php echo ($requestedCount > 0 ? $requestedCount : ''); ?>" placeholder="e.g. 5" required />
-      <?php if ($selectedSection !== ''): ?>
-        <div class="hint">Available in <?php echo htmlspecialchars($selectedSection == "rand_q" ? "total" : ($selectedSection)); ?>.<br>Number of questions in section: <?php echo $maxCount; ?></div>
-      <?php else: ?>
-        <div class="hint">Pick a section first to see available questions.</div>
-      <?php endif; ?>
-    </div>
+<?php elseif ($filter==="topic"): ?>
+    <label>Topic:</label>
+    <select name="value" onchange="this.form.submit()">
+        <option value="">Pick topic</option>
+        <?php foreach($topicBySection[$section] ?? [] as $t): ?>
+            <option value="<?=h($t)?>" <?=$value===$t?"selected":""?>><?=h($t)?></option>
+        <?php endforeach; ?>
+    </select>
+<?php endif; ?>
 
-    <div>
-      <button type="submit">Load Quiz</button>
-    </div>
-  </form>
+<?php endif; ?>
 
-  <?php if ($selectedSection !== '' && $requestedCount > 0 && count($quizQuestions) === 0): ?>
-    <p class="error">No questions found for that section. Please choose another section.</p>
-  <?php endif; ?>
+<!-- Step 4: Number of questions -->
+<?php if($csvLoaded && $section!=="" && $filter!==""): ?>
 
-  <?php if (count($quizQuestions) > 0): ?>
-    <hr />
-    <h2><?php echo htmlspecialchars($selectedSection == "rand_q" ? "Randomly Generated" : ('Section '.$selectedSection)); ?> Quiz</h2>
-    <p>Answer all questions then submit.</p>
+<?php
+// Pre-calc maximum available
+if ($filter==="random") {
+    $maxCountHint = count($rows);
+} elseif ($filter==="criteria" && $value!=="") {
+    $temp=[];
+    foreach($rows as $r){ if ($r["Section"]===$section && $r["Criteria"]===$value) $temp[]=$r; }
+    $maxCountHint = count($temp);
+} elseif ($filter==="topic" && $value!=="") {
+    $temp=[];
+    foreach($rows as $r){ if ($r["Section"]===$section && $r["Topic"]===$value) $temp[]=$r; }
+    $maxCountHint = count($temp);
+} else {
+    $temp=[];
+    foreach($rows as $r){ if ($r["Section"]===$section) $temp[]=$r; }
+    $maxCountHint = count($temp);
+}
+?>
 
-    <form id="quiz-form" onsubmit="return false;">
-      <?php foreach ($quizQuestions as $i => $q): ?>
-        <div class="question" data-rowid="<?php echo (int)$q['rowId']; ?>">
-          <h3><?php echo ($i+1) . '. ' . htmlspecialchars($q['QuestionText']); ?></h3>
+<label>Number of questions:</label>
+<input type="number"
+       min="1"
+       max="<?=$maxCountHint?>"
+       name="count"
+       value="<?=$count>0?$count:""?>"
+       required>
 
-          <div class="option">
-            <label><input type="radio" name="q<?php echo $i; ?>" value="a" /> <?php echo htmlspecialchars($q['OptionA']); ?></label>
-          </div>
-          <div class="option">
-            <label><input type="radio" name="q<?php echo $i; ?>" value="b" /> <?php echo htmlspecialchars($q['OptionB']); ?></label>
-          </div>
-          <div class="option">
-            <label><input type="radio" name="q<?php echo $i; ?>" value="c" /> <?php echo htmlspecialchars($q['OptionC']); ?></label>
-          </div>
-        </div>
-      <?php endforeach; ?>
+<div class="hint">Maximum available: <?=$maxCountHint?></div>
 
-      <div class="actions">
-        <button type="button" id="submit-quiz">Submit Quiz</button>
-        <button type="button"><a href="quiz.php">Change section / count</a></button>
-      </div>
-    </form>
+<br><br>
+<button type="submit" name="doQuiz" value="1">Load Quiz</button>
 
-    <script>
-      // Pass the selected CSV row IDs to JS so it can look up the correct answers.
-      window.quizConfig = {
-        section: <?php echo json_encode($selectedSection); ?>,
-        rowIds: <?php echo json_encode(array_map(fn($q) => $q['rowId'], $quizQuestions)); ?>
-      };
-      
-  window.quizConfig = {
-    section: <?php echo json_encode($selectedSection); ?>,
-    rowIds: <?php echo json_encode(array_map(fn($q) => $q['rowId'], $quizQuestions)); ?>,
-    passThreshold: 70 // override per quiz/section if you like
-  };
+<?php endif; ?>
+
+</form>
+
+<!-- QUIZ DISPLAY -->
+<?php if ($doQuiz && !empty($quiz)): ?>
+<hr>
+<h2>Your Quiz</h2>
+
+<form id="quiz-form" onsubmit="return false;">
+
+<?php foreach($quiz as $i=>$q): ?>
+<div class="question" data-rowid="<?=$q['id']?>">
+    <h3><?=($i+1).". ".h($q["QuestionText"])?></h3>
+
+    <label><input type="radio" name="q<?=$i?>" value="a"> <?=h($q["A"])?></label><br>
+    <label><input type="radio" name="q<?=$i?>" value="b"> <?=h($q["B"])?></label><br>
+    <label><input type="radio" name="q<?=$i?>" value="c"> <?=h($q["C"])?></label><br>
+
+    <?php if(trim($q["D"])!==""): ?>
+    <label><input type="radio" name="q<?=$i?>" value="d"> <?=h($q["D"])?></label><br>
+    <?php endif; ?>
+</div>
+<?php endforeach; ?>
+
+<button id="submit-quiz" type="button">Submit Quiz</button>
+</form>
+
+<script>
+window.quizConfig = {
+    section: <?= json_encode($section) ?>,
+    rowIds: <?= json_encode(array_map(fn($r)=>$r["id"],$quiz)) ?>,
+    csvFile: <?= json_encode("/quiz/" . $courses[$course]) ?>,
+    passThreshold: 70
+};
 </script>
 
-    <script src="quiz.js"></script>
+<script src="quiz.js"></script>
 
-  <?php endif; ?>
-  </div>
+<?php endif; ?>
 
 </div>
 </body>
