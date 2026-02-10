@@ -2,26 +2,31 @@
 include($_SERVER['DOCUMENT_ROOT'].'/index_includes/is_auth.php');
 include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 ?>
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title><?= htmlspecialchars(SITE_NAME) ?> — Protected</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="index-css.css">
-
+<title>Choose Your Course</title>
+<link rel="stylesheet" href="/quiz/quiz-layout.css">
 </head>
 <body>
-<div class="container">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <?php include($_SERVER['DOCUMENT_ROOT'].'/index_includes/index_menu.php'); ?>
-  </aside>
 
-  <?php include($_SERVER['DOCUMENT_ROOT']. '/index_includes/index_main.php'); ?>
+<div class="quiz-shell">
+    <div class="quiz-layout">
+        <div class="quiz-right">
+           <h1>What course do you want to revise?</h1>
 
- </div>
+            <div class="result-buttons" >
+
+                <a href="<?='/dss_index.php' ?>">DSS</a>
+                <a href="<?= '/dsd_index_.php' ?>">DSD</a>
+                <a href="<?= '/marketing_index.php' ?>">Marketing</a>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
-

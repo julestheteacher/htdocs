@@ -1,0 +1,23 @@
+{
+  "name": "Problem Solving",
+  "href": "problem/problem-index.php",
+  "criteria": [
+    { "id": "1.1.1", "label": "Know the definition and understand the purpose of computational thinking.", "to_revise": false, "completed": false },
+    { "id": "1.1.2", "label": "Know when to use computational thinking.", "to_revise": false, "completed": false },
+    { "id": "1.1.3", "label": "Know and understand the benefits and drawbacks of using computational thinking.", "to_revise": false, "completed": false },
+    { "id": "1.1.4", "label": "Know the components of computational thinking: decomposition; pattern recognition; abstraction; algorithmic design.", "to_revise": false, "completed": false },
+    { "id": "1.1.5", "label": "Know and understand the benefits and drawbacks of using the components of computational thinking.", "to_revise": false, "completed": false },
+    { "id": "1.1.6", "label": "Know and understand the purpose of decomposition.", "to_revise": false, "completed": false },
+    { "id": "1.1.7", "label": "Know the tasks of decomposition: identify the main features of a problem; characterise each identified feature; break problems into smaller, more manageable parts; break solutions into smaller, more manageable parts.", "to_revise": false, "completed": false },
+    { "id": "1.1.8", "label": "Be able to use decomposition for problem solving.", "to_revise": false, "completed": false },
+    { "id": "1.1.9", "label": "Know and understand methods to represent decomposition: block diagrams; information flow diagrams; flowcharts; written descriptions.", "to_revise": false, "completed": false },
+    { "id": "1.1.10", "label": "Be able to use the methods to represent decomposition.", "to_revise": false, "completed": false },
+    { "id": "1.1.11", "label": "Know and understand the purpose of pattern recognition.", "to_revise": false, "completed": false },
+    { "id": "1.1.12", "label": "Be able to use pattern recognition for problem solving: find and interpret trends and similarities within and between problems and processes; find and interpret common features between a given problem and existing solutions; make predictions and assumptions based on identified patterns.", "to_revise": false, "completed": false },
+    { "id": "1.1.13", "label": "Know and understand the purpose of abstraction.", "to_revise": false, "completed": false },
+    { "id": "1.1.14", "label": "Know and understand the tasks of abstraction: identify information that is needed; filter out unnecessary details; hide details of internal workings.", "to_revise": false, "completed": false },
+    { "id": "1.1.15", "label": "Be able to use abstraction.", "to_revise": false, "completed": false },
+    { "id": "1.1.16", "label": "Be able to use abstraction in problem solving.", "to_revise": false, "completed": false },
+    { "id": "1.1.17", "label": "Understand the interrelationships between components of computational thinking and make judgements about the suitability of using the components in digital support services.", "to_revise": false, "completed": false }
+  ]
+}

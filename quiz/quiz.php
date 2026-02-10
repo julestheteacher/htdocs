@@ -1,5 +1,9 @@
 <?php
 declare(strict_types=1);
+include '../index_includes/is_auth.php';
+include '../index_includes/check.php';
+
+
 
 // Escape helper
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES); }
@@ -268,6 +272,6 @@ if ($filter==="random") {
 </div>
 
 <script src="quiz.js?v=<?=time()?>"></script>
-<div id="quiz-result"></div>
+
 </body>
 </html>

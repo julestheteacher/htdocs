@@ -9,13 +9,13 @@
 <h1>Review Your Answers</h1>
 
 <div class="quiz-shell">
-<div class="quiz-layout">
-<div class="quiz-right" style="width:100%;">
+    <div class="quiz-layout">
+        <div class="quiz-right" style="width:100%;">
 
 <div id="review-area"></div>
 
-</div>
-</div>
+        </div>
+    </div>
 </div>
 
 <script>
