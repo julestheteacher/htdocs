@@ -16,7 +16,7 @@
         { name: "Emerging Issues", href: "/emerging/emerging-index.php" },
         { name: "Legislation", href: "/legislation/legislation-index.php" },
         { name: "Security", href: "/security/security-index.php" },
-        { name: "Digital Support", href: "/digitalsupport/digital-support-index.php" },
+        { name: "Programming", href: "/programming/programming-index.php" },
         { name: "Revision Quiz", href: "/quiz/quiz.php" }
         
       ];

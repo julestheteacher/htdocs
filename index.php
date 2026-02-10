@@ -18,7 +18,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
             <div class="result-buttons" >
 
                 <a href="<?='/dss_index.php' ?>">DSS</a>
-                <a href="<?= '/dsd_index_.php' ?>">DSD</a>
+                <a href="<?= '/dsd_index.php' ?>">DSD</a>
                 <a href="<?= '/marketing_index.php' ?>">Marketing</a>
 
 
