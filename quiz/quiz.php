@@ -36,7 +36,10 @@ if ($course !== "" && isset($courses[$course])) {
     $file = __DIR__ . "/" . $courses[$course];
     if (file_exists($file)) {
         $fh = fopen($file, "r");
-        $header = fgetcsv($fh);
+        
+// Read header row
+    $header = fgetcsv($fh, length: null, separator: ',', enclosure: '"', escape: '');
+
         if ($header !== false) {
 
             $map = [];
@@ -56,8 +59,11 @@ if ($course !== "" && isset($courses[$course])) {
             if ($ok) {
                 $csvLoaded = true;
                 $id = 0;
-
-                while (($data = fgetcsv($fh)) !== false) {
+                
+               
+// Read each subsequent row
+                while (($data = fgetcsv($fh, length: null, separator: ',', enclosure: '"', escape: '')) !==
+                    false) {
                     $sec = trim($data[$map["Section"]] ?? "");
                     $cri = trim($data[$map["Criteria"]] ?? "");
                     $top = trim($data[$map["Topic1"]]   ?? "");
@@ -170,6 +176,7 @@ window.quizConfig = {
 <form method="get" id="settings">
 
 <label>Course:</label>
+<p></p>
 <select name="course" onchange="this.form.submit()">
 <option value="">Select a course</option>
 <?php foreach ($courses as $key => $f): ?>
@@ -178,7 +185,8 @@ window.quizConfig = {
 </select>
 
 <?php if ($csvLoaded): ?>
-<label>Section:</label>
+<p></p><label>Section:</label>
+<p></p>
 <select name="section" onchange="this.form.submit()">
 <option value="">Select a section</option>
 <?php foreach ($sections as $s): ?>
@@ -189,7 +197,8 @@ window.quizConfig = {
 
 
 <?php if ($csvLoaded && $section !== ""): ?>
-<label>Filter:</label>
+<p></p><label>Filter:</label>
+<p></p>
 <select name="filter" onchange="this.form.submit()">
 <option value="">Choose filter…</option>
 <option value="random"   <?=$filter==="random"?"selected":""?>>Random</option>
@@ -198,7 +207,8 @@ window.quizConfig = {
 </select>
 
 <?php if ($filter==="criteria"): ?>
-<label>Criteria:</label>
+<p></p><label>Criteria:</label>
+<p></p>
 <select name="value" onchange="this.form.submit()">
 <option value="">Pick criteria</option>
 <?php foreach ($criteriaBySection[$section] ?? [] as $c): ?>
@@ -207,7 +217,8 @@ window.quizConfig = {
 </select>
 
 <?php elseif ($filter==="topic"): ?>
-<label>Topic:</label>
+<p></p><label>Topic:</label>
+<p></p>
 <select name="value" onchange="this.form.submit()">
 <option value="">Pick topic</option>
 <?php foreach ($topicBySection[$section] ?? [] as $t): ?>
@@ -219,7 +230,8 @@ window.quizConfig = {
 
 
 <?php if ($csvLoaded && $section !== "" && $filter !== ""): ?>
-<label>Number of questions:</label>
+<p></p><label>Number of questions:</label>
+<p></p>
 <?php
 if ($filter==="random") {
     $maxCountHint = count($rows);
@@ -244,8 +256,6 @@ if ($filter==="random") {
 <!-- RIGHT SIDE QUIZ -->
 <div class="quiz-right">
 <?php if ($doQuiz && !empty($quiz)): ?>
-<h2>Your Quiz</h2>
-
 <form id="quiz-form" onsubmit="return false;">
 
 <?php foreach ($quiz as $i => $q): ?>
@@ -264,7 +274,9 @@ if ($filter==="random") {
 <?php endforeach; ?>
 
 <button id="submit-quiz" type="button">Submit Quiz</button>
+
 </form>
+<div id="quiz-result"></div>
 <?php endif; ?>
 </div>
 

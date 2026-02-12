@@ -1,18 +1,18 @@
 ﻿<?php
 include($_SERVER['DOCUMENT_ROOT'].'/index_includes/is_auth.php');
 include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
+
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Software Development/Digital Support Services Pearson</title>
 <link rel="stylesheet" href="../global_includes/styles.css">
-
 </head>
 <body>
+
 <div class="container">
   <!-- Sidebar -->
   <aside class="sidebar">    
@@ -21,8 +21,6 @@ include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 
   <!-- Main Content -->
   <main class="content">
-    <h2>Digital Software Development</h2>
-    <h2>Digital Support Services</h2>
     <h2>Security</h2>
     <?php include 'php_includes/security_main.php'; ?>
     
@@ -30,5 +28,6 @@ include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 </div>
 </body>
 </html>
+
 
 

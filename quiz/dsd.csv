@@ -1,4 +1,4 @@
-Section,Criteria,Topic1,QuestionText,OptionA,OptionB,OptionC,OptionD,CorrectOption,Description
+Section,Criteria,Topic1,QuestionnText,Optional,OptionB,OptionC,OptionD,CorrectOption,Description
 Security,8.1.1,Security-Topic 1,Which of these is an example of Human Resources confidential information?,Salaries and benefits,Intellectual property,Client details,,a,
 Security,8.1.1,Security-Topic 2,Which of these is considered commercially sensitive information?,Client details,Staff personal details,Usernames and passwords,,a,
 Security,8.1.1,Security-Topic 3,Which of these is considered access information?,Usernames and passwords,Sales numbers,Contracts,,a,

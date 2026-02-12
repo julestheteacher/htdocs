@@ -1,16 +1,30 @@
-/*
-========================================
- QUIZ LAYOUT STYLES (Pale Pink Theme)
-========================================
-*/
 
-/* Global font override */
-.quiz-shell, 
-.quiz-shell * {
+/* FORCE ALL TEXT SITE-WIDE TO SANS-SERIF */
+html, body,
+.quiz-shell, .quiz-shell * {
     font-family: Arial, Helvetica, sans-serif !important;
-    box-sizing: border-box;
-    color: #111; /* dark readable text */
+    font-style: normal !important;
+    font-variant: normal !important;
 }
+
+
+/* Centered container box for everything */
+.quiz-shell {
+    max-width: 1100px;        /* Controls the width of the whole quiz area */
+    margin: 0 auto;           /* Centers left/right */
+    background: #ffffff;      /* White background (change if needed) */
+    padding: 2rem;            /* Space inside the box */
+    border-radius: 16px;      /* Rounded corners */
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);  /* Soft shadow */
+    color: #111; /* dark readable text */
+    
+}
+.quiz-shell h1,h2 {
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: center;
+    color: #000;
+}
+
 
 /* MAIN WRAPPER */
 .quiz-layout {
@@ -46,6 +60,8 @@
 h1, h2,h3,p {
     font-family: Arial, Helvetica, sans-serif !important;
     color: #000;
+    text-align: center;
+
 }
 
 /* ------------------------------
@@ -58,8 +74,8 @@ h1, h2,h3,p {
     background-color: #e89cb5;        /* soft rose pink */
     color: #fff;
     border: none;
-    border-radius: 12px;
-    padding: 0.6rem 0.8rem;
+    border-radius: 20px;
+    padding: 0.9rem 0.8rem;
     font-size: 1rem;
     width: 100%;
     max-width: 400px;
