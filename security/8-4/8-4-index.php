@@ -16,7 +16,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
   
 <div class="container">
   <!-- Sidebar -->
-  <aside class="sidebar">
+  <aside class="navbar">
     <?php include 'php_includes/8-4-menu.php'; ?>
   </aside>
 

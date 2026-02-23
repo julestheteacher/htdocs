@@ -168,6 +168,24 @@ window.quizConfig = {
 <h1>Interactive Quiz</h1>
 <h2>Choose your course and quiz settings below.</h2>
 
+<?php
+
+// Map course -> home page
+$courseMap = [
+    'dss' => '../../dss_index.php',
+    'dsd' => '../dsd_index.php',
+    'marketing' => '../marketing_index.php'
+];
+
+// Default home page if no cookie
+$homeLink = "../index.php";
+
+if ($course && isset($courseMap[$course])) {
+    $homeLink = $courseMap[$course];
+}
+?>
+<h1><a href="<?= $homeLink ?>">Home</a></h1>
+
 <div class="quiz-shell">
 <div class="quiz-layout">
 

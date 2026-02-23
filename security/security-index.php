@@ -1,7 +1,6 @@
 ﻿<?php
 include($_SERVER['DOCUMENT_ROOT'].'/index_includes/is_auth.php');
 include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
-
 ?>
 
 <html lang="en">

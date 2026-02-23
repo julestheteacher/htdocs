@@ -1,3 +1,1 @@
-<p>Welcome to the "Security " section of the core, it's identical no matter which pathway you chose. Here, you'll explore various cybersecurity risks, including technical, human, and physical vulnerabilities. Each topic includes detailed explanations, real-world examples, and knowledge checks to reinforce your understanding.</p>
-    <p>Use the sidebar to navigate through each topic, complete knowledge checks, and submit reflections. When ready, try the 
-        Interactive Quiz to test your knowledge!</p>
+<p>Welcome to the Problem Solving. For the core exams you need to ensure you can demonstrate - ie do, DFD, ERD and IFD

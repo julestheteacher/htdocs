@@ -1,0 +1,61 @@
+Section,Criteria,Topic1,QuestionText,OptionA,OptionB,OptionC,OptionD,CorrectOption,Description
+Problem Solving,1.2.5,Algarithmic Design,What is the purpose of a block diagram?,Show step-by-step decisions,Show high-level components,Show written details,Show data storage,b,Block diagrams represent major components or systems at a high level.
+Problem Solving,1.2.5,Algarithmic Design,Which method shows how information moves through a system?,Block diagrams,Information flow diagrams,Written descriptions,Timelines,b,Information flow diagrams map the movement of data.
+Problem Solving,1.2.5,Algarithmic Design,What do flowcharts primarily represent?,People,Steps in a process,Hardware components,Hidden details,b,Flowcharts show the logical sequence of actions.
+Problem Solving,1.2.5,Algarithmic Design,A written description is useful when…,Details must be precise,You cannot draw,Diagrams are unavailable,A detailed narrative is needed,d,Written descriptions explain processes in words for clarity.
+Problem Solving,1.2.5,Algarithmic Design,Which is a benefit of block diagrams?,Too detailed,Easy to understand high-level systems,Shows every decision,Shows user input only,b,Block diagrams simplify complexity by using big-picture blocks.
+Problem Solving,1.2.5,Algarithmic Design,Which is a drawback of information flow diagrams?,Too vague,May become cluttered with many arrows,Shows no data,Cannot show movement,b,Many interacting data flows can become visually overwhelming.
+Problem Solving,1.2.5,Algarithmic Design,Flowcharts use symbols to show…,Geography,Storylines,Process logic,Business costs,c,"Flowcharts symbolise decisions, processes, and flow."
+Problem Solving,1.2.5,Algarithmic Design,A drawback of written descriptions is…,Too visual,Requires drawing skills,Can be misinterpreted,Cannot describe detail,c,Long text descriptions may be unclear without structure.
+Problem Solving,1.2.5,Algarithmic Design,Which diagram is best for showing decision points?,Block diagram,Flowchart,Written description only,Bar chart,b,Diamonds in flowcharts represent decisions.
+Problem Solving,1.2.5,Algarithmic Design,A benefit of information flow diagrams is…,Showing logic,Showing high-level modules,Showing how data moves,Avoiding structure,c,These diagrams specialise in showing data movement.
+Problem Solving,1.2.5,Algarithmic Design,Scenario: A technician is planning the main parts of a new system. Which tool should be used?,Flowchart,Block diagram,Written plan,Checklist,b,Block diagrams show system components clearly.
+Problem Solving,1.2.5,Algarithmic Design,Scenario: A developer needs to show user data travelling between database and API. Use…,Flowchart,Information flow diagram,Block diagram,Pseudocode,b,It visually maps data movement.
+Problem Solving,1.2.5,Algarithmic Design,Scenario: You need to explain a process to a non-technical manager. Use…,Flowchart only,Complex formulas,Written description,Code comments,c,Written descriptions can be adapted to any audience.
+Problem Solving,1.2.5,Algarithmic Design,Which diagram is easiest for explaining a process to beginners?,Flowchart,Infinite loops,Dense text,Hex charts,a,Flowcharts visually clarify steps.
+Problem Solving,1.2.5,Algarithmic Design,A limitation of block diagrams is…,Too detailed,Not detailed enough,Hard to draw,Shows incorrect data,b,They lack detailed step-by-step logic.
+Problem Solving,1.2.5,Algarithmic Design,"In decomposition, representing smaller tasks is best shown using…",Block diagrams,Flowcharts,Storyboards,Mind maps,b,Flowcharts are ideal for step-level detail.
+Problem Solving,1.2.5,Algarithmic Design,Written descriptions work best for…,Exact instructions,Only images,Only block diagrams,Coding,a,Text can precisely describe each step.
+Problem Solving,1.2.5,Algarithmic Design,Which symbol in flowcharts represents a decision?,Rectangle,Diamond,Oval,Arrow,b,Diamonds = decision points.
+Problem Solving,1.2.5,Algarithmic Design,Which symbol shows a start/end in flowcharts?,Oval,Diamond,Square,Triangle,a,Ovals = terminators.
+Problem Solving,1.2.5,Algarithmic Design,Benefit of written descriptions?,Requires logic,Flexible detail level,Only for experts,Cannot be changed,b,You can adjust the detail as needed.
+Problem Solving,1.1.1,Algorithms,What is computational thinking-,A programming language,A problem-solving approach using logical steps,A computer hardware process,A networking method,b,A problem-solving approach using logical steps
+Problem Solving,1.1.1,Algorithms,Which of the following is a key purpose of computational thinking-,To replace human thinking,To break down complex problems,To design graphics,To speed up hardware,b,To break down complex problems
+Problem Solving,1.1.1,Algorithms,Computational thinking helps by:,Making problems more confusing,Structuring problems into manageable parts,Avoiding logical processes,Eliminating all errors,b,Structuring problems into manageable parts
+Problem Solving,1.1.1,Algorithms,Decomposition in computational thinking means:,Joining problems together,Breaking problems into smaller parts,Ignoring complexity,Fixing bugs,b,Breaking problems into smaller parts
+Problem Solving,1.1.1,Algorithms,Pattern recognition is used when:,Identifying similarities across problems,Erasing data,Randomly selecting solutions,Avoiding comparisons,a,Identifying similarities across problems
+Problem Solving,1.1.1,Algorithms,Abstraction involves:,Removing unnecessary detail,Adding extra information,Focusing on everything equally,Ignoring key data,a,Removing unnecessary detail
+Problem Solving,1.1.1,Algorithms,Algorithmic thinking involves:,Creating step-by-step instructions,Guessing solutions,Copying others’ methods,Avoiding planning,a,Creating step-by-step instructions
+Problem Solving,1.1.1,Algorithms,When is computational thinking useful-,Only in computer science,In any complex problem requiring structure,Only when coding,Only during exams,b,In any complex problem requiring structure
+Problem Solving,1.1.1,Algorithms,Computational thinking is especially helpful in:,Random decision-making,Systematic problem analysis,Ignoring constraints,Shortcut creation,b,Systematic problem analysis
+Problem Solving,1.1.1,Algorithms,A drawback of computational thinking can be:,Too structured for creative tasks,Too random to follow,Always incorrect,Not applicable to computers,a,Too structured for creative tasks
+Problem Solving,1.1.1,Algorithms,One benefit of computational thinking is:,Improved logical reasoning,Reduced accuracy,More errors,Less planning,a,Improved logical reasoning
+Problem Solving,1.1.1,Algorithms,Computational thinking helps teams by:,Making collaboration harder,Providing a shared problem-solving framework,Reducing communication,Avoiding structure,b,Providing a shared problem-solving framework
+Problem Solving,1.1.1,Algorithms,A drawback when overusing abstraction is:,Focusing on key details,Losing important information,Creating clearer designs,Simplifying solutions,b,Losing important information
+Problem Solving,1.1.1,Algorithms,Computational thinking supports automation by:,Removing algorithms,Creating repeatable processes,Reducing logic,Ignoring rules,b,Creating repeatable processes
+Problem Solving,1.1.1,Algorithms,When is computational thinking NOT appropriate-,When a problem needs clear logic,When dealing with purely emotional or subjective decisions,When analysing data,When designing algorithms,b,When dealing with purely emotional or subjective decisions
+Problem Solving,1.1.1,Algorithms,Which component of computational thinking is best for designing reusable solutions-,Abstraction,Guesswork,Aesthetics,Coin flipping,a,Abstraction
+Problem Solving,1.1.1,Algorithms,Pattern recognition reduces:,Repetition in solutions,Efficiency,Clarity,Accuracy,a,Repetition in solutions
+Problem Solving,1.1.1,Algorithms,Algorithmic thinking is useful when:,A solution needs clear steps,A task is random,Logic is discouraged,Data is unavailable,a,A solution needs clear steps
+Problem Solving,1.1.1,Algorithms,Computational thinking improves problem solving by:,Adding unnecessary complexity,Introducing structure and logic,Avoiding decisions,Removing planning,b,Introducing structure and logic
+Problem Solving,1.1.1,Algorithms,A benefit of decomposition is:,Bigger problems become harder,Problems become easier to manage,Everything becomes random,Solutions become unclear,b,Problems become easier to manage
+Problem Solving,1.1.4,Algorithms,What is decomposition in computational thinking-,Joining problems together,Breaking a problem into smaller parts,Ignoring detail,Random guessing,b,Breaking a problem into smaller parts
+Problem Solving,1.1.4,Algorithms,A benefit of decomposition is:,Problems become harder,Each part becomes easier to understand,Everything becomes random,More errors occur,b,Each part becomes easier to understand
+Problem Solving,1.1.4,Algorithms,Pattern recognition involves:,Spotting similarities and trends,Deleting repeated data,Ignoring relationships,Changing patterns,a,Spotting similarities and trends
+Problem Solving,1.1.4,Algorithms,Pattern recognition helps by:,Increasing repetition,Allowing reuse of solutions,Removing structure,Avoiding logic,b,Allowing reuse of solutions
+Problem Solving,1.1.4,Algorithms,Abstraction means:,Adding all data,Focusing only on important information,Random ordering,Storing everything,b,Focusing only on important information
+Problem Solving,1.1.4,Algorithms,A drawback of abstraction is:,Reduced clarity,Too much detail included,Important details may be removed,Better structure,c,Important details may be removed
+Problem Solving,1.1.4,Algorithms,Algorithmic design is used to:,Make random choices,Create step-by-step instructions,Confuse problems,Ignore processes,b,Create step-by-step instructions
+Problem Solving,1.1.4,Algorithms,Algorithms must be:,Ambiguous,Clear and unambiguous,Random,Infinite,b,Clear and unambiguous
+Problem Solving,1.1.4,Algorithms,Which component is best for simplifying complex problems-,Pattern recognition,Decomposition,Algorithmic design,Encryption,b,Decomposition
+Problem Solving,1.1.4,Algorithms,Which component reduces duplication in solutions-,Abstraction,Pattern recognition,Guesswork,Iteration,b,Pattern recognition
+Problem Solving,1.1.4,Algorithms,Abstraction helps programmers by:,Showing all details,Removing unnecessary details,Increasing complexity,Mixing steps,b,Removing unnecessary details
+Problem Solving,1.1.4,Algorithms,Which best describes algorithmic thinking-,Choosing randomly,Designing logical sequences of steps,Avoiding structure,Using only visuals,b,Designing logical sequences of steps
+Problem Solving,1.1.4,Algorithms,Decomposition is useful when:,Problems are too small,Problems are complex,Everything is obvious,The answer is known already,b,Problems are complex
+Problem Solving,1.1.4,Algorithms,Pattern recognition often leads to:,New errors,Generalised solutions,Harder tasks,Slower programs,b,Generalised solutions
+Problem Solving,1.1.4,Algorithms,Abstraction is essential when:,There is too much irrelevant information,Data is already simple,Nothing needs solving,All details matter,a,There is too much irrelevant information
+Problem Solving,1.1.4,Algorithms,Algorithmic design outputs:,A completed program,A clear step-by-step plan,A random result,Only hardware,b,A clear step-by-step plan
+Problem Solving,1.1.4,Algorithms,Which component helps create reusable solutions-,Guesswork,Pattern recognition,Overthinking,Repetition,b,Pattern recognition
+Problem Solving,1.1.4,Algorithms,Which component directly supports automation-,Abstraction,Decomposition,Algorithmic design,Pattern recognition,c,Algorithmic design
+Problem Solving,1.1.4,Algorithms,Complex systems benefit from:,Decomposition into modules,Ignoring structure,Removing order,Randomising processes,a,Decomposition into modules
+Problem Solving,1.1.4,Algorithms,The four components of computational thinking include:,"Sorting, searching, comparing, calculating","Decomposition, pattern recognition, abstraction, algorithmic design","Memory, CPU, storage, input","Logic, maths, science, creativity",b,"Decomposition, pattern recognition, abstraction, algorithmic design"

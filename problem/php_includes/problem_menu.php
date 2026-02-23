@@ -1,10 +1,30 @@
-    <H1><a href="../index.php">Home</a></H1>
-    <h1><a href="problem-index.php">Problem Home</a></h1>
+<?php
+// Read cookie set from index.php
+$course = $_COOKIE['course'] ?? null;
 
-    <ul>
-      <li><a href="/8-1/8-1-index.php"><i class="fas fa-cogs"></i>8.1 Security Risks</a></li>
-      <li><a href="/8-2/8-2-index.php"><i class="fas fa-cogs"></i>8.2 Types of threats and vulnerabilities</a></li>
-      <li><a href="/8-3/8-3-index.php"><i class="fas fa-cogs"></i>8.3 Threat Mitigation</a></li>
-      <li><a href="/Security-quiz.php"><i class="fas fa-cogs"></i>Overall Security Quiz</a></li>
+// Map course -> home page
+$courseMap = [
+    'dss' => '../../dss_index.php',
+    'dsd' => '../dsd_index.php',
+    'marketing' => '../marketing_index.php'
+];
 
-    </ul>
+// Default home page if no cookie
+$homeLink = "../index.php";
+
+if ($course && isset($courseMap[$course])) {
+    $homeLink = $courseMap[$course];
+}
+?>
+
+<h1><a href="<?= $homeLink ?>">Home</a></h1>
+<h1><a href="../problem/problem-index.php">Problem Solving Home</a></h1>
+     
+<ul>
+    <li><a href="1-1-index.php"><i class="fas fa-cogs"></i>1-1 Computational Thinking</a></li>
+    <li><a href="1-2-index.php"><i class="fas fa-cogs"></i>1.2 Strategies</a></li>
+    <li><a href="1-3-index.php"><i class="fas fa-cogs"></i>1.3 Problem Solving</a></li>
+
+    <li><a href="../quiz/quiz.php?course=<?= $course ?>&section=Problem+Solving"><i class="fas fa-cogs"></i>Test Yourself</a></li>
+</ul>
+

@@ -1,6 +1,6 @@
-﻿<?php
-include '../index_includes/is_auth.php';
-include '../index_includes/check.php';
+<?php
+include($_SERVER['DOCUMENT_ROOT'].'/index_includes/is_auth.php');
+include($_SERVER['DOCUMENT_ROOT'].'/index_includes/check.php');
 ?>
 
 <!DOCTYPE html>
@@ -9,25 +9,17 @@ include '../index_includes/check.php';
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Software Development/Digital Support Services Pearson</title>
-<link rel="stylesheet" href="../global_includes/styles.css">
-<script src="../global_includes/script.js"></script>
-</head>
+  <link rel="stylesheet" href="../../global_includes/styles.css">
+  </head>
 <body>
 <div class="container">
   <!-- Sidebar -->
   <aside class="sidebar">    
     <?php include 'php_includes/problem_menu.php'; ?>
   </aside>
-
   <!-- Main Content -->
-  <main class="content">
- 
-    <h2>Problem Solving</h2>
-    <?php include 'php_includes/problem_main.php'; ?>
-    
-  </main>
-</div>
+ <main class="content">
+  <?php include 'php_includes/1-2-main.php'; ?>
+</main>
 </body>
 </html>
-
-

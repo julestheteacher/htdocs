@@ -1,0 +1,869 @@
+Section,Criteria,Topic1,QuestionText,OptionA,OptionB,OptionC,OptionD,CorrectOption,Description
+Digital Environments - Networks,7.3,Connection Media,Which connection media is most susceptible to electromagnetic interference-,Fibre optic,Satellite,"Copper (e.g., UTP)",Wi-Fi,c,Copper cabling is most affected by EMI compared to fibre.
+Digital Environments - Networks,7.3,Data Transmission,Which part of a data packet contains the data being transmitted-,Header,Payload,Trailer,Checksum,b,The payload is the actual user data in the packet.
+Digital Environments - Networks,7.3,Data Transmission,CRC is used for:,Addressing,Error detection,Routing,Encryption,b,CRC provides error detection by checking frame integrity.
+Digital Environments - Networks,7.3,Data Transmission,Packet switching can cause packet loss due to:,Server upgrades,Congestion,Low CPU usage,High memory availability,b,Congestion leads to queue drops and packet loss.
+Digital Environments - Networks,7.3,Data Transmission,The trailer of a packet typically contains:,Source address,Destination address,Error-checking information,Routing instructions,c,"Frame trailers carry error-checking information (e.g., FCS)."
+Digital Environments - Networks,7.3,Data Transmission,What is the primary purpose of a data packet-,To transmit data across a network,To store backup files,To identify hardware components,To encrypt Wi-Fi signals,a,To transmit data across a network
+Digital Environments - Networks,7.3,Data Transmission,Which part of a data packet contains the actual data being carried-,Header,Payload,Trailer,Checksum,b,Payload
+Digital Environments - Networks,7.3,Data Transmission,What does the header of a data packet usually contain-,Error-checking data,Source and destination addresses,Application data,Encryption keys,b,Source and destination addresses
+Digital Environments - Networks,7.3,Data Transmission,What is the function of the trailer in a data packet-,Routing,Error detection,Addressing,Transporting data,b,Error detection
+Digital Environments - Networks,7.3,Data Transmission,Which component is used in packets to detect errors-,IP address,MAC address,CRC,Router,c,CRC
+Digital Environments - Networks,7.3,Data Transmission,CRC stands for:,Cyclic Redundancy Check,Central Routing Code,Circular Resource Control,Client Relay Connection,a,Cyclic Redundancy Check
+Digital Environments - Networks,7.3,Data Transmission,Packet switching breaks data into:,Blocks,Packets,Frames,Signals,b,Packets
+Digital Environments - Networks,7.3,Data Transmission,Which process allows packets to take different paths across a network-,Circuit switching,Packet switching,Signal modulation,Frequency hopping,b,Packet switching
+Digital Environments - Networks,7.3,Data Transmission,A common cause of packet loss is:,High CPU speed,Network congestion,Low RAM usage,Strong Wi-Fi signal,b,Network congestion
+Digital Environments - Networks,7.3,Data Transmission,Which of the following is NOT a cause of packet loss-,Hardware failure,Network congestion,Routing errors,Correct packet sequencing,d,Correct packet sequencing
+Digital Environments - Networks,7.3,Data Transmission,Packet switching is mainly used in:,Postal systems,Circuit-based telephones,Modern digital networks,Water supply systems,c,Modern digital networks
+Digital Environments - Networks,7.3,Data Transmission,Which term describes when packets arrive out of order-,Packet loss,Packet delay,Packet reordering,Packet duplication,c,Packet reordering
+Digital Environments - Networks,7.3,Data Transmission,Which part of a packet ensures data has not been corrupted-,Header,Payload,CRC value,Router,c,CRC value
+Digital Environments - Networks,7.3,Data Transmission,What happens if CRC detects an error-,Packet is accepted,Packet is re-sent,Packet is routed to a new server,Packet is stored,b,Packet is re-sent
+Digital Environments - Networks,7.3,Data Transmission,The structure of a typical packet includes:,"Header, payload, trailer","Sender, receiver, checksum","Bits, frames, segments","Router, switch, hub",a,"Header, payload, trailer"
+Digital Environments - Networks,7.3,Data Transmission,Packets that are too large are usually:,Dropped,Fragmented,Corrupted,Stored,b,Fragmented
+Digital Environments - Networks,7.3,Data Transmission,Packet loss negatively impacts:,Video streaming quality,Mouse sensitivity,Screen brightness,File size,a,Video streaming quality
+Digital Environments - Networks,7.3,Data Transmission,One role of the header is to:,Check for errors,Provide addressing information,Transport the payload,Compress data,b,Provide addressing information
+Digital Environments - Networks,7.3,Data Transmission,Which of the following best defines packet switching-,Continuous dedicated connection,Data sent as independent packets,Data stored before forwarding,Data encoded using frequency changes,b,Data sent as independent packets
+Digital Environments - Networks,7.3,Data Transmission,"If many packets are dropped during transmission, this is likely due to:",Low CPU usage,High network congestion,Strong connection,Correct CRC checks,b,High network congestion
+Digital Environments - Networks,7.3,Data Transmission,What is the main purpose of HTTP-,Transfer web pages,Send emails,Assign IP addresses,Resolve domain names,a,Transfer web pages
+Digital Environments - Networks,7.3,Data Transmission,What does bandwidth measure in a network-,Amount of data lost,Maximum data transfer rate,Delay in data transfer,Number of connected devices,b,Maximum data transfer rate
+Digital Environments - Networks,7.3,Data Transmission,Latency refers to:,The time delay before data starts transferring,The maximum data speed,The number of errors in packets,The size of a network,a,The time delay before data starts transferring
+Digital Environments - Networks,7.3,Data Transmission,High bandwidth allows:,More data to be transmitted at once,Lower ping,Less congestion always,Longer delays,a,More data to be transmitted at once
+Digital Environments - Networks,7.3,Data Transmission,High latency typically leads to:,Faster downloads,Slower response times,Higher throughput,Improved performance,b,Slower response times
+Digital Environments - Networks,7.3,Data Transmission,Which activity is most affected by latency-,Video streaming,Email downloading,Real-time gaming,File copying,c,Real-time gaming
+Digital Environments - Networks,7.3,Data Transmission,Which activity is most affected by bandwidth-,Web browsing,Video streaming quality,Keyboard response time,Mouse latency,b,Video streaming quality
+Digital Environments - Networks,7.3,Data Transmission,A network with low bandwidth and low latency will:,Transfer small data quickly,Transfer large files instantly,Experience high packet loss,Prevent device overload,a,Transfer small data quickly
+Digital Environments - Networks,7.3,Data Transmission,Latency is typically measured in:,Mbps,GHz,Milliseconds,Gigabytes,c,Milliseconds
+Digital Environments - Networks,7.3,Data Transmission,Bandwidth is typically measured in:,Milliseconds,Kilograms,Mbps or Gbps,Degrees Celsius,c,Mbps or Gbps
+Digital Environments - Networks,7.3,Data Transmission,High latency and low bandwidth combined usually result in:,Excellent performance,Smooth streaming,Slow and unresponsive networks,Instant loading,c,Slow and unresponsive networks
+Digital Environments - Networks,7.3,Network Devices,Which device forwards data packets between different networks-,Switch,Router,Hub,Repeater,b,Routers forward packets between different IP networks.
+Digital Environments - Networks,7.3,Network Devices,A switch operates mainly at which OSI layer-,Layer 2,Layer 3,Layer 7,Layer 1,a,Switches operate at OSI Layer 2 (Data Link).
+Digital Environments - Networks,7.3,Network Devices,"Which device typically stores user accounts, files, and authentication services-",Router,Server,Firewall,Client,b,"Servers host user accounts, files, and authentication."
+Digital Environments - Networks,7.3,Network Devices,The Internet backbone is best described as:,Home broadband networks,The central high-speed infrastructure of the internet,Cellular towers,LAN switches,b,It's the high-speed core infrastructure of the internet.
+Digital Environments - Networks,7.3,Network Models,Which model uses a central server to manage resources-,Client-server,Peer-to-peer,Mesh,Thin client,a,Client-server centralises resource control on a server.
+Digital Environments - Networks,7.3,Network Models,Which model is easiest and cheapest to set up for a small number of users-,Client-server,Thin client,Peer-to-peer,WAN,c,Peer-to-peer is simplest and cheapest for small groups.
+Digital Environments - Networks,7.3,Network Models,A thin client mainly relies on:,Local processing power,Cloud services,A powerful central server,Peer devices,c,Thin clients depend on a central server for processing.
+Digital Environments - Networks,7.3,Network Models,Which is a drawback of a peer-to-peer network-,No central point of failure,Harder to manage and secure,Requires a server,Requires high bandwidth,b,P2P is harder to manage and secure without central control.
+Digital Environments - Networks,7.3,Network Models,Which model provides the strongest centralised security-,LAN,Thin client,Peer-to-peer,Client-server,d,Client-server enables strong centralised policies and auth.
+Digital Environments - Networks,7.3,OSI,Which OSI layer is responsible for physically transmitting bits across media-,Data Link,Physical,Network,Transport,b,The Physical layer transmits raw bits over the medium.
+Digital Environments - Networks,7.3,OSI,Which OSI layer assigns IP addresses and handles routing-,Session,Data Link,Network,Application,c,The Network layer handles IP addressing and routing.
+Digital Environments - Networks,7.3,OSI,Encryption and decryption occur at which layer-,Application,Presentation,Session,Transport,b,Presentation layer handles data representation and encryption.
+Digital Environments - Networks,7.3,OSI,TCP and UDP operate at which OSI layer-,Transport,Network,Session,Data Link,a,TCP and UDP are Transport-layer protocols.
+Digital Environments - Networks,7.3,OSI,The session layer is responsible for:,Routing,Establishing and managing connections,Physical transmission,Compression,b,The Session layer establishes and manages sessions.
+Digital Environments - Networks,7.3,OSI,HTTP and FTP work at which OSI layer-,Presentation,Network,Application,Transport,c,HTTP and FTP are Application-layer protocols.
+Digital Environments - Networks,7.3,OSI,Which OSI layer is responsible for end-user network services such as email and web browsing-,Application,Presentation,Session,Transport,a,Application
+Digital Environments - Networks,7.3,OSI,"Which OSI layer handles data encryption, compression, and translation-",Transport,Presentation,Network,Data Link,b,Presentation
+Digital Environments - Networks,7.3,OSI,"Which OSI layer establishes, manages, and terminates communication sessions-",Session,Network,Application,Physical,a,Session
+Digital Environments - Networks,7.3,OSI,Which OSI layer handles logical addressing and routing-,Network,Data Link,Transport,Session,a,Network
+Digital Environments - Networks,7.3,OSI,MAC addressing operates at which OSI layer-,Data Link,Network,Physical,Transport,a,Data Link
+Digital Environments - Networks,7.3,OSI,Which OSI layer transmits raw bits over physical media-,Physical,Network,Application,Presentation,a,Physical
+Digital Environments - Networks,7.3,OSI,At which OSI layer do switches primarily operate-,Data Link,Transport,Network,Session,a,Data Link
+Digital Environments - Networks,7.3,OSI,At which OSI layer do routers operate-,Network,Data Link,Transport,Physical,a,Network
+Digital Environments - Networks,7.3,OSI,Which OSI layer is responsible for reliable or unreliable delivery of data segments-,Transport,Network,Session,Data Link,a,Transport
+Digital Environments - Networks,7.3,OSI,Which OSI layer packages data into frames-,Data Link,Transport,Network,Presentation,a,Data Link
+Digital Environments - Networks,7.3,OSI,Which OSI layer converts frames into bits for transmission-,Physical,Transport,Network,Session,a,Physical
+Digital Environments - Networks,7.3,Protocols,Which protocol transfers web pages over the internet-,FTP,SMTP,HTTP,POP,c,HTTP is the protocol for transferring web pages.
+Digital Environments - Networks,7.3,Protocols,HTTPS is more secure than HTTP because it uses:,UDP,Encryption,DNS,DHCP,b,HTTPS adds TLS encryption over HTTP.
+Digital Environments - Networks,7.3,Protocols,Which protocol is used to send email from a client to a mail server-,SMTP,POP,IMAP,FTP,a,SMTP is used to send mail from clients to servers.
+Digital Environments - Networks,7.3,Protocols,Which protocol downloads email from a mail server and removes it-,IMAP,SMTP,POP,FTP,c,POP retrieves and typically deletes email from the server.
+Digital Environments - Networks,7.3,Protocols,Which routing protocol is a distance-vector protocol-,OSPF,RIP,DHCP,DNS,b,RIP is a distance-vector routing protocol.
+Digital Environments - Networks,7.3,Protocols,Which routing protocol uses link-state routing-,RIP,OSPF,POP,HTTPS,b,OSPF is a link-state routing protocol.
+Digital Environments - Networks,7.3,Protocols,Which protocol is used to assign IP addresses automatically-,DNS,DHCP,FTP,IMAP,b,DHCP dynamically assigns IP addresses to hosts.
+Digital Environments - Networks,7.3,Protocols,Which protocol resolves domain names to IP addresses-,DNS,DHCP,FTP,SMTP,a,DNS resolves domain names to IP addresses.
+Digital Environments - Networks,7.3,Protocols,SFTP is more secure than FTP because it:,Uses UDP,Encrypts data,Is faster,Uses DNS,b,Encrypts data
+Digital Environments - Networks,7.3,Protocols,HTTPS differs from HTTP by providing:,Faster loading,Encryption/security,Routing updates,Email delivery,b,Encryption/security
+Digital Environments - Networks,7.3,Protocols,Which protocol is commonly used for secure web browsing-,HTTP,FTP,HTTPS,DHCP,c,HTTPS
+Digital Environments - Networks,7.3,Protocols,What port does HTTP typically use-,80,25,110,443,a,80
+Digital Environments - Networks,7.3,Protocols,What port does HTTPS typically use-,110,143,443,53,c,443
+Digital Environments - Networks,7.3,Protocols,Which mail protocol is used to send email-,IMAP,POP,SMTP,FTP,c,SMTP
+Digital Environments - Networks,7.3,Protocols,SMTP is primarily responsible for:,Receiving emails,Sending emails,Routing data,Streaming media,b,Sending emails
+Digital Environments - Networks,7.3,Protocols,Which protocol downloads email and removes it from the server-,IMAP,POP,SMTP,DNS,b,POP
+Digital Environments - Networks,7.3,Protocols,IMAP differs from POP by allowing users to:,Delete all emails,Read emails directly on the server,Send emails securely,Change IP addresses,b,Read emails directly on the server
+Digital Environments - Networks,7.3,Protocols,Which protocol syncs email across multiple devices-,SMTP,POP,IMAP,RIP,c,IMAP
+Digital Environments - Networks,7.3,Protocols,Which protocol is considered a distance-vector routing protocol-,OSPF,DNS,RIP,SFTP,c,RIP
+Digital Environments - Networks,7.3,Protocols,RIP determines best paths based on:,Latency,Hop count,Bandwidth,Signal strength,b,Hop count
+Digital Environments - Networks,7.3,Protocols,Which routing protocol uses link-state advertisements-,RIP,OSPF,DHCP,SMTP,b,OSPF
+Digital Environments - Networks,7.3,Protocols,OSPF is best suited for:,Small networks,Large enterprise networks,Home networks only,Email filtering,b,Large enterprise networks
+Digital Environments - Networks,7.3,Protocols,Which protocol assigns IP addresses automatically-,DNS,DHCP,FTP,IMAP,b,DHCP
+Digital Environments - Networks,7.3,Protocols,DNS is responsible for:,Encrypting files,Resolving domain names to IPs,Sending web traffic,Assigning MAC addresses,b,Resolving domain names to IPs
+Digital Environments - Networks,7.3,Protocols,Which protocol transfers files between computers-,FTP,SMTP,DNS,IMAP,a,FTP
+Digital Environments - Networks,7.3,Protocols,What is the secure version of FTP-,SFTP,HTTP,DNS,OSPF,a,SFTP
+Digital Environments - Networks,7.3,Protocols,SFTP improves security by using:,UDP,SSH encryption,MAC filtering,Routing tables,b,SSH encryption
+Digital Environments - Networks,7.3,Protocols,FTP typically uses which ports-,20 and 21,53 and 67,80 and 110,25 and 443,a,20 and 21
+Digital Environments - Networks,7.3,Protocols,DHCP assigns which type of information-,Email settings,IP configuration,MAC addresses,Web cookies,b,IP configuration
+Digital Environments - Networks,7.3,Protocols,DNS commonly uses which port-,25,53,443,143,b,53
+Digital Environments - Networks,7.3,Protocols,SMTP uses which port by default-,80,25,161,53,b,25
+Digital Environments - Networks,7.3,Protocols,IMAP typically uses which port-,143,110,53,25,a,143
+Digital Environments - Networks,7.3,Protocols,POP typically uses which port-,110,443,20,53,a,110
+Digital Environments - Networks,7.3,Protocols,Which protocol is NOT used for email-,SMTP,IMAP,POP,OSPF,d,OSPF
+Digital Environments - Networks,7.3,Protocols,Which routing protocol converges faster-,RIP,OSPF,POP,FTP,b,OSPF
+Digital Environments - Networks,7.3,Protocols,Which protocol ensures secure file transfer using SSH-,SFTP,FTP,IMAP,HTTP,a,SFTP
+Digital Environments - Networks,7.3,Protocols,Which protocol maps domain names such as google.com to IPs-,DNS,DHCP,FTP,SMTP,a,DNS
+Digital Environments - Networks,7.3,Protocols,DHCP stands for:,Dynamic Host Configuration Protocol,Digital Hardware Control Program,Domain Host Communication Path,Data Handling Control Process,a,Dynamic Host Configuration Protocol
+Digital Environments - Networks,7.3,Protocols,DNS stands for:,Domain Naming Service,Domain Name System,Digital Node Selector,Dynamic Network Service,b,Domain Name System
+Digital Environments - Networks,7.3,Protocols,Which protocol supports directory-style browsing of remote files-,FTP,SMTP,DNS,POP,a,FTP
+Digital Environments - Networks,7.3,Protocols,Which routing protocol forms neighbor relationships and uses cost metrics-,OSPF,RIP,DNS,FTP,a,OSPF
+Digital Environments - Networks,7.3,Protocols,HTTPS uses which technology for encryption-,TLS/SSL,CRC,SSH tunneling,MD5 hashing,a,TLS/SSL
+Digital Environments - Networks,7.3,Protocols,Which protocol is used during device boot to obtain an IP address-,DNS,DHCP,POP,IMAP,b,DHCP
+Digital Environments - Networks,7.3,Protocols,Which protocol breaks web communication into requests and responses-,HTTP,SMTP,RIP,DHCP,a,HTTP
+Digital Environments - Networks,7.3,Protocols,Which protocol securely manages and transfers website logins-,HTTPS,FTP,POP,DNS,a,HTTPS
+Digital Environments - Networks,7.3,Protocols,Which email protocol allows folder organization on the server-,POP,IMAP,FTP,SMTP,b,IMAP
+Digital Environments - Networks,7.3,Protocols,Which routing protocol uses hop-by-hop metrics-,RIP,OSPF,DHCP,DNS,a,RIP
+Digital Environments - Networks,7.3,Protocols,Which protocol transfers files without encryption-,FTP,SFTP,HTTPS,IMAP,a,FTP
+Digital Environments - Networks,7.3,TCP/IP,"In the TCP/IP model, IP operates at which layer-",Transport,Application,Internet,Network Interface,c,IP resides in the Internet layer of TCP/IP.
+Digital Environments - Networks,7.3,TCP/IP,Which layer of the TCP/IP model handles end-to-end communication-,Internet,Transport,Application,Network Access,b,The Transport layer provides end-to-end delivery.
+Digital Environments - Networks,7.3,TCP/IP,The TCP/IP Application layer corresponds to which three OSI layers-,"1, 2, 3","4, 5, 6","5, 6, 7","3, 4, 5",c,TCP/IP Application maps to OSI layers 5–7.
+Digital Environments - Networks,7.3,TCP/IP,Which protocol belongs to the TCP/IP Transport layer-,TCP,ARP,DHCP,DNS,a,TCP is a Transport-layer protocol.
+Digital Environments - Networks,7.3,TCP/IP,TCP and UDP operate at which OSI layer-,Transport,Network,Data Link,Presentation,a,Transport
+Digital Environments - Networks,7.3,TCP/IP,"Which TCP/IP layer combines OSI layers 5, 6, and 7-",Application,Transport,Internet,Network Access,a,Application
+Digital Environments - Networks,7.3,TCP/IP,The TCP/IP Internet layer corresponds to which OSI layer-,Network,Data Link,Transport,Application,a,Network
+Digital Environments - Networks,7.3,TCP/IP,Which TCP/IP layer is responsible for end-to-end communication and flow control-,Transport,Internet,Application,Network Access,a,Transport
+Digital Environments - Networks,7.3,TCP/IP,The Network Access layer of TCP/IP corresponds to which OSI layers-,Data Link + Physical,Network + Data Link,Transport + Session,Presentation + Application,a,Data Link + Physical
+Digital Environments - Networks,7.3,TCP/IP,Which protocol operates at the TCP/IP Internet layer-,IP,TCP,FTP,SMTP,a,IP
+Digital Environments - Networks,7.3,TCP/IP,Which protocol operates at the TCP/IP Transport layer-,TCP,DNS,DHCP,ARP,a,TCP
+Digital Environments - Networks,7.3,TCP/IP,"HTTP, FTP, and DNS operate at which TCP/IP layer-",Application,Transport,Internet,Network Access,a,Application
+Digital Environments - Networks,7.3,TCP/IP,Which TCP/IP layer handles physical addressing and defining how data is transmitted over media-,Network Access,Internet,Transport,Application,a,Network Access
+Digital Environments - Networks,7.3,Types of networks,Which network type typically covers the smallest geographical area-,LAN,PAN,WAN,MAN,b,PAN covers the smallest area (personal/near-body range).
+Digital Environments - Networks,7.3,Types of networks,A LAN usually covers which type of area-,A single person’s workspace,A city,A building or campus,Multiple countries,c,A LAN typically spans a building or campus.
+Digital Environments - Networks,7.3,Types of networks,Which network type spans across countries or continents-,PAN,MAN,WAN,LAN,c,"WAN interconnects over large, cross-country distances."
+Digital Environments - Networks,7.3,Types of networks,Bluetooth is most commonly used in which type of network-,MAN,WAN,PAN,LAN,c,Bluetooth is a short-range PAN technology.
+Digital Environments - Networks,7.3,Types of networks,Fibre optic cable is an example of which type of connection media-,Wireless,Copper-based,Guided/wired,Virtual,c,Fibre is a guided/wired medium using light in optical fibre.
+Digital Environments - Networks,7.3,Types of networks,Wi-Fi is an example of what type of network media-,Wired,Wireless,Fibre,Satellite,b,Wi-Fi is a wireless radio medium.
+Digital Environments - Networks,7.3,Types of networks,A MAN typically connects multiple:,Devices on a desk,Buildings in a single city,Countries,Rooms in a home,b,MAN links multiple buildings across a city.
+Digital Environments,7.4,Virtual Environments,What is a Virtual Machine (VM)-,A physical server,Software emulation of a computer system,A type of router,A storage device,b,Software emulation of a computer system
+Digital Environments,7.4,Virtual Environments,"A virtual client (e.g., virtual PC) typically runs:",Directly on hardware without an OS,Inside a VM with a guest OS,Only on mobile devices,"Only in the cloud, never on-prem",b,Inside a VM with a guest OS
+Digital Environments,7.4,Virtual Environments,What does a virtual switch do-,Provides wireless access,Connects VMs at Layer 2 within a host,Encrypts VM disks,Allocates CPU cores to VMs,b,Connects VMs at Layer 2 within a host
+Digital Environments,7.4,Virtual Environments,A virtual router primarily:,Provides DHCP only,Routes traffic between virtual networks/VLANs,Runs guest operating systems,Stores VM snapshots,b,Routes traffic between virtual networks/VLANs
+Digital Environments,7.4,Virtual Environments,A VM “server” usually refers to:,A VM that provides network services to clients,A bare-metal hypervisor,A storage array,A physical desktop,a,A VM that provides network services to clients
+Digital Environments,7.4,Virtual Environments,A Type 1 hypervisor runs:,On top of a host OS,Directly on the host hardware,Inside each VM,Only in public cloud,b,Directly on the host hardware
+Digital Environments,7.4,Virtual Environments,A Type 2 hypervisor runs:,Directly on hardware,On top of a host operating system,Inside firmware only,"Only on servers, never laptops",b,On top of a host operating system
+Digital Environments,7.4,Virtual Environments,Which is typically more efficient for production data centers-,Type 2 hypervisor,Type 1 hypervisor,Container engine,Virtual switch,b,Type 1 hypervisor
+Digital Environments,7.4,Virtual Environments,Which example best fits a Type 2 hypervisor-,VMware ESXi,Microsoft Hyper-V Server (bare-metal),Oracle VirtualBox,KVM on bare metal,c,Oracle VirtualBox
+Digital Environments,7.4,Virtual Environments,Which is a characteristic of Type 1 hypervisors-,Higher overhead from host OS,Tighter hardware access and lower latency,Require desktop UI to run,Limited to single VM,b,Tighter hardware access and lower latency
+Digital Environments,7.4,Virtual Environments,“Isolation” in virtualization means:,No backups are required,Each VM is logically separated from others,VMs share the same process space,All VMs must run the same OS,b,Each VM is logically separated from others
+Digital Environments,7.4,Virtual Environments,“Portability” in virtualization is best described as:,Moving VMs between hosts with minimal changes,Running only on the original host,Needing hardware recompile,Tying VMs to single NIC,a,Moving VMs between hosts with minimal changes
+Digital Environments,7.4,Virtual Environments,“Managed execution” refers to:,Hypervisor schedules CPU/memory/IO for VMs,Users manually pin every process,VMs run without resource limits,Only storage is managed,a,Hypervisor schedules CPU/memory/IO for VMs
+Digital Environments,7.4,Virtual Environments,“Aggregation” commonly means:,Combining multiple physical resources for VMs,Splitting one VM into many pieces,Only bonding of NICs,Joining two VMs into one OS,a,Combining multiple physical resources for VMs
+Digital Environments,7.4,Virtual Environments,“Sharing” in virtual environments typically indicates:,All VMs share root password,Multiple VMs share pooled hardware resources,Files are publicly available on internet,Snapshots are sent to users,b,Multiple VMs share pooled hardware resources
+Digital Environments,7.4,Virtual Environments,“Emulation” is:,Running software compiled for different hardware/ISA,Only accelerating graphics,Deduplicating storage blocks,Encrypting VM traffic,a,Running software compiled for different hardware/ISA
+Digital Environments,7.4,Virtual Environments,Increased security in virtualization often comes from:,Running all apps as admin,Segmentation and snapshots/rollback,Disabling firewalls,Sharing credentials,b,Segmentation and snapshots/rollback
+Digital Environments,7.4,Virtual Environments,Which feature helps prevent faults in one VM affecting others-,Aggregation,Isolation,Sharing,Emulation,b,Isolation
+Digital Environments,7.4,Virtual Environments,A key cost benefit of virtualization at scale is:,More rack space required,Higher power consumption,Server consolidation reducing hardware,Mandatory licensing increases,c,Server consolidation reducing hardware
+Digital Environments,7.4,Virtual Environments,Virtualization improves disaster recovery mainly via:,Hardcoding IPs,Faster VM restores from images/snapshots,Disabling backups,Manual OS reinstalls,b,Faster VM restores from images/snapshots
+Digital Environments,7.4,Virtual Environments,A benefit for testing environments is:,Hard to clone systems,Easy to snapshot and revert states,Requires new hardware per test,Tests must be run in production,b,Easy to snapshot and revert states
+Digital Environments,7.4,Virtual Environments,Education and training benefit because:,Students require dedicated hardware each,VMs allow safe labs and resets,Only experts can use VMs,VMs forbid experimentation,b,VMs allow safe labs and resets
+Digital Environments,7.4,Virtual Environments,Resilience is improved by:,Single host deployment,Live migration and HA clusters,Turning off monitoring,Static allocation only,b,Live migration and HA clusters
+Digital Environments,7.4,Virtual Environments,Virtualization can lower carbon footprint by:,Running idle servers continuously,"Consolidating workloads to fewer, efficient hosts",Disabling power management,Avoiding resource scheduling,b,"Consolidating workloads to fewer, efficient hosts"
+Digital Environments,7.4,Virtual Environments,Why is management often easier in virtualized environments-,Each VM needs its own rack,"Unified tools for provisioning, monitoring, templates",Manual CLI only,No automation possible,b,"Unified tools for provisioning, monitoring, templates"
+Digital Environments,7.4,Virtual Environments,A drawback of virtualization is extra hardware load due to:,Hypervisor overhead,No CPU usage,Unlimited free memory,Direct hardware execution with zero layers,a,Hypervisor overhead
+Digital Environments,7.4,Virtual Environments,Slower execution time can occur because:,Context switches and abstraction layers,Direct silicon access,Overclocking by default,Always faster disk IO,a,Context switches and abstraction layers
+Digital Environments,7.4,Virtual Environments,Virtualized benchmarks may mislead due to:,False representation of performance,Perfect parity with bare metal,Guaranteed higher IOPS,No contention effects,a,False representation of performance
+Digital Environments,7.4,Virtual Environments,Which workload may suffer more from virtualization overhead-,Light web server,CPU/GPU-intensive real-time trading,Static file hosting,DNS caching,b,CPU/GPU-intensive real-time trading
+Digital Environments,7.4,Virtual Environments,Over-consolidation risk primarily leads to:,Better performance,Resource contention and throttling,No change,Lower utilization,b,Resource contention and throttling
+Digital Environments,7.4,Virtual Environments,What is a VM snapshot-,Full physical backup only,Point-in-time state to revert/clone,Live migration process,A hardware RAID function,b,Point-in-time state to revert/clone
+Digital Environments,7.4,Virtual Environments,Live migration allows:,Moving a running VM between hosts with minimal downtime,Converting VM to container automatically,Changing guest OS architecture on the fly,Deleting VM disks safely,a,Moving a running VM between hosts with minimal downtime
+Digital Environments,7.4,Virtual Environments,Which resource is commonly overcommitted in virtualization-,CPU and memory (with limits),Power supplies,Motherboard slots,KVM cabling,a,CPU and memory (with limits)
+Digital Environments,7.4,Virtual Environments,Which is TRUE about virtual switches-,They operate like OSI Layer 2 switches,They route at Layer 3 only,They require physical cabling,They can’t do VLANs,a,They operate like OSI Layer 2 switches
+Digital Environments,7.4,Virtual Environments,Which statement about Type 2 hypervisors is TRUE-,They rely on a host OS for hardware access,They require RAID controllers,They cannot run on laptops,They always outperform Type 1,a,They rely on a host OS for hardware access
+Digital Environments,7.4,Virtual Environments,Which feature directly supports isolation between networks on a host-,VLANs on virtual switches,USB passthrough,CPU pinning,Screen sharing,a,VLANs on virtual switches
+Digital Environments,7.4,Virtual Environments,A sign of false performance representation can be:,Consistent results across hosts,Benchmarks inside a lightly loaded host,Ignoring noisy-neighbor effects,Transparent resource limits,c,Ignoring noisy-neighbor effects
+Digital Environments,7.4,Virtual Environments,Increased security is improved when:,All VMs share admin accounts,Role-based access and separate networks per tier,Disable patching in guests,Expose management interfaces publicly,b,Role-based access and separate networks per tier
+Digital Environments,7.4,Virtual Environments,Aggregation of storage typically enables:,Lower capacity,Shared datastores for many VMs,Single-disk per VM only,No redundancy,b,Shared datastores for many VMs
+Digital Environments,7.4,Virtual Environments,Emulation vs. virtualization: which is TRUE-,Emulation can run different CPU architectures; virtualization usually requires same ISA,Both require identical hardware,Virtualization always slower than emulation,Emulation provides hardware-level isolation only,a,Emulation can run different CPU architectures; virtualization usually requires same ISA
+Digital Environments,7.4,Virtual Environments,Managed execution can help with:,Resource quotas and scheduling fairness,Random allocation of CPU,Unlimited memory for all VMs,Disabling IO controls,a,Resource quotas and scheduling fairness
+Digital Environments,7.4,Virtual Environments,Which factor most increases extra hardware load-,Running many idle VMs,Overcommitting CPU/RAM beyond safe thresholds,Disabling snapshots,Using thin provisioning,b,Overcommitting CPU/RAM beyond safe thresholds
+Digital Environments,7.4,Virtual Environments,A common portability benefit for dev teams is:,Inconsistent environments,Reproducible VM images that run on different hosts,Needing new hardware for every student,Manual rebuild every time,b,Reproducible VM images that run on different hosts
+Digital Environments,7.5,Cloud Computing,What is a public cloud-,Cloud used by a single organisation only,Cloud services offered over the internet to multiple customers,A cloud located in a private datacentre,A cloud requiring no authentication,b,Cloud services offered over the internet to multiple customers
+Digital Environments,7.5,Cloud Computing,What is a private cloud-,Cloud services shared publicly,Cloud infrastructure dedicated to a single organisation,A cloud rented from a third party,A personal online storage account,b,Cloud infrastructure dedicated to a single organisation
+Digital Environments,7.5,Cloud Computing,Which is a key benefit of cloud portability-,Ability to move applications/data across environments easily,Automatic encryption of all files,Faster CPU speeds,Guaranteed unlimited bandwidth,a,Ability to move applications/data across environments easily
+Digital Environments,7.5,Cloud Computing,Elasticity in cloud computing refers to:,Fixed resource allocation,Automatic scaling of resources up or down,Manual installation of hardware,Reduced network speed,b,Automatic scaling of resources up or down
+Digital Environments,7.5,Cloud Computing,Which benefit relates to fewer storage limitations-,Cloud can expand storage capacity as needed,Cloud restricts data uploads,Cloud only stores local files,Cloud prevents file sharing,a,Cloud can expand storage capacity as needed
+Digital Environments,7.5,Cloud Computing,Why is cloud often considered cost-effective-,Requires expensive hardware purchases,Uses pay-as-you-go pricing models,Charges users for unused resources,Requires full-time on-site engineers,b,Uses pay-as-you-go pricing models
+Digital Environments,7.5,Cloud Computing,Which type of cloud gives organisations full control over security-,Public cloud,Private cloud,Hybrid mobile storage,Open access cloud,b,Private cloud
+Digital Environments,7.5,Cloud Computing,A public cloud is best suited for:,Highly sensitive government data,Scalable general-purpose workloads,Systems that must stay on-prem only,Hardware-dependent legacy software,b,Scalable general-purpose workloads
+Digital Environments,7.5,Cloud Computing,Cloud elasticity benefits organisations by:,Increasing fixed hardware needs,Avoiding resource spikes by scaling automatically,Requiring manual server upgrades,Limiting system usage,b,Avoiding resource spikes by scaling automatically
+Digital Environments,7.5,Cloud Computing,"Portability, elasticity and cost effectiveness together enable:",Slower cloud adoption,Flexible and scalable deployment models,Mandatory on-site upgrades,Removing virtualisation entirely,b,Flexible and scalable deployment models
+Digital Environments,7.5,Cloud Computing,What does IaaS primarily provide-,Full applications,Virtualised hardware resources,Email services,End-user software,b,Virtualised hardware resources
+Digital Environments,7.5,Cloud Computing,"In IaaS, who manages the operating system-",Cloud provider,Client,ISP,End user,b,Client
+Digital Environments,7.5,Cloud Computing,Which layer does the cloud provider manage in IaaS-,Applications only,User accounts,Virtualisation and hardware,Data backups only,c,Virtualisation and hardware
+Digital Environments,7.5,Cloud Computing,Which cloud model gives the client most control-,SaaS,PaaS,IaaS,DaaS,c,IaaS
+Digital Environments,7.5,Cloud Computing,A key advantage of IaaS is:,No technical skills required,Full hardware ownership,High flexibility and scalability,Provider manages all software,c,High flexibility and scalability
+Digital Environments,7.5,Cloud Computing,A disadvantage of IaaS is:,Least client control,Requires client to manage OS and middleware,Limited scalability,No cost benefits,b,Requires client to manage OS and middleware
+Digital Environments,7.5,Cloud Computing,"In PaaS, the client manages:","Applications, data, user accounts",Virtualisation only,Hardware and storage,Runtime and OS,a,"Applications, data, user accounts"
+Digital Environments,7.5,Cloud Computing,"In PaaS, the cloud provider manages:",Only storage,Only applications,"Runtime, OS, virtualisation and hardware",User accounts only,c,"Runtime, OS, virtualisation and hardware"
+Digital Environments,7.5,Cloud Computing,A major benefit of PaaS is:,No coding needed,Rapid development without OS maintenance,Full control over kernel,Runs without internet,b,Rapid development without OS maintenance
+Digital Environments,7.5,Cloud Computing,A disadvantage of PaaS is:,Vendor lock-in risks,Client must manage hardware,Little automation,Requires managing full stack,a,Vendor lock-in risks
+Digital Environments,7.5,Cloud Computing,SaaS provides:,Infrastructure only,Platforms for development,Complete software applications,Virtual networks only,c,Complete software applications
+Digital Environments,7.5,Cloud Computing,"In SaaS, the client manages:",Applications and runtime,OS and middleware,User accounts and data,Virtualisation and storage,c,User accounts and data
+Digital Environments,7.5,Cloud Computing,"In SaaS, the cloud provider manages:",Only hardware,"Software, runtime, OS, virtualisation and hardware",User data only,Local installations,b,"Software, runtime, OS, virtualisation and hardware"
+Digital Environments,7.5,Cloud Computing,A major advantage of SaaS is:,No updates required by client,Client controls full stack,On-prem installation required,Complex setup time,a,No updates required by client
+Digital Environments,7.5,Cloud Computing,A disadvantage of SaaS is:,High client maintenance,Limited customisation,Client must manage hardware,Code-level access required,b,Limited customisation
+Digital Environments,7.5,Cloud Computing,Which model offers the least client responsibility-,IaaS,PaaS,SaaS,None of these,c,SaaS
+Digital Environments,7.5,Cloud Computing,Which model requires the client to manage middleware-,IaaS,PaaS,SaaS,DaaS,a,IaaS
+Digital Environments,7.5,Cloud Computing,Which model is best for developers building applications quickly-,IaaS,PaaS,SaaS,FaaS,b,PaaS
+Digital Environments,7.5,Cloud Computing,Which delivery model provides full control of virtual machines-,SaaS,PaaS,IaaS,BPaaS,c,IaaS
+Digital Environments,7.5,Cloud Computing,Which type typically uses subscriptions for hosted apps like email-,IaaS,PaaS,SaaS,Hybrid,c,SaaS
+Digital Environments,7.6,Resilient Environments,What is a key security benefit of a resilient environment-,More frequent outages,Reduced vulnerabilities,Increased system complexity,Fewer updates,b,Reduced vulnerabilities
+Digital Environments,7.6,Resilient Environments,Data security refers to protecting data during:,File renaming,Storage and transfer,Staff meetings,Application installation,b,Storage and transfer
+Digital Environments,7.6,Resilient Environments,Resilient environments help organisations avoid:,Increased vulnerabilities,Brand damage,Customer trust,Faster performance,b,Brand damage
+Digital Environments,7.6,Resilient Environments,Reduced downtime leads to:,Longer outages,Loss of customers,Increased customer confidence,Slower service,c,Increased customer confidence
+Digital Environments,7.6,Resilient Environments,Why does resilience help protect brand reputation-,More failures,Stable services,Frequent cyberattacks,Complex sign-in processes,b,Stable services
+Digital Environments,7.6,Resilient Environments,Organisations with strong resilience are more likely to:,Lose customer trust,Maintain good public image,Increase system failures,Share private data,b,Maintain good public image
+Digital Environments,7.6,Resilient Environments,A benefit of resilience is:,More system downtime,Improved customer confidence,Reduced availability,Weaker policies,b,Improved customer confidence
+Digital Environments,7.6,Resilient Environments,Resilient environments reduce vulnerabilities by:,Ignoring updates,Applying patches and hardening devices,Disabling firewalls,Allowing all user access,b,Applying patches and hardening devices
+Digital Environments,7.6,Resilient Environments,A direct impact of resilience is:,Lower operational continuity,Higher downtime,Improved system reliability,Increased data breaches,c,Improved system reliability
+Digital Environments,7.6,Resilient Environments,Why does resilience improve data protection-,Data becomes inaccessible,Security controls are ignored,Systems stay protected during failures,All traffic becomes unencrypted,c,Systems stay protected during failures
+Digital Environments,7.6,Resilient Environments,Software updates help resilience by:,Breaking features,Fixing vulnerabilities,Slowing systems,Removing encryption,b,Fixing vulnerabilities
+Digital Environments,7.6,Resilient Environments,Planned updates are important because they:,Reduce system stability,Keep systems current,Block access,Increase risk,b,Keep systems current
+Digital Environments,7.6,Resilient Environments,Patches respond to:,New vulnerabilities,Network redesign,Failed passwords,Application themes,a,New vulnerabilities
+Digital Environments,7.6,Resilient Environments,Rolling hardware replacement helps by:,Keeping failing equipment in use,"Removing old, unreliable devices",Avoiding new technology,Increasing downtime,b,"Removing old, unreliable devices"
+Digital Environments,7.6,Resilient Environments,Secure hardware disposal prevents:,Faster downloads,Data leakage,Offline backups,Snapshot failures,b,Data leakage
+Digital Environments,7.6,Resilient Environments,Data redundancy means:,Only one copy of data,Multiple recoverable copies,No backups exist,Data stored in RAM only,b,Multiple recoverable copies
+Digital Environments,7.6,Resilient Environments,System redundancy ensures:,System failure stops services,One failure does not cause downtime,Reduced availability,Unpredictable behaviour,b,One failure does not cause downtime
+Digital Environments,7.6,Resilient Environments,Device hardening includes:,Removing unused ports and services,Installing all possible software,Allowing open network access,Disabling passwords,a,Removing unused ports and services
+Digital Environments,7.6,Resilient Environments,Backup systems improve resilience by:,Preventing data restoration,Allowing full recovery after failure,Deleting old backups,Stopping operations,b,Allowing full recovery after failure
+Digital Environments,7.6,Resilient Environments,Onsite backups are stored:,Offsite,In the same physical location,In the cloud,On user laptops,b,In the same physical location
+Digital Environments,7.6,Resilient Environments,Offsite backups protect against:,Local disasters,Cloud outages,Weak passwords,Slow Wi-Fi,a,Local disasters
+Digital Environments,7.6,Resilient Environments,Cloud backups provide:,No recovery options,"Remote, scalable storage",Local-only restoration,Slower backup speeds,b,"Remote, scalable storage"
+Digital Environments,7.6,Resilient Environments,A hot site is:,Fully operational and ready immediately,A room with no equipment,A slow recovery location,Offline and unused,a,Fully operational and ready immediately
+Digital Environments,7.6,Resilient Environments,A cold site provides:,Full equipment and live systems,Power and space but no hardware,Instant failover,Live data synchronisation,b,Power and space but no hardware
+Digital Environments,7.6,Resilient Environments,A warm site includes:,No power,Partial equipment for faster recovery,Full duplication,Staff offices only,b,Partial equipment for faster recovery
+Digital Environments,7.6,Resilient Environments,Standard operating procedures (SOPs) are important because:,They cause delays,Staff ignore them,They provide consistent guidance,They reduce training,c,They provide consistent guidance
+Digital Environments,7.6,Resilient Environments,Effective staff training ensures:,Incorrect responses,Slow recovery,Correct action during incidents,Poor communication,c,Correct action during incidents
+Digital Environments,7.6,Resilient Environments,Induction training helps resilience by:,Confusing new staff,Introducing policies and systems,Increasing downtime,Reducing understanding,b,Introducing policies and systems
+Digital Environments,7.6,Resilient Environments,SOPs must be updated when:,New digital systems are introduced,Nothing has changed,Policies are removed,Training is cancelled,a,New digital systems are introduced
+Digital Environments,7.6,Resilient Environments,Updated policies support resilience by:,Weakening controls,Ensuring compliance and secure practice,Allowing any access,Reducing clarity,b,Ensuring compliance and secure practice
+Digital Environments,7.6,Resilient Environments,Resilience reduces risk by:,Expanding attack surfaces,Minimising weaknesses,Removing encryption,Disabling firewalls,b,Minimising weaknesses
+Digital Environments,7.6,Resilient Environments,Customer trust increases when:,Systems frequently fail,Data is secure and services are reliable,Policies are ignored,Downtime rises,b,Data is secure and services are reliable
+Digital Environments,7.6,Resilient Environments,Vulnerabilities increase when organisations:,Apply patches,Delay upgrades,Harden devices,Use redundancy,b,Delay upgrades
+Digital Environments,7.6,Resilient Environments,Hardware replacement improves resilience by:,Keeping broken equipment,Preventing hardware-related outages,Reducing performance,Increasing failures,b,Preventing hardware-related outages
+Digital Environments,7.6,Resilient Environments,Redundant systems allow:,Failures without service interruption,Services to shut down,Loss of all data,Slow recovery,a,Failures without service interruption
+Digital Environments,7.6,Resilient Environments,Device hardening reduces:,Attack surface,Staff training,Authentication levels,Log retention,a,Attack surface
+Digital Environments,7.6,Resilient Environments,Offsite backups are valuable because they:,Fail during local disasters,Survive site-wide failures,Must be stored nearby,Are read-only,b,Survive site-wide failures
+Digital Environments,7.6,Resilient Environments,A benefit of cloud backups is:,Limited storage,Disaster-resistant remote access,Instant physical retrieval,No encryption controls,b,Disaster-resistant remote access
+Digital Environments,7.6,Resilient Environments,Hot sites support resilience by:,Providing slow restoration,Enabling immediate continuation,Storing unused hardware,Offering low-cost options,b,Enabling immediate continuation
+Digital Environments,7.6,Resilient Environments,Resilient organisations typically experience:,More downtime,Lower customer confidence,More stable operations,Less reliability,c,More stable operations
+Digital Environments,7.3,Network Models,Which feature best distinguishes a client–server network model-,Equal nodes sharing resources,Centralised servers providing resources,Devices connected directly without roles,All processing done locally,b,client-server
+Digital Environments,7.3,Network Models,A key benefit of client–server architecture in large networks is...,Perfect privacy,No need for servers,Centralised management and control,Guaranteed zero downtime,c,client-server
+Digital Environments,7.3,Network Models,A major drawback of client–server systems is...,Server failure impacts many clients,Clients perform too much processing,No central management,It cannot handle large networks,a,client-server
+Digital Environments,7.3,Network Models,"In a client–server model, servers typically...",Perform all processing locally,Request services from clients,Provide shared services and manage resources,Control only physical topology,c,client-server
+Digital Environments,7.3,Network Models,Why does client–server architecture scale well for enterprise use-,Each device manages its own data,Resources can be upgraded independently of clients,No specialised hardware is needed,Traffic is always encrypted,b,client-server
+Digital Environments,7.3,Network Models,A thin client relies heavily on...,A central server for processing,Local heavy computation,Peer devices for redundancy,Local GPU rendering,a,thin client
+Digital Environments,7.3,Network Models,A benefit of thin client computing is...,High local processing power,Lower hardware costs and easier maintenance,Improved offline performance,Full application execution on device,b,thin client
+Digital Environments,7.3,Network Models,A drawback of thin clients is...,Too much local storage needed,High hardware cost per client,Performance depends on server and network,Limited central control,c,thin client
+Digital Environments,7.3,Network Models,Thin clients are most appropriate for...,Decentralised file-sharing,High-end graphical rendering tasks,Offline development work,Environments with many identical users,d,thin client
+Digital Environments,7.3,Network Models,Why do thin clients reduce local attack surfaces-,Few applications are executed locally,Hardware is highest-end,All workloads run offline,Users install software freely,a,thin client
+Digital Environments,7.3,Network Models,Which characteristic best defines a peer-to-peer network-,Processing is handled by data centres,A single central server controls access,Devices boot from a shared image,All nodes act as both clients and servers,d,peer-to-peer
+Digital Environments,7.3,Network Models,A benefit of peer-to-peer networks is...,Full auditing,Strong central security,Guaranteed performance,Easy and quick to set up,d,peer-to-peer
+Digital Environments,7.3,Network Models,A drawback of peer-to-peer networks is...,Weak centralised control,Very strong encryption,Consistent speeds,Scalable authentication,a,peer-to-peer
+Digital Environments,7.3,Network Models,Peer-to-peer networks scale poorly because...,Traffic is always encrypted,Servers are too expensive,Each node must track many others,Clients have excessive power,c,peer-to-peer
+Digital Environments,7.3,Network Models,P2P models are commonly used in...,WAN-level services,Enterprise authentication,Virtual desktop infrastructure,Small home or workgroups,d,network models
+Digital Environments,7.3,Network Models,Which issue limits security in peer-to-peer networks-,Too many centralised firewalls,No central authority verifies access,Strict server roles,Encrypted storage by default,b,peer-to-peer
+Digital Environments,7.3,Network Models,Which scenario best suits a client–server model-,An organisation with many users needing shared resources,Temporary small-group collaboration,Local file sharing among 2–3 devices,Offline task scheduling,a,client-server
+Digital Environments,7.3,Network Models,Which scenario best suits a thin-client deployment-,Call centres using identical desktop environments,Distributed media hosting,Local gaming networks,Secure P2P research tasks,a,thin client
+Digital Environments,7.3,Network Models,Which scenario best suits peer-to-peer-,Large authentication domains,Enterprise-level HR systems,Virtual desktop environments,Simple ad-hoc file sharing,d,peer-to-peer
+Digital Environments,7.3,Network Models,Why are updates easier to manage in client–server systems-,Clients auto-update via P2P,Each client must be updated manually,Updates installed once on the server,Updates are unnecessary,c,client-server
+Digital Environments,7.3,Network Models,Which technical issue can overload servers in a client–server model-,GPU contention,Local processing overload,High peer availability,Too many simultaneous client requests,d,client-server
+Digital Environments,7.3,Network Models,Why is latency more visible in thin-client systems-,Thin clients use heavy GPUs,Processing occurs remotely,Servers run offline,Local caching prevents delays,b,thin client
+Digital Environments,7.3,Network Models,Which factor makes peer-to-peer unsuitable for confidential data-,Servers enforce all rules,Strong central storage controls,Guaranteed perfect encryption,Data is stored on individual machines,d,peer-to-peer
+Digital Environments,7.3,Network Models,Why do client–server systems offer better access control-,Traffic cannot be monitored,Clients prevent policy changes,Data is stored only locally,Policies can be enforced centrally,d,client-server
+Digital Environments,7.3,Network Models,Which advantage do thin clients have over full PCs-,Lower power use and simpler hardware,More powerful GPUs,Full offline capability,Independent application installs,a,thin client
+Digital Environments,7.3,Network Models,Why might a P2P network create inconsistent performance-,Servers enforce capacity,Traffic is strictly managed,Peers vary in capability and availability,QoS guarantees are built in,c,network models
+Digital Environments,7.3,Network Models,Why does server centralisation improve backup reliability-,Backups run on each client separately,Clients store their own backups,Data resides on central servers,P2P sync replaces backups,c,network models
+Digital Environments,7.3,Network Models,What is a disadvantage of centralised authentication services-,It makes systems fully redundant,It requires no maintenance,"If the authentication server fails, logins may fail",It eliminates client failures,c,network models
+Digital Environments,7.3,Network Models,Which model reduces hardware costs the most-,Peer-to-peer models,Client–server systems,Thin clients,Hybrid clouds,c,network models
+Digital Environments,7.3,Network Models,Which model produces the least predictable network traffic patterns-,Client-server networks,Peer-to-peer networks,Thin-client networks,Virtual machines,b,network models
+Problem Solving,1.1.1,Algorithms,What is computational thinking-,A programming language,A problem-solving approach using logical steps,A computer hardware process,A networking method,b,A problem-solving approach using logical steps
+Problem Solving,1.1.1,Algorithms,Which of the following is a key purpose of computational thinking-,To replace human thinking,To break down complex problems,To design graphics,To speed up hardware,b,To break down complex problems
+Problem Solving,1.1.1,Algorithms,Computational thinking helps by:,Making problems more confusing,Structuring problems into manageable parts,Avoiding logical processes,Eliminating all errors,b,Structuring problems into manageable parts
+Problem Solving,1.1.1,Algorithms,Decomposition in computational thinking means:,Joining problems together,Breaking problems into smaller parts,Ignoring complexity,Fixing bugs,b,Breaking problems into smaller parts
+Problem Solving,1.1.1,Algorithms,Pattern recognition is used when:,Identifying similarities across problems,Erasing data,Randomly selecting solutions,Avoiding comparisons,a,Identifying similarities across problems
+Problem Solving,1.1.1,Algorithms,Abstraction involves:,Removing unnecessary detail,Adding extra information,Focusing on everything equally,Ignoring key data,a,Removing unnecessary detail
+Problem Solving,1.1.1,Algorithms,Algorithmic thinking involves:,Creating step-by-step instructions,Guessing solutions,Copying others’ methods,Avoiding planning,a,Creating step-by-step instructions
+Problem Solving,1.1.1,Algorithms,When is computational thinking useful-,Only in computer science,In any complex problem requiring structure,Only when coding,Only during exams,b,In any complex problem requiring structure
+Problem Solving,1.1.1,Algorithms,Computational thinking is especially helpful in:,Random decision-making,Systematic problem analysis,Ignoring constraints,Shortcut creation,b,Systematic problem analysis
+Problem Solving,1.1.1,Algorithms,A drawback of computational thinking can be:,Too structured for creative tasks,Too random to follow,Always incorrect,Not applicable to computers,a,Too structured for creative tasks
+Problem Solving,1.1.1,Algorithms,One benefit of computational thinking is:,Improved logical reasoning,Reduced accuracy,More errors,Less planning,a,Improved logical reasoning
+Problem Solving,1.1.1,Algorithms,Computational thinking helps teams by:,Making collaboration harder,Providing a shared problem-solving framework,Reducing communication,Avoiding structure,b,Providing a shared problem-solving framework
+Problem Solving,1.1.1,Algorithms,A drawback when overusing abstraction is:,Focusing on key details,Losing important information,Creating clearer designs,Simplifying solutions,b,Losing important information
+Problem Solving,1.1.1,Algorithms,Computational thinking supports automation by:,Removing algorithms,Creating repeatable processes,Reducing logic,Ignoring rules,b,Creating repeatable processes
+Problem Solving,1.1.1,Algorithms,When is computational thinking NOT appropriate-,When a problem needs clear logic,When dealing with purely emotional or subjective decisions,When analysing data,When designing algorithms,b,When dealing with purely emotional or subjective decisions
+Problem Solving,1.1.1,Algorithms,Which component of computational thinking is best for designing reusable solutions-,Abstraction,Guesswork,Aesthetics,Coin flipping,a,Abstraction
+Problem Solving,1.1.1,Algorithms,Pattern recognition reduces:,Repetition in solutions,Efficiency,Clarity,Accuracy,a,Repetition in solutions
+Problem Solving,1.1.1,Algorithms,Algorithmic thinking is useful when:,A solution needs clear steps,A task is random,Logic is discouraged,Data is unavailable,a,A solution needs clear steps
+Problem Solving,1.1.1,Algorithms,Computational thinking improves problem solving by:,Adding unnecessary complexity,Introducing structure and logic,Avoiding decisions,Removing planning,b,Introducing structure and logic
+Problem Solving,1.1.1,Algorithms,A benefit of decomposition is:,Bigger problems become harder,Problems become easier to manage,Everything becomes random,Solutions become unclear,b,Problems become easier to manage
+Problem Solving,1.1.4,Algorithms,What is decomposition in computational thinking-,Joining problems together,Breaking a problem into smaller parts,Ignoring detail,Random guessing,b,Breaking a problem into smaller parts
+Problem Solving,1.1.4,Algorithms,A benefit of decomposition is:,Problems become harder,Each part becomes easier to understand,Everything becomes random,More errors occur,b,Each part becomes easier to understand
+Problem Solving,1.1.4,Algorithms,Pattern recognition involves:,Spotting similarities and trends,Deleting repeated data,Ignoring relationships,Changing patterns,a,Spotting similarities and trends
+Problem Solving,1.1.4,Algorithms,Pattern recognition helps by:,Increasing repetition,Allowing reuse of solutions,Removing structure,Avoiding logic,b,Allowing reuse of solutions
+Problem Solving,1.1.4,Algorithms,Abstraction means:,Adding all data,Focusing only on important information,Random ordering,Storing everything,b,Focusing only on important information
+Problem Solving,1.1.4,Algorithms,A drawback of abstraction is:,Reduced clarity,Too much detail included,Important details may be removed,Better structure,c,Important details may be removed
+Problem Solving,1.1.4,Algorithms,Algorithmic design is used to:,Make random choices,Create step-by-step instructions,Confuse problems,Ignore processes,b,Create step-by-step instructions
+Problem Solving,1.1.4,Algorithms,Algorithms must be:,Ambiguous,Clear and unambiguous,Random,Infinite,b,Clear and unambiguous
+Problem Solving,1.1.4,Algorithms,Which component is best for simplifying complex problems-,Pattern recognition,Decomposition,Algorithmic design,Encryption,b,Decomposition
+Problem Solving,1.1.4,Algorithms,Which component reduces duplication in solutions-,Abstraction,Pattern recognition,Guesswork,Iteration,b,Pattern recognition
+Problem Solving,1.1.4,Algorithms,Abstraction helps programmers by:,Showing all details,Removing unnecessary details,Increasing complexity,Mixing steps,b,Removing unnecessary details
+Problem Solving,1.1.4,Algorithms,Which best describes algorithmic thinking-,Choosing randomly,Designing logical sequences of steps,Avoiding structure,Using only visuals,b,Designing logical sequences of steps
+Problem Solving,1.1.4,Algorithms,Decomposition is useful when:,Problems are too small,Problems are complex,Everything is obvious,The answer is known already,b,Problems are complex
+Problem Solving,1.1.4,Algorithms,Pattern recognition often leads to:,New errors,Generalised solutions,Harder tasks,Slower programs,b,Generalised solutions
+Problem Solving,1.1.4,Algorithms,Abstraction is essential when:,There is too much irrelevant information,Data is already simple,Nothing needs solving,All details matter,a,There is too much irrelevant information
+Problem Solving,1.1.4,Algorithms,Algorithmic design outputs:,A completed program,A clear step-by-step plan,A random result,Only hardware,b,A clear step-by-step plan
+Problem Solving,1.1.4,Algorithms,Which component helps create reusable solutions-,Guesswork,Pattern recognition,Overthinking,Repetition,b,Pattern recognition
+Problem Solving,1.1.4,Algorithms,Which component directly supports automation-,Abstraction,Decomposition,Algorithmic design,Pattern recognition,c,Algorithmic design
+Problem Solving,1.1.4,Algorithms,Complex systems benefit from:,Decomposition into modules,Ignoring structure,Removing order,Randomising processes,a,Decomposition into modules
+Problem Solving,1.1.4,Algorithms,The four components of computational thinking include:,"Sorting, searching, comparing, calculating","Decomposition, pattern recognition, abstraction, algorithmic design","Memory, CPU, storage, input","Logic, maths, science, creativity",b,"Decomposition, pattern recognition, abstraction, algorithmic design"
+Problem Solving,1.1.7,Algorithms,What is the primary purpose of decomposition in problem solving-,To simplify complex problems,To make problems harder,To remove parts of a problem,To avoid solving the problem,a,
+Problem Solving,1.1.7,Algorithms,Which of the following best describes a ‘feature’ of a problem-,A key element or part of the problem,A random detail,Something unrelated,The final solution,a,
+Problem Solving,1.1.7,Algorithms,Why is breaking a problem into smaller parts useful-,Smaller parts are easier to understand,It hides the problem,It avoids detail,It increases complexity,a,
+Problem Solving,1.1.7,Algorithms,What does it mean to characterise an identified feature-,Describing it clearly,Ignoring it,Deleting it,Changing the problem,a,
+Problem Solving,1.1.7,Algorithms,Which task is included in decomposition-,Identifying main features,Guessing the answer,Avoiding detail,Checking spelling,a,
+Problem Solving,1.1.7,Algorithms,Decomposition helps problem solvers by...,Making problems easier to manage,Making problems larger,Removing important steps,Avoiding solutions,a,
+Problem Solving,1.1.7,Algorithms,"When identifying main features of a problem, what should you focus on-",Important aspects of the problem,Unrelated facts,Personal opinions,Random guesses,a,
+Problem Solving,1.1.7,Algorithms,Which of the following is an example of decomposition-,Splitting a program into modules,Writing everything in one line,Ignoring steps,Finishing without planning,a,
+Problem Solving,1.1.7,Algorithms,Breaking a solution into smaller steps helps because...,Each step becomes clearer,It confuses the process,It adds unnecessary work,It hides the method,a,
+Problem Solving,1.1.7,Algorithms,What is the first step in decomposition-,Identify main features,Write the full solution first,Guess the output,Start coding immediately,a,
+Problem Solving,1.1.7,Algorithms,Characterising a feature means...,Explaining what it is and what it does,Deleting it,Ignoring it,Assuming it works,a,
+Problem Solving,1.1.7,Algorithms,A large complex task becomes easier when...,It is broken into smaller parts,It is made more complex,Steps are removed,It becomes unclear,a,
+Problem Solving,1.1.7,Algorithms,Which best describes ‘manageable parts’-,Steps that are easy to understand and work with,Random tasks,Unrelated jobs,Parts that are impossible,a,
+Problem Solving,1.1.7,Algorithms,Why do digital problem-solvers use decomposition-,It improves clarity and efficiency,It increases confusion,It removes accuracy,It makes tasks impossible,a,
+Problem Solving,1.1.7,Algorithms,Which of the following is *not* part of decomposition-,Adding unnecessary detail,Breaking tasks down,Identifying features,Characterising features,b,
+Problem Solving,1.1.7,Algorithms,Decomposition is especially useful when...,Problems are large and complex,Problems are tiny,Solutions already exist,Nothing needs solving,a,
+Problem Solving,1.1.7,Algorithms,Repeat the same step,Focus on what matters,Add random details,Avoid structure,Identifying the main features of a problem helps you...,d,
+Problem Solving,1.1.7,Algorithms,Which statement about decomposition is true-,It supports clear problem analysis,It makes solutions less reliable,It removes structure,It avoids planning,a,
+Problem Solving,1.1.7,Algorithms,Breaking solutions into parts allows...,Better testing and improvement,Hiding errors,Removing essential steps,Avoiding planning,a,
+Problem Solving,1.1.7,Algorithms,Decomposition supports problem solving by...,"Helping people understand, plan, and solve problems",Making tasks confusing,Removing key features,Avoiding thinking,a,
+Digital Environments,7.1.1,Types of Hardware,What is a key benefit of personal computers-,Low portability,High performance,Low storage,Always server-based,b,personal computer
+Digital Environments,7.1.1,Types of Hardware,Which is a common issue with personal computers-,Low power use,High mobility,Hardware failures,Built-in sensors,c,personal computer
+Digital Environments,7.1.1,Types of Hardware,What is a typical use of a personal computer-,Hosting websites,Industrial automation,Office tasks,Traffic control,c,personal computer
+Digital Environments,7.1.1,Types of Hardware,Personal computers are best suited for...,General-purpose tasks,High redundancy,Industrial control,Low-power sensors,a,personal computer
+Digital Environments,7.1.1,Types of Hardware,A limitation of personal computers is...,High mobility,Limited portability,Always online,Built-in automation,b,personal computer
+Digital Environments,7.1.1,Types of Hardware,Which device is an example of a mobile device-,Server rack,Smartphone,Washing machine controller,Desktop tower,b,mobile device
+Digital Environments,7.1.1,Types of Hardware,A benefit of mobile devices is...,Fixed installation,High heat output,Full redundancy,Portability,d,mobile device
+Digital Environments,7.1.1,Types of Hardware,A common issue with mobile devices is...,High redundancy,High expandability,Short battery life,Low power use,c,mobile device
+Digital Environments,7.1.1,Types of Hardware,Mobile devices are typically used for...,Communication,Hosting services,Industrial control,Running networks,a,mobile device
+Digital Environments,7.1.1,Types of Hardware,Smartphones and tablets are classified as...,Mobile devices,Servers,Embedded systems,Personal computers,a,mobile device
+Digital Environments,7.1.1,Types of Hardware,What is a main benefit of servers-,Full mobility,Touchscreen use,Low storage,High reliability,d,server
+Digital Environments,7.1.1,Types of Hardware,Servers are typically used for...,Personal budgeting,Gaming,Hosting services,Photo editing,c,server
+Digital Environments,7.1.1,Types of Hardware,A common issue with servers is...,Physical buttons,Touchscreens,Battery limits,Overheating risks,d,server
+Digital Environments,7.1.1,Types of Hardware,Servers are designed to...,Portable computing,Touch interaction,Run multiple services,Consumer tasks,c,server
+Digital Environments,7.1.1,Types of Hardware,A limitation of servers is...,Full mobility,Touchscreen,High cost,Always battery powered,c,server
+Digital Environments,7.1.1,Types of Hardware,Embedded devices are used in...,Servers,Appliances,Laptops,Desktops,b,embedded device
+Digital Environments,7.1.1,Types of Hardware,A key benefit of embedded devices is...,Portability,High redundancy,High expandability,Low power use,d,embedded device
+Digital Environments,7.1.1,Types of Hardware,A limitation of embedded devices is...,Touch interfaces,High expandability,Limited flexibility,Full redundancy,c,embedded device
+Digital Environments,7.1.1,Types of Hardware,Embedded devices are commonly found in...,Household devices,High-end servers,Gaming rigs,Data centres,a,embedded device
+Digital Environments,7.1.1,Types of Hardware,Embedded devices are designed for...,Single-task automation,General-purpose computing,Hosting services,Full OS use,a,embedded device
+Digital Environments,7.1.1,Types of Hardware,Which describes personal computers-,Single-purpose,Industrial control,Service hosting,"General-purpose, user-focused",d,personal computer
+Digital Environments,7.1.1,Types of Hardware,Which describes mobile devices-,Portable and sensor-based,Server-grade hardware,Industrial automation,Single-purpose only,a,mobile device
+Digital Environments,7.1.1,Types of Hardware,Which describes servers-,High redundancy and hosting,Touchscreen use,General consumer tasks,Small automation tasks,a,server
+Digital Environments,7.1.1,Types of Hardware,Which describes embedded devices-,Server-grade,General-purpose,Touch enabled,Single-function and embedded,d,embedded device
+Digital Environments,7.1.1,Types of Hardware,A personal computer is typically used for...,Traffic control,Hosting networks,Industrial automation,Web browsing,d,personal computer
+Digital Environments,7.1.1,Types of Hardware,Mobile devices are useful because...,Built-in automation,Redundancy,High heat output,Portability,d,mobile device
+Digital Environments,7.1.1,Types of Hardware,Servers support organisations by...,Gaming,Touch usage,General consumer tasks,Managing networks,d,server
+Digital Environments,7.1.1,Types of Hardware,Embedded devices support tasks by...,Hosting websites,Automation tasks,Photo editing,Web browsing,b,embedded device
+Digital Environments,7.1.1,Types of Hardware,Which is a benefit of personal computers-,Industrial hosting,Limited sensors,Flexibility,Single tasks,c,personal computer
+Digital Environments,7.1.1,Types of Hardware,Which is an issue with mobile devices-,High expandability,High redundancy,Battery drain,Always wired,c,mobile device
+Digital Environments,7.1.1,Types of Hardware,Which is an advantage of servers-,Small screens,High uptime,General browsing,Automation,b,server
+Digital Environments,7.1.1,Types of Hardware,Which is a disadvantage of embedded devices-,Touchscreen use,High redundancy,Limited flexibility,Portability,c,embedded device
+Digital Environments,7.1.1,Types of Hardware,Personal computers often provide...,Industrial grade,Always portable,Built-in sensors,High customisation,d,personal computer
+Digital Environments,7.1.1,Types of Hardware,Mobile devices often provide...,Hosting data,Touch usage,Industrial automation,Gaming,b,mobile device
+Digital Environments,7.1.1,Types of Hardware,Servers often provide...,Single automation,Touch interaction,Portable tasks,Centralised hosting,d,server
+Digital Environments,7.1.1,Types of Hardware,Embedded devices often provide...,General browsing,Touch usage,Automation,Hosting data,c,embedded device
+Digital Environments,7.1.1,Types of Hardware,Personal computers are commonly used for...,Industrial control,General tasks,Server hosting,Traffic systems,b,personal computer
+Digital Environments,7.1.1,Types of Hardware,Mobile devices are commonly used for...,Server hosting,Industrial automation,Communication,Gaming,c,mobile device
+Digital Environments,7.1.1,Types of Hardware,Servers are commonly used for...,Traffic control,Hosting data,Gaming,Touch input,b,server
+Digital Environments,7.1.1,Types of Hardware,Embedded devices are commonly used for...,General computation,Gaming,Hosting data,Automation,d,embedded device
+Digital Environments,7.1.1,Types of Hardware,Why are personal computers popular-,High redundancy,Affordability,Battery-powered,Industrial use,b,personal computer
+Digital Environments,7.1.1,Types of Hardware,Why are mobile devices convenient-,Fixed installation,High redundancy,High expansion,Portability,d,mobile device
+Digital Environments,7.1.1,Types of Hardware,Why are servers necessary-,Centralised management,Touch browsing,Automation,Portability,a,server
+Digital Environments,7.1.1,Types of Hardware,Why are embedded devices efficient-,Gaming performance,Low power use,General-purpose computing,Touch usage,b,embedded device
+Digital Environments,7.1.1,Types of Hardware,What is a feature of personal computers-,Specialised,Embedded,Small battery,Upgradeable,d,personal computer
+Digital Environments,7.1.1,Types of Hardware,What is a feature of mobile devices-,Touchscreen,High redundancy,Expandable,Custom circuits,a,mobile device
+Digital Environments,7.1.1,Types of Hardware,What is a feature of servers-,High portability,Touch input,High uptime,Small scale automation,c,server
+Digital Environments,7.1.1,Types of Hardware,What is a feature of embedded devices-,Low power and specialised,General-purpose,High redundancy,Touch based,a,embedded device
+Digital Environments,7.1.1,Types of Hardware,Which device type offers portability-,Desktops,Servers,Embedded systems,Mobile devices,d,computer types
+Digital Environments,7.1.1,Types of Hardware,Which device type is typically specialised-,Embedded devices,Servers,Personal computers,Mobile devices,a,computer types
+Digital Environments,7.1.2,Hardware Components,What does the number of processor cores affect-,Power draw,Screen size,Parallel processing,Weight,c,"cpu cores, parallel processing, multicore"
+Digital Environments,7.1.2,Hardware Components,Clock speed is measured in...,Volts,MB,GHz,Watts,c,"cpu clock speed, GHz, performance"
+Digital Environments,7.1.2,Hardware Components,A larger cache improves...,Storage size,Screen brightness,Power usage,Data access speed,d,"cpu cache, latency, data fetch"
+Digital Environments,7.1.2,Hardware Components,A feature of mobile processors is...,Low power use,High heat output,Large size,High cost,a,"mobile CPU, low power, efficiency"
+Digital Environments,7.1.2,Hardware Components,The motherboard connects...,All components,Only CPU,Only RAM,Only storage,a,"motherboard, chipset, bus, sockets"
+Digital Environments,7.1.2,Hardware Components,A GPU is designed for...,Graphics processing,Cooling,Sound output,Network routing,a,"GPU, graphics processing, parallel compute"
+Digital Environments,7.1.2,Hardware Components,NICs allow computers to...,Storage,Graphics output,Cooling,Network access,d,"NIC, network interface, ethernet"
+Digital Environments,7.1.2,Hardware Components,PCI stands for...,Peripheral Component Interconnect,Processor Control Interface,Primary Card Input,Parallel Compute Interface,a,"PCI, expansion bus, add-in cards"
+Digital Environments,7.1.2,Hardware Components,USB is mainly used for...,Power,Cooling,Storage,Peripheral connection,d,"USB, peripheral, universal serial bus"
+Digital Environments,7.1.2,Hardware Components,Air cooling uses...,Radiation,Lasers,Oil pumps,Fans,d,"air cooling, fans, heatsink"
+Digital Environments,7.1.2,Hardware Components,Liquid cooling uses...,Air pressure,Fans,Lasers,Liquid coolant,d,"liquid cooling, coolant, radiator, pump"
+Digital Environments,7.1.2,Hardware Components,A temperature sensor detects...,Temperature,Light,Voltage,Colour,a,"sensor, temperature, thermistor"
+Digital Environments,7.1.2,Hardware Components,A motion sensor detects...,Movement,Sound,Colour,Heat,a,"sensor, motion, PIR"
+Digital Environments,7.1.2,Hardware Components,More cores improve...,Weight,Screen size,Colour depth,Parallel tasks,d,"cpu cores, parallel processing, multicore"
+Digital Environments,7.1.2,Hardware Components,Higher clock speed improves...,Heat,Performance,Storage,Resolution,b,"cpu clock speed, GHz, performance"
+Digital Environments,7.1.2,Hardware Components,Cache memory helps by...,Increasing heat,Reducing fetch time,Creating graphics,Storing files,b,"cpu cache, latency, data fetch"
+Digital Environments,7.1.2,Hardware Components,Mobile processors reduce...,Power usage,Weight,Strength,Speed,a,"mobile CPU, low power, efficiency"
+Digital Environments,7.1.2,Hardware Components,The motherboard houses...,All components,Only GPU,Only RAM,Only PCIe slots,a,"motherboard, chipset, bus, sockets"
+Digital Environments,7.1.2,Hardware Components,A GPU accelerates...,Network access,Cooling CPU,Reading disks,Rendering graphics,d,"GPU, graphics processing, parallel compute"
+Digital Environments,7.1.2,Hardware Components,A NIC provides...,Network access,Graphics,Cooling,Storage,a,"NIC, network interface, ethernet"
+Digital Environments,7.1.2,Hardware Components,PCI slots allow...,Fans,Screens,Expansion cards,Printers,c,"PCI, expansion bus, add-in cards"
+Digital Environments,7.1.2,Hardware Components,USB ports allow...,Peripheral connection,Cooling,Memory,CPU,a,"USB, peripheral, universal serial bus"
+Digital Environments,7.1.2,Hardware Components,Air cooling uses...,Lights,Pumps,Fans,Ink,c,"air cooling, fans, heatsink"
+Digital Environments,7.1.2,Hardware Components,Liquid cooling uses...,Heat,Fans,Speakers,Coolant,d,"liquid cooling, coolant, radiator, pump"
+Digital Environments,7.1.2,Hardware Components,Sensors convert signals to...,Digital data,Light,Sound,Voltage,a,"hardware, fundamentals"
+Digital Environments,7.1.2,Hardware Components,A light sensor detects...,Sound,Heat,Speed,Light levels,d,"sensor, light, LDR"
+Digital Environments,7.1.2,Hardware Components,A pressure sensor detects...,Voltage,Sound,Pressure,Light,c,"sensor, pressure, barometric"
+Digital Environments,7.1.2,Peripherals,Which of the following is an input device-,Speaker,Keyboard,Printer,Monitor,b,"input devices, keyboard, mouse, scanner"
+Digital Environments,7.1.2,Peripherals,Which device outputs visual information-,Scanner,Mouse,Keyboard,Monitor,d,"output devices, monitor, speaker, printer"
+Digital Environments,7.1.2,Peripherals,A keyboard is an example of...,Output device,Input device,Cooling device,Network device,b,"hardware, fundamentals"
+Digital Environments,7.1.2,Peripherals,A monitor is an example of...,Storage,Sensor,Cooling device,Output device,d,"hardware, fundamentals"
+Digital Environments,7.1.2,Peripherals,Which is an output device-,Printer,Keyboard,Scanner,Mouse,a,"output devices, monitor, speaker, printer"
+Digital Environments,7.1.2,Storage,RAM is used for...,Firmware,Permanent data,User files,Temporary data,d,"RAM, main memory, volatile"
+Digital Environments,7.1.2,Storage,ROM typically stores...,Temporary storage,RAM data,User files,Firmware,d,"ROM, firmware, non-volatile"
+Digital Environments,7.1.2,Storage,Magnetic storage uses...,Lasers,No moving parts,Spinning disks,Electrons,c,"HDD, magnetic storage, spinning disks"
+Digital Environments,7.1.2,Storage,SSD storage contains...,Mirrors,Spinning disks,Lasers,No moving parts,d,"SSD, solid state, flash, no moving parts"
+Digital Environments,7.1.2,Storage,Optical storage uses...,Electrons,Magnets,Lasers,Fans,c,"optical storage, CD, DVD, laser"
+Digital Environments,7.1.2,Storage,RAID 1 provides...,Parity,Striping,Mirroring,Optical backup,c,"RAID 1, mirroring, redundancy"
+Digital Environments,7.1.2,Storage,RAID 5 uses...,Mirroring,Parity,Hot swap,Optical reading,b,"RAID 5, parity, striping"
+Digital Environments,7.1.2,Storage,RAID 10 combines...,Parity only,Striping and mirroring,Single disk,Optical burning,b,"RAID 1, mirroring, redundancy"
+Digital Environments,7.1.2,Storage,NAS provides storage that is...,Local-only access,Network-based access,Optical access,Temporary access,b,"NAS, network-attached storage, file sharing"
+Digital Environments,7.1.2,Storage,SAN provides storage that is...,High-speed network,Local USB,Keyboard port,Printer port,a,"SAN, storage area network, fibre channel"
+Digital Environments,7.1.2,Storage,RAM is...,Magnetic,Non-volatile,Optical,Volatile memory,d,"RAM, main memory, volatile"
+Digital Environments,7.1.2,Storage,ROM is...,User files,Volatile,Temporary,Non-volatile memory,d,"ROM, firmware, non-volatile"
+Digital Environments,7.1.2,Storage,Magnetic storage is known for...,No moving parts,Fastest speed,Large capacity,Laser reading,c,"HDD, magnetic storage, spinning disks"
+Digital Environments,7.1.2,Storage,SSD storage is known for...,Magnetic disks,Low noise,High speed,Cheap cost,c,"SSD, solid state, flash, no moving parts"
+Digital Environments,7.1.2,Storage,Optical storage is used for...,CPU,RAM,CD/DVD storage,GPU,c,"optical storage, CD, DVD, laser"
+Digital Environments,7.1.2,Storage,RAID 1 mirrors data for...,Redundancy,Speed,Parity only,No redundancy,a,"RAID 1, mirroring, redundancy"
+Digital Environments,7.1.2,Storage,NAS connects through...,RAM slot,Network,CPU socket,GPU slot,b,"NAS, network-attached storage, file sharing"
+Digital Environments,7.1.2,Storage,SAN connects through...,Wi-Fi only,USB,HDMI,High-speed fabric,d,"SAN, storage area network, fibre channel"
+Digital Environments,7.2.1,Operating Systems,What is a key feature of batch operating systems-,Non-interactive tasks,Touchscreen tasks,Real-time tasks,Mobile apps,a,batch
+Digital Environments,7.2.1,Operating Systems,Batch systems are commonly used for...,High-volume jobs,Web browsing,Gaming,Mobile communications,a,batch
+Digital Environments,7.2.1,Operating Systems,Batch OS work best with...,Touch interfaces,Real-time responses,Large scheduled workloads,Small mobile tasks,c,batch
+Digital Environments,7.2.1,Operating Systems,A limitation of batch processing is...,Fast feedback,No user interaction,Battery drain,Touch issues,b,batch
+Digital Environments,7.2.1,Operating Systems,Batch jobs are usually...,Instant,Interactive,Scheduled,Mobile,c,batch
+Digital Environments,7.2.1,Operating Systems,Multitasking OS allow...,Real-time only,One task only,Multiple tasks concurrently,Mobile-only tasks,c,Multi-tasking
+Digital Environments,7.2.1,Operating Systems,An interrupt is...,A touch gesture,A signal to the CPU,A network request,A mobile alert,b,Multi-tasking
+Digital Environments,7.2.1,Operating Systems,A multitasking OS runs tasks...,Only when charging,One by one only,Only when idle,Simultaneously,d,Multi-tasking
+Digital Environments,7.2.1,Operating Systems,A benefit of multitasking OS is...,Storage,Battery life,Hosting,Efficiency,d,Multi-tasking
+Digital Environments,7.2.1,Operating Systems,Real-time OS are designed for...,Mobile browsing,Monitoring and control,Batch printing,Gaming,b,
+Digital Environments,7.2.1,Operating Systems,Real-time OS are used in...,Web browsers,Mobile phones,Industrial systems,Games,c,
+Digital Environments,7.2.1,Operating Systems,A key requirement of a real-time OS is...,Large storage,Predictable timing,Battery savings,Touch input,b,
+Digital Environments,7.2.1,Operating Systems,Real-time OS support...,Transaction processing,Touch input,Battery saving,Batch jobs,a,
+Digital Environments,7.2.1,Operating Systems,A limitation of real-time OS is...,Network needs,Touch issues,Battery limits,Limited flexibility,d,
+Digital Environments,7.2.1,Operating Systems,Network OS support...,Touch optimisation,Resource sharing,Real-time control,Batch processing,b,
+Digital Environments,7.2.1,Operating Systems,A key feature of network operating systems is...,Touchscreen input,Battery handling,User management,Batch scheduling,c,
+Digital Environments,7.2.1,Operating Systems,Network OS manage...,Touch control,Battery levels,Network resources,Real-time tasks,c,
+Digital Environments,7.2.1,Operating Systems,Network OS allow...,Battery charging,Communication,Touch gestures,Batch printing,b,
+Digital Environments,7.2.1,Operating Systems,Network OS are commonly used for...,Battery storing,Touch input,File sharing,Batch loading,c,
+Digital Environments,7.2.1,Operating Systems,Mobile OS run on...,Smartphones,Servers,Batch processors,Industrial robots,a,
+Digital Environments,7.2.1,Operating Systems,Mobile OS are optimised for...,High redundancy,Lower power,Batch timing,Real-time scheduling,b,
+Digital Environments,7.2.1,Operating Systems,Mobile OS improve...,Hosting,Redundancy,Battery life,Printing,c,
+Digital Environments,7.2.1,Operating Systems,Mobile OS support...,Server hosting,Batch jobs,Mobile apps,Industrial control,c,
+Digital Environments,7.2.1,Operating Systems,A limitation of mobile OS is...,More redundancy,Less performance,Immediate response,Batch timing,b,
+Digital Environments,7.2.1,Operating Systems,Batch OS are best suited for...,Real-time work,Touch input,High-volume jobs,Network routing,c,
+Digital Environments,7.2.1,Operating Systems,Multitasking OS allow users to...,Run many apps,Increase heat,Host servers,Automate factories,a,
+Digital Environments,7.2.1,Operating Systems,Real-time OS must guarantee...,Response deadlines,Battery limits,Network access,Batch scheduling,a,
+Digital Environments,7.2.1,Operating Systems,Network OS enable devices to...,Batch queue,Save battery,Share resources,Real-time timing,c,
+Digital Environments,7.2.1,Operating Systems,Mobile OS are common because...,Batch automation,Redundancy,Portability,Server hosting,c,
+Digital Environments,7.2.1,Operating Systems,Batch systems rely heavily on...,Scheduling,Touch input,Battery life,Network routing,a,
+Digital Environments,7.2.1,Operating Systems,Interrupts allow the CPU to...,Print files,Save battery,Switch tasks quickly,Host apps,c,
+Digital Environments,7.2.1,Operating Systems,Real-time OS are unsuitable for...,Battery life,Strict timing,Touch ability,Flexibility,d,
+Digital Environments,7.2.1,Operating Systems,Network OS provide shared...,Battery use,Touch input,Resources,Batch queues,c,
+Digital Environments,7.2.1,Operating Systems,Mobile OS require less...,Batch queues,Redundancy,Strict timing,Processing power,d,
+Digital Environments,7.2.1,Operating Systems,Batch OS typically run...,Network routes,Interactive apps,Touch apps,Queued tasks,d,
+Digital Environments,7.2.1,Operating Systems,Multitasking OS handle...,Network load,Battery,Touch input,CPU resources,d,
+Digital Environments,7.2.1,Operating Systems,Real-time OS prioritise...,Task deadlines,Battery use,Touch speed,Batch time,a,
+Digital Environments,7.2.1,Operating Systems,Network OS coordinate...,Users,Battery,Touch,Queues,a,
+Digital Environments,7.2.1,Operating Systems,Mobile OS manage...,CPU power,Memory,Battery use,Timing,c,
+Digital Environments,7.2.1,Operating Systems,Batch processing improves...,Battery,System throughput,Touch,Network,b,
+Digital Environments,7.2.1,Operating Systems,Time-slicing divides...,Touch,Battery,CPU time,Storage,c,
+Digital Environments,7.2.1,Operating Systems,Interrupts notify...,The network,The battery,The CPU,The touchscreen,c,
+Digital Environments,7.2.1,Operating Systems,Real-time OS often run...,Network tasks,Mobile apps,Batch apps,Industrial apps,d,
+Digital Environments,7.2.1,Operating Systems,Network OS commonly manage...,Battery and apps,Users and devices,Batch and print,Touch and swipe,b,
+Digital Environments,7.2.1,Operating Systems,Mobile OS are designed for...,Portability,Batch jobs,Real-time,Redundancy,a,
+Digital Environments,7.2.1,Operating Systems,Batch OS reduce...,Battery,CPU load,Network,Timing,b,
+Digital Environments,7.2.1,Operating Systems,Multitasking OS improve...,Performance,Battery life,Timing,Touch,a,
+Digital Environments,7.2.1,Operating Systems,Which workload most requires deterministic scheduling guarantees of a real-time OS-,Ad-hoc office printing,Batch video transcoding overnight,Closed-loop motor control with strict cycle deadlines,Email spam filtering,c,real-time operating system
+Digital Environments,7.2.1,Operating Systems,A multitasking OS that uses short time-slices may introduce...,fewer context switches,lower CPU clock speed,more RAM fragmentation,jitter in time-sensitive tasks,d,multitasking operating system
+Digital Environments,7.2.1,Operating Systems,"In a pre-emptive multitasking system, an interrupt primarily...",flushes the cache,restarts the scheduler,signals the CPU to service an urgent event,halts user processes,c,multitasking operating system
+Digital Environments,7.2.1,Operating Systems,A real-time OS used for transaction processing must guarantee...,zero context switches,highest average throughput,bounded response time,maximum CPU frequency,c,real-time operating system
+Digital Environments,7.2.2,Utilities Software,What is the primary purpose of file management utilities,"Organise, move, and control files and folders",Increase CPU speed,Repair hardware,Design user interfaces,a,File Management Utilities help hard drives perform better
+Digital Environments,7.2.2,Utilities Software,Which task is commonly supported by file managers-,Format the operating system,Compile code automatically,Encrypt network traffic by default,Rename and copy files,d,
+Digital Environments,7.2.2,Utilities Software,A file manager typically lets users,Set permissions on files/folders,Replace the kernel,Increase RAM capacity,Change CPU voltage,a,
+Digital Environments,7.2.2,Utilities Software,Defragmenters are used to,Delete duplicate files only,Rearrange file fragments for faster access,Encrypt the entire disk,Resize partitions automatically,b,
+Digital Environments,7.2.2,Utilities Software,A benefit of disk defragmentation is,Automatic malware removal,Longer battery life on all devices,Guaranteed data integrity,Improved read performance on HDDs,d,
+Digital Environments,7.2.2,Utilities Software,Which storage type benefits least from defragmentation-,Optical discs,Hard disk drives (HDDs),Solid-state drives (SSDs),Magnetic tapes,c,
+Digital Environments,7.2.2,Utilities Software,File compression utilities primarily...,Increase image resolution,Reduce file size for storage or transfer,Repair corrupted files automatically,Speed up the CPU,b,
+Digital Environments,7.2.2,Utilities Software,Lossless compression is best when...,You need hardware acceleration,You want smaller size than possible,Quality loss is acceptable,"You must preserve exact data (e.g., text/code)",d,
+Digital Environments,7.2.2,Utilities Software,A drawback of file compression can be...,Permanent encryption,Guaranteed data loss,Time to compress/decompress,Automatic virus scanning,c,
+Digital Environments,7.2.2,Utilities Software,Package managers are used to...,Format removable media,Defragment the hard drive,"Install, update, and remove software",Back up user data,c,
+Digital Environments,7.2.2,Utilities Software,A key feature of package managers is...,Screen calibration,CPU overclocking,Disk partitioning,Dependency management,d,
+Digital Environments,7.2.2,Utilities Software,A risk when using third-party packages is...,Automatic CPU throttling,Supply-chain vulnerabilities,Guaranteed code quality,Perfect uptime,b,
+Digital Environments,7.2.2,Utilities Software,Protection software typically includes...,Package builders,Disk defragmenters,Antivirus and firewall tools,Compression codecs only,c,
+Digital Environments,7.2.2,Utilities Software,An example function of protection software is...,Unlimited storage,Zero-day patching for all apps,Real-time malware scanning,Automatic OS replacement,c,
+Digital Environments,7.2.2,Utilities Software,A limitation of protection software is...,No user interaction required,Guaranteed 100% protection,False positives and overhead,Eliminates the need for updates,c,
+Digital Environments,7.2.2,Utilities Software,Backup software is used to...,Reduce network latency,Improve CPU performance,Create data copies for recovery,Increase monitor resolution,c,
+Digital Environments,7.2.2,Utilities Software,A good backup strategy should include...,The 3-2-1 rule,Single copy on one device,Backups without testing,Only full backups,a,
+Digital Environments,7.2.2,Utilities Software,Which backup type copies only files changed since the last backup of any type-,Full backup,Incremental backup,Differential backup,Snapshot backup,b,
+Digital Environments,7.2.2,Utilities Software,Cloud backup software benefits users by...,No subscription costs,Guaranteed faster local restores,Off-site redundancy and accessibility,Eliminates encryption needs,c,
+Digital Environments,7.2.2,Utilities Software,A common issue with backups is...,Backups not tested or monitored,Automatic malware removal,Increased CPU speed,Eliminates human error,a,
+Digital Environments,7.2.4,Application Software,What is a key feature of word processors-,Editing and formatting text,Editing videos,Creating 3D models,Managing networks,a,word processor
+Digital Environments,7.2.4,Application Software,Word processors are commonly used for...,Writing documents,Running servers,Storing large datasets,Processing payments,a,word processor
+Digital Environments,7.2.4,Application Software,Spreadsheets are primarily used for...,Calculations and data analysis,Writing essays,Sending messages,Editing audio,a,spreadsheet
+Digital Environments,7.2.4,Application Software,A benefit of spreadsheet software is...,Automating calculations,Improving graphics,Sending bulk email,Hosting websites,a,spreadsheet
+Digital Environments,7.2.4,Application Software,Databases are best suited for...,Writing letters,Storing and retrieving structured data,Drawing diagrams,Sending mail,b,database
+Digital Environments,7.2.4,Application Software,A key feature of database software is...,Editing images,Querying large datasets,Browsing the web,Designing animations,b,database
+Digital Environments,7.2.4,Application Software,Email software is mainly used for...,Managing projects,Sending and receiving messages,Editing sound,Hosting networks,b,email
+Digital Environments,7.2.4,Application Software,A limitation of email is...,Perfect accuracy,Guaranteed privacy,Unlimited storage,Spam and phishing risks,d,email
+Digital Environments,7.2.4,Application Software,Project management software helps users...,Create audio files,Compose emails,Edit videos,Track tasks and timelines,d,project management
+Digital Environments,7.2.4,Application Software,A key feature of project management tools is...,Real-time gaming,Gantt charts and scheduling,Grammar correction,Photo editing,b,project management
+Digital Environments,7.2.4,Application Software,Why is defragmentation discouraged on SSDs,It reduces available TRIM blocks,It offers no speed benefit and adds unnecessary write wear,It lowers controller temperature,It increases seek time,b,defragmenters
+Digital Environments,7.2.4,Application Software,Which backup plan follows the 3-2-1 rule,"3 vaults, 2 clouds, 1 tape","3 full backups daily, 2 incrementals, 1 snapshot","3 copies, 2 media types, 1 off-site","3 servers, 2 switches, 1 UPS",c,backup software
+Digital Environments,7.2.4,Application Software,Incremental backups differ from differential because incrementals...,always include the master file table,copy changes since the last full backup,copy only changes since the last backup of any type,require no restoration chain,c,backup software
+Digital Environments,7.2.4,Application Software,A key limitation of relying on email for workflow approvals is...,lack of transactional guarantees and idempotency,excess CPU utilisation on clients,limited MIME support,mandatory encryption by default,a,email
+Digital Environments,7.2.4,Application Software,A package manager primarily reduces the risk of...,wireless interference,CPU overclocking errors,disk partition misalignment,dependency hell and inconsistent versions,d,package managers
+Digital Environments,7.2.4,Application Software,Why do incremental-forever backups complicate restores-,they require tape only,they eliminate deduplication,longer restore chains across many points,they forbid snapshots,c,backup software
+Digital Environments,7.2.4,Application Software,A drawback of email-based approvals is...,guaranteed delivery,auto-MFA on all clients,native schema validation,no atomic transaction boundary,d,email
+Digital Environments,7.2.4,Application Software,Why is automated patching via package managers essential-,increases CPU boost clocks,reduces unpatched-vulnerability dwell time,improves fan curves,raises RAM bandwidth,b,package managers
+Digital Environments-Networks,7.3.1,Benefits of,What is a key benefit of connecting devices to form a network-,Increase hardware cost,Share resources,Reduce connectivity,Remove storage needs,b,network benefits
+Digital Environments-Networks,7.3.1,Benefits of,Which of the following is a drawback of networked devices-,Centralised management,Easy communication,Resource sharing,Security vulnerabilities,d,network drawbacks
+Digital Environments-Networks,7.3.1,Benefits of,Networks allow devices to...,Avoid storage,Reduce performance,Eliminate software needs,Communicate and share data,d,network benefits
+Digital Environments-Networks,7.3.1,Benefits of,One advantage of file sharing across a network is...,Unlimited storage,Guaranteed security,Improved collaboration,Reduced bandwidth,c,network benefits
+Digital Environments-Networks,7.3.1,Benefits of,A common security risk of networked devices is...,Stronger protection,Malware spreading,Lower risk,Guaranteed privacy,b,network drawbacks
+Digital Environments-Networks,7.3.1,Benefits of,A benefit of using network printers is...,Unlimited colour printing,Guaranteed faster printing,Cost savings through shared access,Offline operation,c,network benefits
+Digital Environments-Networks,7.3.1,Benefits of,A drawback of network dependency is...,Improved reliability,Network outages affecting all devices,Reduced traffic,Unlimited bandwidth,b,network drawbacks
+Digital Environments-Networks,7.3.1,Benefits of,Connecting devices in a network supports...,Guaranteed privacy,Efficient communication,Eliminating all cables,Unlimited speed,b,network benefits
+Digital Environments-Networks,7.3.1,Benefits of,A disadvantage of large networks is...,Guaranteed reliability,Higher management complexity,Unlimited users,Automatic backups,b,network drawbacks
+Digital Environments-Networks,7.3.1,Benefits of,A benefit of centralised backups on a network is...,Unlimited storage,Guaranteed zero data loss,Data recovery from a single location,Faster local printing,c,network benefits
+Digital Environments-Networks,7.3.2,Types of,What is a key feature of a Personal Area Network (PAN)-,Very short-range connectivity,City-wide coverage,Nationwide coverage,Global communication,a,PAN
+Digital Environments-Networks,7.3.2,Types of,PANs are typically used for...,Running global services,Linking cities,Connecting personal devices,Connecting offices worldwide,c,PAN
+Digital Environments-Networks,7.3.2,Types of,A common technology used in PANs is...,Fiber backbones,Satellite links,Bluetooth,Global routing,c,PAN
+Digital Environments-Networks,7.3.2,Types of,A limitation of PANs is...,Short range,High cost,High latency,Large coverage,a,PAN
+Digital Environments-Networks,7.3.2,Types of,Which device is most likely to use a PAN-,Office routers,Data centres,Wireless headphones,Cloud servers,c,PAN
+Digital Environments-Networks,7.3.2,Types of,What defines a Local Area Network (LAN)-,Inter-city links,Long-distance links,Global connections,Small geographic area,d,LAN
+Digital Environments-Networks,7.3.2,Types of,LANs are commonly used in...,Homes and offices,Global enterprises,Cross-country networks,Mobile carriers,a,LAN
+Digital Environments-Networks,7.3.2,Types of,A benefit of LANs is...,Guaranteed anonymity,Global coverage,High speed and low cost,Unlimited range,c,LAN
+Digital Environments-Networks,7.3.2,Types of,A typical LAN covers...,Mobile networks only,A whole country,Multiple continents,A building or campus,d,LAN
+Digital Environments-Networks,7.3.2,Types of,Which device is commonly part of a LAN-,Firewall appliance,Satellite dish,Mobile tower,Ethernet switch,d,LAN
+Digital Environments-Networks,7.3.2,Types of,What is a defining feature of a Metropolitan Area Network (MAN)-,Within one room,City-wide coverage,Across continents,Inside one building,b,MAN
+Digital Environments-Networks,7.3.2,Types of,MANs typically connect...,Multiple LANs in a city,Personal devices,Global networks,Mobile phones only,a,MAN
+Digital Environments-Networks,7.3.2,Types of,A common use of a MAN is...,Connecting campuses in a city,Connecting homes only,Connecting continents,Connecting personal devices,a,MAN
+Digital Environments-Networks,7.3.2,Types of,A drawback of a MAN is...,Battery drain,Short range,Data loss,High infrastructure cost,d,MAN
+Digital Environments-Networks,7.3.2,Types of,A Wide Area Network (WAN) usually covers...,One room,Large geographic areas,One building,One campus,b,WAN
+Digital Environments-Networks,7.3.2,Types of,WANs commonly support...,Short-range pairing,Room-to-room wireless,Long-distance communication,Local file transfers,c,WAN
+Digital Environments-Networks,7.3.2,Types of,A drawback of WANs is...,Low cost,Short range,Higher latency,Simple setup,c,WAN
+Digital Environments-Networks,7.3.2,Types of,A Virtual Private Network (VPN) allows users to...,Increase local storage,Expand wireless range,Access a secure remote network,Boost processor speed,c,VPN
+Digital Environments-Networks,7.3.2,Types of,A benefit of using a VPN is...,Local device pairing,Guaranteed faster internet,Unlimited bandwidth,Secure encrypted connections,d,VPN
+Digital Environments-Networks,7.3.2,Types of,A drawback of VPNs is...,Remote access,Improved anonymity,Better security,Slower speed due to encryption,d,VPN
+Digital Environments-Networks,7.3.3,Connection Types,What is a key feature of copper Ethernet cabling-,Electrical signals,Light pulses,Radio waves,Infrared beams,a,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,A benefit of copper Ethernet is...,Low cost,Very long range,Highest immunity to interference,Unlimited bandwidth,a,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,A drawback of copper Ethernet is...,Susceptible to interference,Very high cost,Fragile glass cores,Difficult installation,a,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,Copper Ethernet cables are commonly used for...,Long-distance global links,Subsea cables,Office LAN connections,Temporary pop-up networks,c,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,Which characteristic describes Cat6/Cat7 Ethernet-,Uses light pulses,Higher bandwidth than older Ethernet,Supports wireless roaming,Globally long-range links,b,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,Fibre-optic cables transmit data using...,Electrical signals,Light pulses,Radio waves,Magnetic fields,b,wired - fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,A benefit of fibre-optic connectivity is...,Lowest cost,High speed over long distances,Easiest installation,Best for very short links only,b,wired - fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,A drawback of fibre-optic connectivity is...,Susceptibility to EMI,Higher installation cost,Short distances only,Low bandwidth,b,wired - fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Fibre-optic is preferred over copper for...,Long-distance high-speed links,Short home connections,Temporary wireless setups,Battery-powered devices,a,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,Which scenario best suits fibre-optic links-,Bluetooth pairing,Inter-building backbone links,Local device switching,Short-range IoT networks,b,wired - fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Wireless access points (WAPs) provide...,Internet filtering only,Fibre-optic routing,Copper-based switching,Wireless network connectivity,d,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,A benefit of wireless connectivity is...,Mobility,Guaranteed maximum speed,Complete immunity to interference,No security concerns,a,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,A drawback of wireless connectivity is...,Total privacy,Guaranteed stability,Unlimited bandwidth,Signal interference,d,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,Wireless access points are commonly used for...,Long-distance signal transport,Providing Wi-Fi in buildings,Hosting fibre backbones,Encrypting data automatically,b,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,Which characteristic applies to wireless signals-,Unlimited range,Guaranteed stability,Interference from obstacles,Full physical security,c,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,"Compared to wired networks, wireless networks...",Have unlimited range,Provide higher speeds always,Are immune to interference,Are easier to intercept,d,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,One limitation of wireless access points is...,Guaranteed speed,Perfect privacy,Unlimited bandwidth,Limited range,d,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,Ethernet cables typically support...,Global routing only,Laser-based switching,Gigabit or faster speeds,Short-range pairing,c,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,Copper Ethernet cabling is vulnerable to...,Light-pulse distortion,Water damage only,Electromagnetic interference,Glass-core bending,c,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,Fibre-optic cables are immune to...,Copper oxidation,Signal fading,Wireless congestion,Electromagnetic interference,d,wired - fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Wireless networks require...,Wireless access points,Glass-core routers,Copper transceivers,Laser repeaters,a,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,A benefit of using wired connections is...,Cheaper access points,Full mobility,More stable connections,Easier interception,c,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,A drawback of fibre-optic installation is...,Lower cost,Low interference,Fragility and installation difficulty,Short-range capabilities,c,wired - fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Wireless networks improve...,Mobility for users,Highest stability,Complete security,Long-distance cabling,a,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,Wired networks typically offer...,Low latency and stability,Highest mobility,Zero interference,Unlimited bandwidth,a,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,Wireless access points enable devices to...,Connect without cables,Send fibre-optic pulses,Regenerate copper signals,Provide wired shielding,a,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,Copper cabling is most suitable for...,City-wide links,Undersea routing,Short-distance office links,Global WANs,c,wired - copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,Fibre-optic cabling is most suitable for...,Temporary hotspots,Short cable runs,Backbone networks,Mobile devices,c,wired - fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Wireless connections are most suitable for...,Heavy data-centre routing,Guaranteed stability,Mobile and flexible access,Long-distance backbone traffic,c,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,Which of the following is a feature of WAPs-,Directing fibre light,Broadcasting Wi-Fi signals,Regenerating copper signals,Amplifying VPN tunnels,b,wireless - wireless access points
+Digital Environments-Networks,7.3.3,Connection Types,"Compared to copper, fibre-optic links are preferred for core backbones because...",they offer longer reach and immunity to EMI,they use cheaper transceivers,they require no patch panels,they are easier to field-terminate,a,fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Copper Ethernet runs beyond 100 m typically require...,CAT3 cabling for compliance,jumbo frames to reduce loss,PoE++ injectors for stability,active devices or extenders to avoid attenuation,d,copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,A practical benefit of wired connections over Wi-Fi is...,zero packet loss,unlimited bandwidth,consistently lower latency and jitter,automatic encryption,c,wired - general
+Digital Environments-Networks,7.3.3,Connection Types,A drawback of fibre-optic deployments is...,excess heat generation,susceptibility to electromagnetic noise,very short maximum distance,higher installation cost and fragility of strands,d,fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Co-channel interference in dense Wi-Fi occurs when...,multiple APs use overlapping channels in proximity,RSSI is too strong on wired ports,APs have mismatched PoE budgets,SSID names are duplicated,a,wireless - WAPs
+Digital Environments-Networks,7.3.3,Connection Types,A wireless access point primarily provides...,optical multiplexing,NAT and firewall at layer-3 by default,block-level storage services,layer-2 connectivity for wireless clients,d,wireless - WAPs
+Digital Environments-Networks,7.3.3,Connection Types,"For building-to-building links across a campus, the preferred medium is...",unshielded CAT3 copper,single-mode fibre backbones,802.11b bridges,USB extenders,b,fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Why can high-density AP deployments lower overall throughput-,802.1Q truncates airtime,PoE injectors limit frame sizes,SSID beacons consume RAM,channel reuse and contention increase collisions,d,wireless - WAPs
+Digital Environments-Networks,7.3.3,Connection Types,"Compared with multi-mode, single-mode fibre is preferred for...","long-haul, higher-bandwidth, lower loss links",short patch leads only,cheaper transceivers at short range,legacy 100Base-FX only,a,fibre-optic
+Digital Environments-Networks,7.3.3,Connection Types,Copper Ethernet is more susceptible than fibre to...,chromatic dispersion,EMI and crosstalk,splice loss,connector reflection,b,copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,An advantage of wired backhaul for WAPs is...,predictable capacity independent of RF conditions,built-in roaming without controllers,fewer switch ports required,automatic DFS selection,a,wireless - WAPs
+Digital Environments-Networks,7.3.3,Connection Types,Why is PoE attractive for edge devices-,it removes need for switches,it increases PHY data rate,single cable for data and power,it eliminates cabling limits,c,copper/ethernet
+Digital Environments-Networks,7.3.3,Connection Types,A drawback of very long fibre runs is...,optical attenuation requiring amplification,EMI saturation,coax reflections,CAT ratings mismatch,a,fibre-optic
+Digital Environments-Networks,7.3.4,Topologies,What is a defining feature of a star topology-,Nodes connect in a closed loop,Each node connects to every other,All nodes connect to a central device,Devices share a single bus,c,star topology
+Digital Environments-Networks,7.3.4,Topologies,A benefit of star topology is...,Easy to add/remove devices,Lowest cabling cost,No single points of failure,No need for switches,a,star topology
+Digital Environments-Networks,7.3.4,Topologies,A drawback of star topology is...,Complex routing,Single point of failure at the hub/switch,Difficult fault isolation,No central management,b,star topology
+Digital Environments-Networks,7.3.4,Topologies,"In a star, if one spoke cable fails...",Broadcast storms occur,The entire network fails,All devices slow down,Only that device is affected,d,star topology
+Digital Environments-Networks,7.3.4,Topologies,The central device in a star is typically a...,Repeater only,Router only,Switch or hub,Bridge only,c,star topology
+Digital Environments-Networks,7.3.4,Topologies,What defines a mesh topology-,All nodes connect to a central hub,Many or all nodes interconnect,A single backbone with branches,Devices share a single coax,b,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,A benefit of full mesh is...,High fault tolerance,Minimal cabling,Simple to configure,Lowest hardware cost,a,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,A drawback of mesh topology is...,No path diversity,Low redundancy,Single point of failure,High cabling and configuration cost,d,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,Mesh topologies are well-suited for...,Small home networks only,Mission-critical or wireless backhaul,One-room labs only,Temporary pop-ups,b,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,"In mesh networks, resilience is achieved by...",Shared bus access,A single backbone,Multiple redundant paths,Half-duplex links,c,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,A tree topology is best described as...,A hierarchy of star/bus segments,A ring of switches,A full mesh of routers,A daisy-chain of repeaters,a,tree topology
+Digital Environments-Networks,7.3.4,Topologies,A benefit of a tree topology is...,No single points of failure,Hierarchical management,Least cabling of all,Self-healing without protocols,b,tree topology
+Digital Environments-Networks,7.3.4,Topologies,A drawback of a tree topology is...,No scalability limits,Failure near the root can impact many branches,Complex cabling everywhere,No need for central control,b,tree topology
+Digital Environments-Networks,7.3.4,Topologies,Tree topologies are commonly used to...,Structuring large campus networks,Small peer-to-peer homes,Ad-hoc IoT clusters,Point-to-point links only,a,tree topology
+Digital Environments-Networks,7.3.4,Topologies,"In a tree topology, a failure near the root can...",Only affect the failing leaf,Have no effect,Affect many downstream devices,Increase redundancy,c,tree topology
+Digital Environments-Networks,7.3.4,Topologies,Logical topology refers to...,How data flows between nodes,Where cables and devices are placed,Rack elevation diagrams,The OSI physical layer spec,a,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,Physical topology refers to...,Traffic patterns only,How frames are switched,Routing protocols in use,Actual layout of cables and devices,d,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,Which statement about logical vs physical is correct-,Logical equals IP addressing only,Logical shows racks; physical shows VLANs,Both describe cabling,Physical shows placement; logical shows traffic flow,d,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,An Ethernet switch network physically wired as a star may logically operate as a...,Logical ring,Logical bus (switched Ethernet),Logical mesh,Logical tree,b,star topology
+Digital Environments-Networks,7.3.4,Topologies,Wi-Fi often has a physical star around the AP but logically behaves like a...,Logical mesh,Logical ring,Logical tree,Shared logical medium,d,star topology
+Digital Environments-Networks,7.3.4,Topologies,Star topology is preferred in offices because...,It simplifies troubleshooting and adds devices easily,It needs the least cables,It has no single point of failure,It removes the need for switches,a,star topology
+Digital Environments-Networks,7.3.4,Topologies,Mesh topology is preferred in mission-critical networks because...,Redundant paths reduce outages,It requires no management,It always costs less,It scales perfectly without design,a,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,Tree topology helps large organisations by...,Grouping departments and segments,Removing all hierarchy,Avoiding VLANs,Eliminating uplinks,a,tree topology
+Digital Environments-Networks,7.3.4,Topologies,"When planning logical topology, engineers mainly consider...","Traffic flow, switching and routing",Rack space and cable trays,Wall trunking routes,Patch panel counts,a,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,"When planning physical topology, engineers mainly consider...",QoS policies,Spanning trees and VLANs,Cabling routes and device placement,IP subnets only,c,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,A star topology’s scalability is...,Good (add more spokes),Very poor (can’t add nodes),Only via full mesh,Only via new backbones,a,star topology
+Digital Environments-Networks,7.3.4,Topologies,A mesh topology’s scalability is...,Identical to star,Always easy and cheap,Unlimited without cost,Challenging without careful design,d,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,Tree topology’s manageability is...,Always automatic,Impossible without mesh,Easier due to hierarchy,Only via full mesh,c,tree topology
+Digital Environments-Networks,7.3.4,Topologies,Logical topologies can change via configuration without...,Buying new IPs only,Changing cable colours,Re-cabling the network,Replacing end devices only,c,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,Physical topologies require changes to...,Cabling or device placement,Only firmware updates,VLAN changes only,QoS policy edits only,a,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,A MAN best fits...,personal device pairing,a single office floor,global intercontinental links,city-wide inter-site connectivity,d,MAN
+Digital Environments-Networks,7.3.4,Topologies,A WAN link characteristic is typically...,in-room cable runs,microsecond latency and no jitter,higher latency and variable bandwidth,ad-hoc Bluetooth pairing,c,WAN
+Digital Environments-Networks,7.3.4,Topologies,A PAN is most appropriate for...,multi-campus routing,short-range wearable sensors,metro fibre rings,branch-office MPLS,b,PAN
+Digital Environments-Networks,7.3.4,Topologies,A defining feature of star topology is...,shared coaxial bus,each node daisy-chains in a loop,all nodes attach to a central switch,every node connects to every other,c,star topology
+Digital Environments-Networks,7.3.4,Topologies,The main resilience weakness of star topologies is...,lack of VLAN support,excess cabling at the edge,broadcasts are impossible,central device as single point of failure,d,star topology
+Digital Environments-Networks,7.3.4,Topologies,Full-mesh networks scale poorly due to...,no path redundancy,lack of duplex links,quadratic growth of links and routing state,absence of spanning tree,c,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,Tree topology is commonly used to...,form closed token rings,aggregate access layers into core layers,replace routing protocols,eliminate uplinks,b,tree topology
+Digital Environments-Networks,7.3.4,Topologies,Logical vs physical: a campus may be physically star-wired but logically...,a pure bus with collisions,a token ring,a full mesh,a switched bus segmentation,d,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,Spanning Tree Protocol in a tree-like LAN primarily...,ensures QoS fairness,prevents VLAN hopping,prevents loops by blocking redundant paths,encrypts management frames,c,tree topology
+Digital Environments-Networks,7.3.4,Topologies,Why does VLAN segmentation change the logical topology-,it alters L2 broadcast domains without re-cabling,it replaces switches with routers,it shortens copper runs,it forces star to mesh,a,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,"In partial-mesh WANs, the hardest metric to keep consistent is...",port speed negotiation,MAC address uniqueness,duplex mismatch rate,end-to-end latency and jitter,d,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,"During incident response, physical topology is needed to...",set DFS channels,calculate OSPF costs,tune MTU sizes,locate cabling paths and devices quickly,d,logical vs physical
+Digital Environments-Networks,7.3.4,Topologies,Which LAN design choice most reduces broadcast domain size without re-cabling-,Using hubs instead of switches,Replacing copper with fibre,Increasing PoE budget,VLANs on managed switches,d,LAN
+Digital Environments-Networks,7.3.4,Topologies,Why do WAN links often exhibit higher jitter than LAN links-,variable queuing across multiple hops,half-duplex Ethernet on core,excess CRC errors in copper,fixed-rate TDM only,a,WAN
+Digital Environments-Networks,7.3.4,Topologies,Dense mesh topologies impact routing because...,duplex settings are ignored,MAC tables overflow by design,path computation grows rapidly with node count,QoS markings are stripped,c,mesh topology
+Digital Environments-Networks,7.3.4,Topologies,Star-wired access with redundant core switches primarily improves...,RF channel reuse,resilience against single core failures,PoE voltage stability,client battery life,b,star topology
+Digital Environments-Networks,7.3.4,Topologies,Tree topologies in campuses typically map to...,pure full-mesh,ring of hubs,token bus segments,"access, distribution, core layers",d,tree topology
+Security,8.1.1,Types of confidential info,Which of the following is considered HR confidential information-,Office opening hours,Staff salaries and benefits,Company logo,Public job postings,b,Staff salaries and benefits
+Security,8.1.1,Types of confidential info,Staff personal details may include:,Customer reviews,Employee home addresses,Office cleaning schedules,Marketing materials,b,Employee home addresses
+Security,8.1.1,Types of confidential info,Which of these is commercially sensitive information-,Public website content,Client details,Weather data,Recruitment advertisements,b,Client details
+Security,8.1.1,Types of confidential info,Intellectual property refers to:,Free images from the internet,Creative or proprietary work owned by an organisation,Public transport timetables,Generic templates,b,Creative or proprietary work owned by an organisation
+Security,8.1.1,Types of confidential info,Contracts are considered confidential because they contain:,Public event details,Legally binding terms and sensitive agreements,Weather forecasts,Emails to customers,b,Legally binding terms and sensitive agreements
+Security,8.1.1,Types of confidential info,Which of the following is classed as access information-,Supplier logos,Passwords,Meeting notes,Café menus,b,Passwords
+Security,8.1.1,Types of confidential info,Multi-factor authentication (MFA) details may include:,Team rotas,One-time codes sent to devices,Public records,Website banner images,b,One-time codes sent to devices
+Security,8.1.1,Types of confidential info,A personal identification number (PIN) is used to:,Access secured systems,Schedule meetings,Approve marketing materials,Share public announcements,a,Access secured systems
+Security,8.1.1,Types of confidential info,Passphrases differ from passwords because they are:,Always numeric,A longer sequence of words or characters,Publicly shared,Easy to guess,b,A longer sequence of words or characters
+Security,8.1.1,Types of confidential info,Biometric data includes:,Favourite colours,Fingerprints and facial recognition,Marketing preferences,Job titles,b,Fingerprints and facial recognition
+Security,8.1.1,Types of confidential info,Why must salaries be kept confidential-,To reduce recruitment,To prevent competitors offering higher wages,To avoid overtime,To reduce tax,b,To prevent competitors offering higher wages
+Security,8.1.1,Types of confidential info,Confidential salaries prevent staff from:,Comparing pay and demanding increases,Taking holidays,Working remotely,Reporting issues,a,Comparing pay and demanding increases
+Security,8.1.1,Types of confidential info,Why should staff personal details be protected-,To protect privacy,To increase advertising,To improve office décor,To boost sales,a,To protect privacy
+Security,8.1.1,Types of confidential info,Keeping staff details confidential prevents:,Competitors contacting them directly,More lunch breaks,IT system updates,Marketing emails,a,Competitors contacting them directly
+Security,8.1.1,Types of confidential info,Why must intellectual property be kept confidential-,To prevent competitors copying designs,To increase meetings,To reduce training,To improve décor,a,To prevent competitors copying designs
+Security,8.1.1,Types of confidential info,Client details must be protected to:,Improve sales reports,Prevent competitors approaching clients,Reduce workload,Increase office space,b,Prevent competitors approaching clients
+Security,8.1.1,Types of confidential info,Confidentiality supports client privacy by:,Hiding errors,Protecting personal and business data,Preventing meetings,Blocking IT upgrades,b,Protecting personal and business data
+Security,8.1.1,Types of confidential info,Sales numbers should remain confidential because:,They reveal weaknesses competitors can exploit,They reduce parking spaces,They change office layout,They affect staff holidays,a,They reveal weaknesses competitors can exploit
+Security,8.1.1,Types of confidential info,Why must access information remain confidential-,To prevent unauthorised access,To increase sales,To reduce printing costs,To improve décor,a,To prevent unauthorised access
+Security,8.1.1,Types of confidential info,Passwords and PINs must be kept secure to:,Allow anyone access,Maintain system security,Reduce staff,Improve marketing,b,Maintain system security
+Security,8.2.1,Technical Threats,What is a botnet-,A secure server,A network of compromised devices,A type of firewall,A backup method,b,A network of compromised devices
+Security,8.2.1,Technical Threats,Botnets are commonly used to:,Improve security,Launch coordinated cyber attacks,Backup data,Update software,b,Launch coordinated cyber attacks
+Security,8.2.1,Technical Threats,A key prevention method for botnets is:,Using weak passwords,Disabling antivirus,Keeping systems patched,Sharing login details,c,Keeping systems patched
+Security,8.2.1,Technical Threats,A DoS attack aims to:,Speed up servers,Make a service unavailable,Encrypt data,Improve bandwidth,b,Make a service unavailable
+Security,8.2.1,Technical Threats,A DDoS attack differs from DoS because it:,Uses one attacker only,Uses many compromised devices,Fixes vulnerabilities,Improves uptime,b,Uses many compromised devices
+Security,8.2.1,Technical Threats,A mitigation method for DDoS is:,Rate limiting,Ignoring traffic logs,Allowing open ports,Sharing passwords,a,Rate limiting
+Security,8.2.1,Technical Threats,Hacktivists typically hack to:,Steal bandwidth,Promote political or social causes,Fix vulnerabilities,Provide support,b,Promote political or social causes
+Security,8.2.1,Technical Threats,Nation-state attackers usually target:,Low-value home users,High-value political and economic targets,Photo libraries,Email newsletters,b,High-value political and economic targets
+Security,8.2.1,Technical Threats,Organised cybercrime groups aim to:,Donate money,Gain financial profit,Enhance security,Improve user training,b,Gain financial profit
+Security,8.2.1,Technical Threats,Individuals hacking for fun are often called:,Script kiddies,Auditors,Admins,Moderators,a,Script kiddies
+Security,8.2.1,Technical Threats,Brute force attacks work by:,Guessing thousands of possible passwords,Deleting passwords,Encrypting devices,Blocking logins,a,Guessing thousands of possible passwords
+Security,8.2.1,Technical Threats,A prevention method against password cracking is:,Short passwords,Enabling account lockout,Sharing passwords,Reusing logins,b,Enabling account lockout
+Security,8.2.1,Technical Threats,Cross-site scripting (XSS) targets:,Client-side scripts in web pages,Database indexes,Server cooling systems,Backup tapes,a,Client-side scripts in web pages
+Security,8.2.1,Technical Threats,A mitigation for XSS is:,Input validation,Open ports,Password reuse,Unpatched APIs,a,Input validation
+Security,8.2.1,Technical Threats,SQL injection exploits:,Weak database queries,USB sticks,Unpatched printers,RAM leaks,a,Weak database queries
+Security,8.2.1,Technical Threats,"To prevent SQL injection, developers should use:",Plain queries,Parameterized statements,Hardcoded passwords,Old drivers,b,Parameterized statements
+Security,8.2.1,Technical Threats,A buffer overflow happens when:,Memory receives more data than expected,Servers power off,Routers reboot,Data is encrypted,a,Memory receives more data than expected
+Security,8.2.1,Technical Threats,A mitigation for buffer overflow is:,Bounds checking,Open permissions,Weak coding,Unfiltered input,a,Bounds checking
+Security,8.2.1,Technical Threats,A virus requires:,User interaction to spread,No host system,Cloud storage,Phone numbers,a,User interaction to spread
+Security,8.2.1,Technical Threats,A worm differs from a virus because it:,Needs user action,Self-replicates across networks,Is harmless,Only infects printers,b,Self-replicates across networks
+Security,8.2.1,Technical Threats,Keyloggers are used to:,Monitor CPU temps,Record keystrokes,Improve speed,Backup logs,b,Record keystrokes
+Security,8.2.1,Technical Threats,Ransomware attacks typically:,Delete nothing,Encrypt data for payment,Improve security,Reduce risk,b,Encrypt data for payment
+Security,8.2.1,Technical Threats,Spyware aims to:,Protect systems,Monitor user activity secretly,Speed up downloads,Filter spam,b,Monitor user activity secretly
+Security,8.2.1,Technical Threats,Remote Access Trojans (RATs) allow attackers to:,Clean systems,Control devices remotely,Improve passwords,Close ports,b,Control devices remotely
+Security,8.2.1,Technical Threats,Phishing usually involves:,Fake emails,Broken cables,Firewall tuning,DNS backups,a,Fake emails
+Security,8.2.1,Technical Threats,Spear phishing is:,Random spam,Highly targeted phishing,Network scanning,DoS filtering,b,Highly targeted phishing
+Security,8.2.1,Technical Threats,Smishing uses:,SMS messages,Voice calls,Apps,USB devices,a,SMS messages
+Security,8.2.1,Technical Threats,Vishing uses:,Emails,Phone calls,Downloads,DNS servers,b,Phone calls
+Security,8.2.1,Technical Threats,Pharming redirects:,Network cables,Users to fake websites,VLAN traffic,WiFi signals,b,Users to fake websites
+Security,8.2.1,Technical Threats,Watering hole attacks compromise:,Trusted websites visited by targets,Hardware fans,Printer queues,Internal HR docs,a,Trusted websites visited by targets
+Security,8.2.1,Technical Threats,USB baiting involves:,Offering free WiFi,Leaving infected USBs for victims,Sending texts,Brute forcing PINs,b,Leaving infected USBs for victims
+Security,8.2.1,Technical Threats,DNS attacks often involve:,Redirecting traffic to malicious sites,Improving website speed,Updating certificates,Backing up servers,a,Redirecting traffic to malicious sites
+Security,8.2.1,Technical Threats,DNS poisoning is:,Data cleaning,Corrupting DNS entries,Streaming data,Securing endpoints,b,Corrupting DNS entries
+Security,8.2.1,Technical Threats,Insecure APIs can:,Expose sensitive data,Improve security,Encrypt passwords,Reduce risks,a,Expose sensitive data
+Security,8.2.1,Technical Threats,A method to protect APIs is:,Weak auth,Strong authentication and validation,Open ports,SQL dumping,b,Strong authentication and validation
+Security,8.2.1,Technical Threats,A man-in-the-middle attack occurs when attackers:,Block traffic entirely,Intercept communication between two parties,Backup emails,Patch systems,b,Intercept communication between two parties
+Security,8.2.1,Technical Threats,A common prevention method against MITM is:,Using unencrypted WiFi,Using HTTPS and encryption,Sharing passwords,Closing browsers,b,Using HTTPS and encryption
+Security,8.2.1,Technical Threats,Open WiFi networks are dangerous because:,They improve battery life,Attackers can sniff traffic,They are always encrypted,They use MFA,b,Attackers can sniff traffic
+Security,8.2.1,Technical Threats,A simple protection method when using public WiFi is:,Disable updates,Use a VPN,Use weak passwords,Leave WiFi on always,b,Use a VPN
+Security,8.2.2,Security Impact,Failure to maintain confidentiality may result in:,Non-compliance with regulations,Increased profits,Better marketing,Higher staff numbers,a,Non-compliance with regulations
+Security,8.2.2,Security Impact,Loss of licence to practise can occur when:,Regulations are not followed,Staff are late,Emails are deleted,Meetings run over,a,Regulations are not followed
+Security,8.2.2,Security Impact,Breaches of confidentiality cause:,Increased trust,Loss of trust,Faster systems,More free time,b,Loss of trust
+Security,8.2.2,Security Impact,Poor privacy protection can damage:,Organisation image,Desk layout,Holiday calendars,Printer quality,a,Organisation image
+Security,8.2.2,Security Impact,Financial loss may include:,Refunds,Coffee costs,Extra training days,More meetings,a,Refunds
+Security,8.2.2,Security Impact,A data breach may lead to:,Legal action,More marketing opportunities,Extra holidays,Improved décor,a,Legal action
+Security,8.2.2,Security Impact,What direct financial consequence can occur after a breach-,Fines,More storage,Higher wages,Faster networks,a,Fines
+Security,8.2.2,Security Impact,Loss of earnings may occur because:,Contracts are terminated,Staff get promoted,More holidays,Office paint fades,a,Contracts are terminated
+Security,8.2.2,Security Impact,Failing to maintain confidentiality can reduce:,Security,Office plants,IT storage,Car parking,a,Security
+Security,8.2.2,Security Impact,Reduced security after a breach may result in:,More attacks,Fewer risks,Stronger legal position,Increased compliance,a,More attacks
+Security,8.2.3,Human Threats,Weak encryption primarily increases the risk of:,Data integrity,Unauthorized data disclosure,Faster performance,Improved availability,b,Unauthorized data disclosure
+Security,8.2.3,Human Threats,Using outdated SSL/TLS versions can enable:,Strong PFS,Downgrade/Man-in-the-Middle attacks,Faster TLS 1.3 handshakes,OCSP stapling,b,Downgrade/Man-in-the-Middle attacks
+Security,8.2.3,Human Threats,"To mitigate weak encryption in transit, organisations should:",Prefer TLS 1.2+ and modern ciphers,Use plaintext HTTP,Disable certificate validation,Share private keys,a,Prefer TLS 1.2+ and modern ciphers
+Security,8.2.3,Human Threats,Poor key management commonly causes:,Shorter outages,Key exposure and data compromise,Better latency,Easier scaling,b,Key exposure and data compromise
+Security,8.2.3,Human Threats,A strong control for encryption keys is:,Store in source code,Use Hardware/Secure Key Management (HSM/KMS),Email to admins,Keep in shared spreadsheets,b,Use Hardware/Secure Key Management (HSM/KMS)
+Security,8.2.3,Human Threats,An inadequate password policy often allows:,Long unique passphrases,Re-use across systems,MFA enforcement,Password managers,b,Re-use across systems
+Security,8.2.3,Human Threats,A good password policy should require:,Short 6-char passwords,Complexity + length or passphrases,Plaintext storage,Shared team accounts,b,Complexity + length or passphrases
+Security,8.2.3,Human Threats,Which storage approach is vulnerable-,"Salted hashing (e.g., bcrypt/Argon2)",Plaintext passwords,PBKDF2 with high iterations,Argon2id,b,Plaintext passwords
+Security,8.2.3,Human Threats,"To mitigate brute force on logins, use:",Account lockout/Rate limiting,Unlimited retries,Static default passwords,Open RDP,a,Account lockout/Rate limiting
+Security,8.2.3,Human Threats,Password rotation should be:,On every login,Triggered by compromise/events,Never used,Daily,b,Triggered by compromise/events
+Security,8.2.3,Human Threats,An organisational anti-pattern is:,Unique individual accounts,Shared admin accounts,MFA for admins,Least privilege,b,Shared admin accounts
+Security,8.2.3,Human Threats,Failing to use MFA increases susceptibility to:,Credential stuffing,Hardware failure,Power spikes,DoS only,a,Credential stuffing
+Security,8.2.3,Human Threats,Best mitigation for stolen passwords is:,Longer usernames,Multi-factor authentication,Fewer users,Guest logins,b,Multi-factor authentication
+Security,8.2.3,Human Threats,MFA fatigue attacks are reduced by:,Push-only MFA without limits,Number matching and limits,Reusing passwords,Disabling alerts,b,Number matching and limits
+Security,8.2.3,Human Threats,"For privileged accounts, MFA should be:",Optional,Required,Discouraged,Replaced by SMS only,b,Required
+Security,8.2.3,Human Threats,Out-of-date hardware often results in:,Unsupported drivers & security gaps,Better performance,Lower heat,Longer warranties,a,Unsupported drivers & security gaps
+Security,8.2.3,Human Threats,Legacy software creates risk due to:,Frequent security patches,Lack of vendor support,Perfect compatibility,Auto-mitigation,b,Lack of vendor support
+Security,8.2.3,Human Threats,Zero-day bugs are:,"Unknown, unpatched vulnerabilities",Old issues with fixes,UI problems,Backup failures,a,"Unknown, unpatched vulnerabilities"
+Security,8.2.3,Human Threats,A mitigation against zero-days is:,Disable logging,Use virtual patching/WAF rules,Delay all updates,Ignore advisories,b,Use virtual patching/WAF rules
+Security,8.2.3,Human Threats,Firmware left unpatched can allow:,Improved boot times,Low-level persistence by attackers,Automatic recovery,Memory defragmentation,b,Low-level persistence by attackers
+Security,8.2.3,Human Threats,Software end-of-life (EOL) risk is:,More updates,No security fixes available,Free support forever,Guaranteed compatibility,b,No security fixes available
+Security,8.2.3,Human Threats,"To manage legacy compatibility securely, use:",Unsupported OS in production,Network isolation & application whitelisting,Open SMB shares,Public RDP,b,Network isolation & application whitelisting
+Security,8.2.3,Human Threats,Patch management should be:,Ad hoc,Risk-based and scheduled,Never required,Manual only,b,Risk-based and scheduled
+Security,8.2.3,Human Threats,Inventory of assets helps by:,Hiding devices,Identifying outdated components,Increasing shadow IT,Reducing visibility,b,Identifying outdated components
+Security,8.2.3,Human Threats,Secure boot/firmware signing helps prevent:,Code execution at boot by attackers,Screen brightness issues,Backup rotation,Password reuse,a,Code execution at boot by attackers
+Security,8.2.3,Human Threats,Human error with file properties can cause:,Correct permissions,Overexposed data shares,Faster logins,Lower latency,b,Overexposed data shares
+Security,8.2.3,Human Threats,Confirmation boxes reduce error by:,Slowing all tasks,Forcing users to review actions,Hiding warnings,Disabling logs,b,Forcing users to review actions
+Security,8.2.3,Human Threats,Staff training mitigates errors by:,Increasing guesswork,Raising awareness of secure practices,Removing SOPs,Blocking updates,b,Raising awareness of secure practices
+Security,8.2.3,Human Threats,A common misconfiguration is:,Least privilege,Public S3/share buckets unintentionally,MFA on admins,Strong logging,b,Public S3/share buckets unintentionally
+Security,8.2.3,Human Threats,Change control helps prevent:,Unreviewed risky changes,Backups,Access reviews,Threat modeling,a,Unreviewed risky changes
+Security,8.2.3,Human Threats,A runbook/SOP helps by:,Encouraging ad-hoc fixes,Providing step-by-step verified actions,Hiding responsibility,Avoiding documentation,b,Providing step-by-step verified actions
+Security,8.2.3,Human Threats,Pre-deployment checks should include:,Open all ports,Security testing & approvals,Disable MFA,Use default passwords,b,Security testing & approvals
+Security,8.2.3,Human Threats,Rollback plans mitigate:,Successful releases,Failed or insecure deployments,Training needs,Power costs,b,Failed or insecure deployments
+Security,8.2.3,Human Threats,Peer review of changes helps catch:,Typos only,Security issues and misconfigurations,User interface ideas,Printer queues,b,Security issues and misconfigurations
+Security,8.2.3,Human Threats,"If an employee is suspected of malicious activity, first action is:",Ignore it,Immediate removal from premises (per policy),Share admin credentials,Disable logging,b,Immediate removal from premises (per policy)
+Security,8.2.3,Human Threats,"To limit further damage, organisations should:",Suspend user accounts immediately,Wait a week,Grant more access,Turn off monitoring,a,Suspend user accounts immediately
+Security,8.2.3,Human Threats,Separation of duties reduces:,Holiday conflicts,Fraud risk,Power usage,Backups,b,Fraud risk
+Security,8.2.3,Human Threats,Just-in-time (JIT) access helps by:,Permanent admin rights,Time-bound privilege elevation,No logging,Shared admin accounts,b,Time-bound privilege elevation
+Security,8.2.3,Human Threats,User activity monitoring is for:,Privacy violations,Detecting unusual/unauthorised actions,Theme changes,Wi-Fi speed,b,Detecting unusual/unauthorised actions
+Security,8.2.3,Human Threats,Off-boarding checklists ensure:,Residual access remains,All access is removed promptly,New privileges assigned,Audits stop,b,All access is removed promptly
+Security,8.2.3,Human Threats,"To mitigate disguised criminals onsite, staff should:",Allow free roaming,Accompany all visitors,Ignore badges,Share Wi-Fi passwords,b,Accompany all visitors
+Security,8.2.3,Human Threats,Front-desk controls should include:,No ID checks,Checking visitor identification,Open door policy,Unmonitored access,b,Checking visitor identification
+Security,8.2.3,Human Threats,Tailgating is:,Authorised escorting,Following someone into a secure area without auth,Badge scanning,Visitor logging,b,Following someone into a secure area without auth
+Security,8.2.3,Human Threats,Mitigation for tailgating is:,Propping doors open,Mantraps/turnstiles and awareness,Removing CCTV,Guest accounts for all,b,Mantraps/turnstiles and awareness
+Security,8.2.3,Human Threats,Locking unattended machines prevents:,Display burn-in,Opportunistic access to sessions,Battery drain,Printer jams,b,Opportunistic access to sessions
+Security,8.2.3,Human Threats,Writing down passwords creates risk of:,Memory loss,Physical credential theft,Faster logins,Better UX,b,Physical credential theft
+Security,8.2.3,Human Threats,Poor password management often means:,Password managers used,Reuse and simple passwords,Strong unique passphrases,MFA everywhere,b,Reuse and simple passwords
+Security,8.2.3,Human Threats,A best practice for passwords is:,Share with trusted colleagues,Use a password manager and unique passphrases,Store in email drafts,Write on sticky notes,b,Use a password manager and unique passphrases
+Security,8.2.3,Human Threats,Public displays of confidential data can be reduced by:,Privacy screens and clear desk policy,Bigger monitors,Open seating,No badges,a,Privacy screens and clear desk policy
+Security,8.2.3,Human Threats,Phishing risk is lowered by:,Annual awareness and simulated exercises,Ignoring suspicious emails,Disabling spam filters,Posting creds online,a,Annual awareness and simulated exercises
+Security,8.2.3,Human Threats,Shadow IT risk is mitigated by:,Encouraging unapproved apps,"Clear policy, approved tools, monitoring",No asset inventory,Public sharing,b,"Clear policy, approved tools, monitoring"
+Security,8.2.3,Human Threats,Regular updates of endpoint protection help to:,Reduce detection,Maintain current threat signatures,Increase false positives,Disable logging,b,Maintain current threat signatures
+Security,8.2.3,Human Threats,Secure workspace habits include:,Leaving screens unlocked,Using cable locks and locking rooms,Sharing badges,Propping doors open,b,Using cable locks and locking rooms
+Security,8.2.4,Physical Threats,What is the primary purpose of an entry control system-,Improve office décor,Authenticate and authorize physical access,Speed up internet,Reduce payroll,b,Authenticate and authorize physical access
+Security,8.2.4,Physical Threats,A building with no controlled entrances is vulnerable to:,Tailgating and unauthorized entry,Better ventilation,Lower power use,Faster lifts,a,Tailgating and unauthorized entry
+Security,8.2.4,Physical Threats,Which control best enforces one-person-at-a-time entry-,Open turnstiles,Mantraps/airlocks,Wide-open doors,Unattended revolving doors,b,Mantraps/airlocks
+Security,8.2.4,Physical Threats,Badge + PIN at doors is an example of:,Single-factor auth,Two-factor/dual-factor physical authentication,No authentication,Social engineering,b,Two-factor/dual-factor physical authentication
+Security,8.2.4,Physical Threats,Visitor badges should be:,Unlabelled,Time-bound and visibly distinct,Shared with staff,Permanent,b,Time-bound and visibly distinct
+Security,8.2.4,Physical Threats,A sign-in/out log at reception helps to:,Track canteen usage,Maintain audit trail of building access,Speed up printing,Reduce lighting,b,Maintain audit trail of building access
+Security,8.2.4,Physical Threats,Tailgating occurs when:,A visitor waits for escort,An unauthorized person follows someone into a secure area,A badge is scanned twice,A door is locked,b,An unauthorized person follows someone into a secure area
+Security,8.2.4,Physical Threats,A mitigation for tailgating is:,Holding doors open,Mantraps/turnstiles and staff awareness,Removing CCTV,Using shared badges,b,Mantraps/turnstiles and staff awareness
+Security,8.2.4,Physical Threats,Access codes should be:,Simple like 1234,Complex and unique,Shared across teams,Written on the keypad,b,Complex and unique
+Security,8.2.4,Physical Threats,Why change door codes regularly-,To confuse staff,To reduce HVAC use,To limit risk if codes are disclosed,To improve décor,c,To limit risk if codes are disclosed
+Security,8.2.4,Physical Threats,Monitoring access areas helps to:,Reduce email spam,Detect suspicious entry patterns,Improve Wi-Fi,Speed up elevators,b,Detect suspicious entry patterns
+Security,8.2.4,Physical Threats,CCTV should cover:,Random hallways only,"Entry points, server rooms, loading bays",Cafeteria only,Parking meters,b,"Entry points, server rooms, loading bays"
+Security,8.2.4,Physical Threats,Periodic audits of staff access rights ensure:,Faster payroll,Least privilege and removal of stale access,More spam,Open access for all,b,Least privilege and removal of stale access
+Security,8.2.4,Physical Threats,Least privilege in physical security means:,Everyone gets a master key,Access only to areas required for the role,Visitors roam freely,All doors unlocked,b,Access only to areas required for the role
+Security,8.2.4,Physical Threats,Shared access codes are:,Traceable to individuals,A good best practice,Discouraged because accountability is lost,Required by law,c,Discouraged because accountability is lost
+Security,8.2.4,Physical Threats,A door left propped open creates risk of:,Energy savings,Unauthorized entry and theft,Faster deliveries,Lower noise,b,Unauthorized entry and theft
+Security,8.2.4,Physical Threats,Badge tailgating alarms trigger when:,Two people enter on one scan,A badge is expired,A door is closed,Lights are off,a,Two people enter on one scan
+Security,8.2.4,Physical Threats,Access logs should be reviewed:,Never,Only annually,Regularly and after incidents,Only by visitors,c,Regularly and after incidents
+Security,8.2.4,Physical Threats,Shoulder surfing is:,Viewing confidential info over someone’s shoulder,Walking quietly,Using ear protection,Cleaning screens,a,Viewing confidential info over someone’s shoulder
+Security,8.2.4,Physical Threats,A control to reduce shoulder surfing is:,Brighter screens,Privacy filters on monitors,Turning screens to public areas,Bigger font sizes,b,Privacy filters on monitors
+Security,8.2.4,Physical Threats,Reception desks handling PII should:,Have screens visible to queues,Use privacy screens and angled monitors,Display all data openly,Use public speakers,b,Use privacy screens and angled monitors
+Security,8.2.4,Physical Threats,Environmental risks include:,"Heat, humidity, dust, water ingress",Only earthquakes,Only noise,Only darkness,a,"Heat, humidity, dust, water ingress"
+Security,8.2.4,Physical Threats,Server rooms should maintain:,Random temperatures,Controlled temperature/humidity and filtration,Open windows,No sensors,b,Controlled temperature/humidity and filtration
+Security,8.2.4,Physical Threats,Best protection from vandalism at entrances is:,No lighting,"CCTV, lighting, reinforced doors",Unattended access,Paper signs,b,"CCTV, lighting, reinforced doors"
+Security,8.2.4,Physical Threats,Anti-tamper seals on cabinets help to:,Improve speed,Indicate unauthorized access attempts,Lower costs,Brighten lights,b,Indicate unauthorized access attempts
+Security,8.2.4,Physical Threats,Perimeter security can include:,Shrubs only,"Fencing, bollards, secure gates",Welcome mats,Open car parks,b,"Fencing, bollards, secure gates"
+Security,8.2.4,Physical Threats,Windows in secure areas should be:,Unlocked,Shatter-resistant or barred as needed,Wide open,Tinted only,b,Shatter-resistant or barred as needed
+Security,8.2.4,Physical Threats,Delivery bays should be:,Unsupervised,Monitored and separated from core areas,Open to public,Code-free,b,Monitored and separated from core areas
+Security,8.2.4,Physical Threats,Cable management and port security prevent:,Dust build-up,Easy tapping/rogue device insertion,Better décor,Longer cables,b,Easy tapping/rogue device insertion
+Security,8.2.4,Physical Threats,Secure screen placement avoids:,User fatigue,Line-of-sight exposure of sensitive data,Printer jams,Slow logins,b,Line-of-sight exposure of sensitive data
+Security,8.2.4,Physical Threats,Ruggedized devices are designed to:,Reduce screen size,"Withstand harsh conditions (shock, dust, moisture)",Be cheaper,Run slower,b,"Withstand harsh conditions (shock, dust, moisture)"
+Security,8.2.4,Physical Threats,Poor robustness increases risk of:,Device survivability,Frequent failures and data loss,Better uptime,Higher MTBF,b,Frequent failures and data loss
+Security,8.2.4,Physical Threats,"In warehouses, a rugged laptop helps to:",Improve colour accuracy,Survive drops and vibrations,Reduce security,Increase glare,b,Survive drops and vibrations
+Security,8.2.4,Physical Threats,Protective cases and port covers mitigate:,Cyber attacks,Physical damage and ingress,Licensing issues,User training,b,Physical damage and ingress
+Security,8.2.4,Physical Threats,Industrial environments benefit from:,Fanless sealed PCs with IP ratings,Open cases,Consumer tablets only,No filtration,a,Fanless sealed PCs with IP ratings
+Security,8.2.4,Physical Threats,Shock-mounted racks in server rooms reduce:,Power bills,Vibration damage to equipment,User errors,Cable length,b,Vibration damage to equipment
+Security,8.2.4,Physical Threats,Using SSDs instead of HDDs can:,Increase shock tolerance,Lower shock tolerance,Increase moving parts,Require more grease,a,Increase shock tolerance
+Security,8.2.4,Physical Threats,A UPS primarily protects against:,Tailgating,Power loss and voltage spikes,Phishing,Malware,b,Power loss and voltage spikes
+Security,8.2.4,Physical Threats,A disaster recovery plan should include:,Only IT contacts,"Alternate sites, backups, roles and runbooks",No communications,Just hope,b,"Alternate sites, backups, roles and runbooks"
+Security,8.2.4,Physical Threats,Hot sites provide:,Immediate failover capability,Cheapest storage,No power,No networking,a,Immediate failover capability
+Security,8.2.4,Physical Threats,Cold sites typically have:,Live systems ready,Space and power but minimal equipment,All data mirrored,Staff on site 24/7,b,Space and power but minimal equipment
+Security,8.2.4,Physical Threats,Backups for disaster recovery should be:,Onsite only,"3-2-1: 3 copies, 2 media, 1 offsite",Never tested,Unencrypted,b,"3-2-1: 3 copies, 2 media, 1 offsite"
+Security,8.2.4,Physical Threats,Geographic diversity of backups helps to:,Increase latency,Protect against regional disasters,Reduce redundancy,Confuse teams,b,Protect against regional disasters
+Security,8.2.4,Physical Threats,Emergency power systems include:,Desk lamps,UPS and generators,LED signs,Coffee machines,b,UPS and generators
+Security,8.2.4,Physical Threats,Evacuation drills are conducted to:,Improve décor,Ensure staff can exit safely and quickly,Save printer ink,Lower taxes,b,Ensure staff can exit safely and quickly
+Security,8.2.4,Physical Threats,Critical spares on hand reduce:,Recovery time (MTTR),Humidity,Printer queues,Lunch breaks,a,Recovery time (MTTR)
+Security,8.2.4,Physical Threats,Environmental sensors in server rooms detect:,Fonts,"Temperature, humidity, smoke, water",Windscreens,Passwords,b,"Temperature, humidity, smoke, water"
+Security,8.2.4,Physical Threats,"To ensure plans work during disasters, organisations should:",Avoid testing,Run regular tabletop and live exercises,Hide procedures,Keep plans secret,b,Run regular tabletop and live exercises
+Security,8.2.5,Security Impact,What is a common business impact of leaking sensitive data-,Improved brand reputation,Regulatory fines and lawsuits,Lower security costs,Faster onboarding,b,Regulatory fines and lawsuits
+Security,8.2.5,Security Impact,Loss of sensitive data often leads to:,Customer churn and loss of trust,Higher NPS immediately,Automatic new sales,Faster product cycles,a,Customer churn and loss of trust
+Security,8.2.5,Security Impact,Unauthorised access to digital systems can allow attackers to:,Improve firewall rules,Exfiltrate data or alter configurations,Reduce detection,Patch systems,b,Exfiltrate data or alter configurations
+Security,8.2.5,Security Impact,A likely result of unauthorised access is:,Better audit trails,Privilege escalation and lateral movement,Lower risk,Automatic encryption,b,Privilege escalation and lateral movement
+Security,8.2.5,Security Impact,Data corruption primarily impacts:,Data integrity and decision-making,Office layout,Screen brightness,Email signatures,a,Data integrity and decision-making
+Security,8.2.5,Security Impact,Corrupted records in a finance system can cause:,Accurate reporting,Incorrect financial statements,Lower fraud risk,Faster close,b,Incorrect financial statements
+Security,8.2.5,Security Impact,"Service disruption (e.g., DDoS) most directly causes:",Higher conversions,Reduced availability and lost revenue,Faster analytics,Improved UX,b,Reduced availability and lost revenue
+Security,8.2.5,Security Impact,Extended downtime may lead to:,Improved SLAs,SLA breaches and compensation payments,Lower support tickets,Higher uptime SLAs,b,SLA breaches and compensation payments
+Security,8.2.5,Security Impact,Unauthorised access to restricted physical areas can result in:,Better safety,"Theft, tampering, or sabotage",Lower insurance cost,Improved morale,b,"Theft, tampering, or sabotage"
+Security,8.2.5,Security Impact,Physical breaches of server rooms can cause:,Faster backups,Direct hardware theft or data destruction,Cheaper power,More resilience,b,Direct hardware theft or data destruction
+Security,8.2.5,Security Impact,A reputational impact of a breach is typically:,Increased public trust,Negative media coverage and brand damage,Guaranteed growth,Higher valuations,b,Negative media coverage and brand damage
+Security,8.2.5,Security Impact,Regulatory non-compliance after a data leak may trigger:,Awards,Investigations and administrative penalties,Tax refunds,Automatic waivers,b,Investigations and administrative penalties
+Security,8.2.5,Security Impact,Operational impact of ransomware includes:,Continuous operations,System lockout and operational standstill,Free upgrades,Lower costs,b,System lockout and operational standstill
+Security,8.2.5,Security Impact,A data integrity incident typically requires:,No follow-up,Root-cause analysis and data restoration,Marketing only,Disabling backups,b,Root-cause analysis and data restoration
+Security,8.2.5,Security Impact,Credential compromise often results in:,Reduced auditability,Unauthorised transactions or data access,No financial risk,Improved MFAs,b,Unauthorised transactions or data access
+Security,8.2.5,Security Impact,Supply-chain disruption due to a provider outage can:,Improve SLA attainment,Cascade into your own service disruption,Have no effect,Guarantee resilience,b,Cascade into your own service disruption
+Security,8.2.5,Security Impact,Loss of key logs/telemetry during an incident impacts:,Faster forensics,Ability to investigate and meet legal duties,Better visibility,Higher accuracy,b,Ability to investigate and meet legal duties
+Security,8.2.5,Security Impact,Breach notification obligations often require:,Immediate deletion of all evidence,Timely communication to regulators/affected parties,Silence for 12 months,Only internal notes,b,Timely communication to regulators/affected parties
+Security,8.2.5,Security Impact,Unauthorised access to HR systems may expose:,Cafeteria menu,"Personal data (e.g., NI numbers, addresses)",Public press releases,Office maps,b,"Personal data (e.g., NI numbers, addresses)"
+Security,8.2.5,Security Impact,A direct cost of service disruption can be:,"Refunds, penalties, and lost sales",Lower churn,Higher uptime,Award nominations,a,"Refunds, penalties, and lost sales"
+Security,8.4.1,CIA Triad,What does confidentiality ensure in the CIA triad-,Data is always public,Only authorised users can access data,Data loads faster,Data is always encrypted,b,Only authorised users can access data
+Security,8.4.1,CIA Triad,A violation of confidentiality may result in:,Faster systems,Unauthorised access to private data,Improved trust,Stable uptime,b,Unauthorised access to private data
+Security,8.4.1,CIA Triad,Confidentiality supports integrity by:,Making data editable by all,Preventing unauthorised tampering,Allowing public access,Deleting old records,b,Preventing unauthorised tampering
+Security,8.4.1,CIA Triad,Data integrity means:,Data is available 24/7,Data has not been altered without authorisation,Data loads quickly,Data is encrypted,b,Data has not been altered without authorisation
+Security,8.4.1,CIA Triad,A threat to integrity is:,Strong passwords,Hashing,Unauthorised modifications,Backups,c,Unauthorised modifications
+Security,8.4.1,CIA Triad,Which technique helps verify integrity-,Hashing,Tailgating,Open Wi-Fi,Weak passwords,a,Hashing
+Security,8.4.1,CIA Triad,Availability ensures:,Data is accessible when needed,Data is hidden forever,Data is low quality,Data is unmonitored,a,Data is accessible when needed
+Security,8.4.1,CIA Triad,A DoS attack primarily impacts:,Confidentiality,Integrity,Availability,None,c,Availability
+Security,8.4.1,CIA Triad,Integrity depends on confidentiality because:,Access control stops unauthorised changes,It makes data public,It reduces backups,It removes encryption,a,Access control stops unauthorised changes
+Security,8.4.1,CIA Triad,"If availability is lost, users:",Cannot access systems or data,Get higher permissions,Gain full integrity,Improve security,a,Cannot access systems or data
+Security,8.4.1,CIA Triad,A system with high confidentiality but low availability is:,Secure and always accessible,Private but frequently unusable,Fast and scalable,Publicly accessible,b,Private but frequently unusable
+Security,8.4.1,CIA Triad,Integrity failure can occur when:,Checksums match,Data is altered without detection,Servers are redundant,Data is encrypted,b,Data is altered without detection
+Security,8.4.1,CIA Triad,Availability supports integrity because:,"If systems are online, tampering cannot occur","If data is unavailable, integrity checks may fail","If systems run, then confidentiality is irrelevant","If data is online, it becomes public",b,"If data is unavailable, integrity checks may fail"
+Security,8.4.1,CIA Triad,An example of maintaining availability is:,Backups and redundant servers,Sharing passwords,Allowing public access,Ignoring updates,a,Backups and redundant servers
+Security,8.4.1,CIA Triad,The CIA triad components are:,"Confidentiality, Integrity, Availability","Control, Input, Access","Cloud, Internet, Applications","Confidentiality, Identity, Access",a,"Confidentiality, Integrity, Availability"
+Security,8.4.2,IAA Model,Identification in a digital system refers to:,Verifying fingerprints,Recognising who the user claims to be,Granting admin rights,Encrypting data,b,Recognising who the user claims to be
+Security,8.4.2,IAA Model,A common knowledge-based identification method is:,Fingerprint,Username,Keycard,Iris scan,b,Username
+Security,8.4.2,IAA Model,Possession-based identification requires:,A physical item such as a token or smart card,A long password,Facial recognition,An email address,a,A physical item such as a token or smart card
+Security,8.4.2,IAA Model,A drawback of possession-based identification is:,Tokens can be lost or stolen,Biometrics cannot be changed,Users forget passphrases,Too much entropy,a,Tokens can be lost or stolen
+Security,8.4.2,IAA Model,Biometric identification relies on:,Something you know,Something you have,Something you are,Something you download,c,Something you are
+Security,8.4.2,IAA Model,A benefit of biometric identification is:,It can be shared easily,Low accuracy,Difficult to forge compared to passwords,Never requires hardware,c,Difficult to forge compared to passwords
+Security,8.4.2,IAA Model,Authentication occurs when the system:,Recognises who the user claims to be,Verifies the identity provided during identification,Assigns permissions,Logs all activity,b,Verifies the identity provided during identification
+Security,8.4.2,IAA Model,Which of the following is part of multi-factor authentication-,Two unrelated verification methods,Only a username,Only one strong password,A public Wi-Fi login,a,Two unrelated verification methods
+Security,8.4.2,IAA Model,Passwords are a form of:,Possession factor,Knowledge factor,Biometric factor,Hardware factor,b,Knowledge factor
+Security,8.4.2,IAA Model,A drawback of passwords is:,They are unique per user,They can be guessed or cracked,They require no memory,They cannot be changed,b,They can be guessed or cracked
+Security,8.4.2,IAA Model,Biometric authentication verifies:,What you have,What you know,What you are,Where you are,c,What you are
+Security,8.4.2,IAA Model,Authorisation ensures:,Users can access only permitted resources,Passwords never expire,Servers always stay online,All users get admin access,a,Users can access only permitted resources
+Security,8.4.2,IAA Model,Role-based access control (RBAC) assigns permissions based on:,Age,The user’s job role,Wi-Fi speed,Browser type,b,
+Security,8.4.2,IAA Model,Access Control Lists (ACLs) define:,General company rules,Who can access specific resources,Electricity usage,Website colour schemes,b,Who can access specific resources
+Security,8.4.2,IAA Model,A drawback of ACLs is:,They are simple to manage at scale,They can become large and hard to maintain,They cannot specify permissions,They remove all security,b,They can become large and hard to maintain
+Security,8.4.2,IAA Model,Accountability in IAAA ensures:,Users stay anonymous,Actions are traceable to responsible users,Passwords do not expire,Data is always encrypted,b,Actions are traceable to responsible users
+Security,8.4.2,IAA Model,Audit logs are used to:,Speed up the system,Record system and user activity for review,Delete old data,Assign new roles automatically,b,Record system and user activity for review
+Security,8.4.2,IAA Model,A benefit of audit logging is:,Harder investigations,No trace of actions,Improved incident response and evidence collection,Users can bypass controls,c,Improved incident response and evidence collection
+Security,8.4.2,IAA Model,User activity monitoring helps detect:,Harmless actions only,Unusual or unauthorised behaviour,Printer issues,File formatting errors,b,Unusual or unauthorised behaviour
+Security,8.4.2,IAA Model,A potential drawback of user monitoring is:,More transparency,Privacy concerns if misused,Better security posture,Fewer breaches,b,Privacy concerns if misused
+Problem Solving,1.1.1,Computational thinking,,,,,,,
